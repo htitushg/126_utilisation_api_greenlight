@@ -1,0 +1,37 @@
+{{define "title"}}Affiche Auteurs{{end}}
+{{define "main"}}
+<div class="corps">
+    <div class="container">
+        <div class="part2">
+          <h1  >{{.Message}}</h1>
+        </div>  
+        <div>
+          <table class="table">
+            <thead>
+            <th>Id</th>
+            <th>Nom</th>
+            <th>Created_At</th>
+            <th>Description</th>
+            <!--<th>Delete</th>-->
+            </thead>
+            <tbody>
+                {{range .Auteurs}}
+                <tr class="tutils">
+                  <td class="data">{{.Auteur_Id}}</td>
+                  <td class="data">{{.Nom}} </td>
+                  <td class="data">{{.CreatedAt}} </td>
+                  <td class="data">{{.Description}} </td>
+                  <!--<td class="cell-buttons">
+                  <a href="/deleteauteur?id={{.Auteur_Id}}" class="bouton3">Delete</a>
+                  </td>-->
+                </tr>
+                {{end}}
+            </tbody>
+          </table>
+        </div>
+        <div class="part2">
+        <a href="/" class="bouton3">Retour</a>
+        </div>
+    </div>
+  </div>
+  {{end}}

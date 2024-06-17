@@ -1,0 +1,42 @@
+{{define "title"}}Modification Utilisateur{{end}}
+{{define "main"}}
+        <div class="login-container">
+        <p class="modifusertitre">MODIFICATION DES INFORMATIONS UTILISATEUR</p>
+            <form action="/user/modif" method="POST" class="modifuserform">
+                <!-- Include the CSRF token -->
+                <input type='hidden' name='csrf_token' value='{{.CSRFToken}}'>
+                {{.Message}}
+                <div class="part2">
+                <div class="modifuserlogin"><label name="name">Nom</label></div>
+
+                    {{with .Form.FieldErrors.name}}
+                        <label class='error'>{{.}}</label>
+                    {{end}}
+                <input type="text" name="name" id="name" value='{{.Form.Name}}' class="modifuserinput" readonly >
+                </div>
+                <div class="part2">
+                <div class="modifuserlogin"><label name="email">Courriel</label></div>
+                    {{with .Form.FieldErrors.Email}}
+                        <label class='error'>{{.}}</label>
+                    {{end}}
+                    <input type="email" name="email" id="email" value='{{.Form.Email}}' class="modifuserinput" required>
+                </div>
+                <div class="part2">
+                <div class="modifuserlogin"><label name="actualpassword">Actual Password</label></div>
+                <input type="password" name="passwordactual" id="actualpassword" class="modifuserinput" required autofocus>
+                </div>
+                <div class="part2">
+                <div class="modifuserlogin"><label name="password1">New Password</label></div>
+                <input type="password" name="password1" id="password1" class="modifuserinput" >
+                </div>
+                <div class="part2">
+                <div class="modifuserlogin"><label name="password2">Confirm New Password</label></div>
+                <input type="password" name="password2" id="password2" class="modifuserinput" >
+                </div>
+                <div class="modifuserlogin">
+                <button type="submit" class="bouton2">Validation Modification</button>
+                <a href="/" class="bouton2">Retour</a>
+                </div>
+            </form>     
+        </div>
+{{end}}

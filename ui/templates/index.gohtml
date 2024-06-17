@@ -1,0 +1,11 @@
+{{define "title"}}Index{{end}}
+{{define "main"}}
+<div class="login-container">
+    {{if .IsAuthenticated}}
+        <div class="corps"><h2>Vous êtes connecté</h2></div>
+    {{else}}
+        <div class="corps"><h2>Veuillez vous enregistrer</h2></div>
+        <div class="corps"><h2>Ou vous connecter</h2></div>
+    {{end}}
+</div>
+{{end}}

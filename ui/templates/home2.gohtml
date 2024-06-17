@@ -1,0 +1,19 @@
+{{define "title"}}Menu Principal{{end}}
+{{define "main"}}
+    <div class="login-principal">
+        <div class="corps"><h2>Page Principale Privée</h2></div>
+        <form action="/modifuser" method="get"><button class="bouton3">Modification Utilisateur</button></form>
+        <form action="/listusers"method="get"><button class="bouton3">Liste des utilisateurs</button></form>
+        <form action="/add" method="post"><button class="bouton3">Add (require login)</button></form>
+        <form action="/listeauteurs"method="get"><button class="bouton3">Liste des auteurs</button></form>
+        <form action="/createauteur"method="get"><button class="bouton3">Créer un auteur</button></form>
+        <form action="/listeediteurs"method="get"><button class="bouton3">Liste des editeurs</button></form>
+        <form action="/createediteur"method="get"><button class="bouton3">Créer un editeur</button></form>
+        <form action="/listelivres"method="get"><button class="bouton3">Liste des livres</button></form>
+        <form action="/listelivresetauteurs"method="get"><button class="bouton3">Liste des livres et auteurs</button></form>
+        <form action="/createlivre"method="get"><button class="bouton3">Créer un livre</button></form>
+        <form action="/logs" method="get"><button class="bouton3">Logs</button></form>
+        <form action="/logout" method="get"><button class="bouton3">Logout</button></form>
+        <div><p class="token">{{.Message}}</p></div>
+    </div>
+{{end}}

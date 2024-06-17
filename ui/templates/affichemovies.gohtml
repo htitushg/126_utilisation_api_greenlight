@@ -1,0 +1,49 @@
+{{define "title"}}Affiche Movie{{end}}
+{{define "main"}}
+
+<p class="modifusertitre">Affichage du movie demandé</p>
+{{range .Form}}
+<div class="ctn">
+    <div class="top-elems">
+        <div class="elem2 generalInfo">
+          <div class="middle-elems">
+            <div class="elem3">
+                <div class="lpart">
+                    <div class="booklabel"><label>Id</label></div>
+                    <div class="elem3text">{{.ID}}</div>
+                </div>
+                <div class="lpart">
+                    <div class="booklabel"><label>Titre</label></div>
+                    <div class="elem3text">{{.Title}}</div>
+                </div>
+            </div>
+            <div class="elem3">
+                <div class="lpart">
+                    <div class="booklabel"><label name="isbn">Version</label></div>
+                    <div class="elem3text">{{.Version}}</div>
+                </div>
+            </div>
+            <div class="elem3">
+                {{range .Genres}}
+                <div class="lpart">
+                    <div class="booklabel"><label name="genre">Genre</label></div>
+                    <div class="elem3text">
+                        <div>{{.}}</div>
+                    </div>
+                </div>
+                {{end}}
+                <div class="lpart">                    
+                    <div class="booklabel"><label>Année</label></div>
+                    <div class="elem3text">{{.Year}}</div>                   
+                </div>
+            </div>
+          </div>
+        </div>  
+    </div>     
+</div>  
+{{end}}    
+<div class="part2">
+    <a href="/movie/view" class="bouton2">Retour</a>
+</div>
+</div>
+{{end}}

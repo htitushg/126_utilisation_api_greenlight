@@ -1,0 +1,20 @@
+{{define "title"}}Livre{{end}}
+{{define "main"}}
+<div class="login-container">
+<p class="modifusertitre">Entrez un code isbn</p>
+<form action="/affichelivre" method="POST" class="modifuserform">
+    <!-- Include the CSRF token -->
+    <input type='hidden' name='csrf_token' value='{{.CSRFToken}}'>
+    {{range .Form.NonFieldErrors}}
+        <div class='error'>{{.}}</div>
+    {{end}}
+    <div class="modifuserlabel"><label name="pseudo">Code Isbn</label>
+        {{with .Form.FieldErrors.isbn}}
+            <label class='error'>{{.}}</label>
+        {{end}}
+        <input type="text" name="isbn" id="isbn" class="modifuserinput" value='{{.Form.Isbn}}' required autofocus>
+    <button class="bouton2">Valider</button>
+    </div>
+</form>
+</div>
+{{end}}

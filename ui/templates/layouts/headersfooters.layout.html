@@ -1,0 +1,30 @@
+{{define "header"}}
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Personel</title>
+    <link rel="stylesheet" type="text/css" href="static/css/style.css">
+    <link rel="icon" href="/static/css/faviconhb.png" type="image/x-icon">
+{{end}}
+
+{{define "header2"}}</head>
+<body>
+<div id="top">
+    <header>
+        <h1 class="entete" >Gestion nouvelle des utilisateurs</h1>
+    <img src="/static/css/utilisateurs2.png">
+    <time class="datesite">21/12/2023</time>
+    </header>
+</div>
+{{end}}
+{{ block "content" . }}
+{{ end }}
+{{ define "footer" }}</body>
+  <div class="copyright">
+    <h3>Les programmeurs débrouillards © 2023</h3>
+    <a> - Site réalisé par Henry G de Barbarin</a>
+    <a> en étroite collaboration avec Antoine</a>
+  </div>
+</html>
+{{ end }}

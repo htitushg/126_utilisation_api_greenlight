@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+{{define "content"}}
+{{$path := .Path}}
+{{range .Livres}}
+<div class="ctn">
+    <div class="top-elems">
+        <div class="elem">
+            {{if .Thumbnail}}
+                <img src="{{$path}}img/{{.Idg}}.png" alt="couverture small du livre">
+            {{else}}
+                <img src="{{$path}}img/normal.png" alt="pas de couverture">
+            {{end}}
+        </div>
+        <div class="elem2 generalInfo">
+          <div class="middle-elems">
+            <div class="elem3">
+                <div class="lpart">
+                    <div class="booklabel"><label>Id</label></div>
+                    <div class="elem3text">{{.Livre_Id}} - {{.Idg}}</div>
+                </div>
+                <div class="lpart">
+                    <div class="booklabel"><label>ISBN</label></div>
+                    <div class="elem3text">{{.Isbn}}</div>
+                </div>
+            </div>
+            <div class="elem3">
+                <div class="lpart">
+                    <div class="booklabel"><label name="isbn">Titre</label></div>
+                    <div class="elem3text">{{.Titre}}</div>
+                </div>
+            </div>
+            <div class="elem3">
+                {{range .Ecrivain}}
+                <div class="lpart">
+                    <div class="booklabel"><label name="auteur">Auteur</label></div>
+                    <div class="elem3text">
+                        <div>{{.}}</div>
+                    </div>
+                </div>
+                {{end}}
+                <div class="lpart">
+                    {{if .Language }}
+                        <div class="booklabel"><label>Langue</label></div>
+                        <div class="elem3text">{{.Language}}</div>
+                    {{end}}
+                </div>
+            </div>
+          </div>
+        </div>
+        <div class="elem2 specificInfo">
+          <div class="middle-elems">
+            <div class="elem3">
+                {{if .Editeur.Nom}}
+                <div class="lpart">
+                    <div class="booklabel"><label name="editeur">Editeur</label></div>
+                    <div class="elem3text">{{.Editeur.Editeur_Id}} - {{.Editeur.Nom}}</div>
+                </div>
+                {{end}}
+                {{if .Publish_date}}
+                <div class="lpart">
+                    <div class="booklabel"><label name="date">Date</label></div>
+                    <div class="elem3text">{{.Publish_date}}</div>
+                </div>
+                {{end}}
+            </div>
+            <div class="elem3">
+                <div class="lpart">
+                    <div class="booklabel"><label name="nbpages">Nb Pages</label></div>
+                    <div class="elem3text">{{.Nb_pages}}</div>
+                </div>
+            </div>
+            <div class="elem3">
+                {{if .Resume}}
+                <div class="lpartlong">
+                    <div class="elem3text">{{.Resume}}</div>
+                </div>
+                {{end}}
+            </div>
+            
+          </div>
+        </div>
+    </div>
+    <div class="bottom-elems">
+        {{if .Description}}
+        <div class="elem-big">
+            <div class="booklabel"><label>Description: </label></div>
+            <div class="elem3text">{{.Description}}</div>
+        </div>
+        {{end}}
+    </div>
+</div>      
+</div>    
+{{end}}
+<div class="part2">
+    <a href="/" class="bouton2">Retour</a> 
+</div>
+{{end}}

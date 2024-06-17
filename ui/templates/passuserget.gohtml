@@ -1,0 +1,22 @@
+{{define "title"}}Mot de Passe{{end}}
+{{define "main"}}
+    <div class="login-container">
+    <p class="modifusertitre">ENREGISTREMENT D'UN NOUVEL UTILISATEUR</p>
+    {{.Message}}
+    <form action="/changepassuser" method="post" class="modifuserform">
+    <input type="text" name="tid" id="tid" value= "{{.Tid}}" class="modifuserinput" hidden>
+        <div class="part2">
+            <div class="modifuserlabel"><label name="password1">Password</label></div>
+            <input type="password" name="password1" id="password1" class="modifuserinput" >
+        </div>
+        <div class="part2">
+            <div class="modifuserlabel"><label name="password2">Confirm Password</label></div>
+            <input type="password" name="password2" id="password2" class="modifuserinput" >
+        </div>
+        <div class="modifuserlogin">
+            <button type="submit" class="bouton2">Validation</button>
+            <a href="/login" class="bouton2">Retour</a>
+        </div>
+    </form>
+    </div>
+{{end}}

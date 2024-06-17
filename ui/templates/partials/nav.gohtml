@@ -1,0 +1,57 @@
+{{define "nav"}}
+    <nav>
+        <div>
+            <ul class="menu" >
+                    <li ><a href="#">Livres</a>
+                        <ul class="sous-menu" >
+                            {{if .IsAuthenticated}}
+                            <li><a href='/livre'>Isbn</a></li>
+                            <li><a href="/afficheauteurs">Liste des auteurs</a></li>
+                            <li><a href="/afficheediteurs">Liste des editeurs</a></li>
+                            {{end}}
+                            <li><a href="/affichelivres" >Liste des Livres</a></li>
+
+                        </ul>
+                    </li>
+                    <li ><a href="#">Films</a>
+                        <ul class="sous-menu" >
+                            <li><a href='/movies/connectuserapi'>S'inscrire sur l'API films</a></li>
+                            <li><a href='/movies/authenticateuserapi'>Se connecter à l'API films</a></li>
+                            {{if .IsAuthenticated}}
+                            <li><a href='/movie/view'>Affiche un film</a></li>
+                            {{end}}
+                            <li><a href='/movie/view'>Affiche un film</a></li>
+                            <li><a href='/movies/view' >Liste des Films</a></li>
+
+                        </ul>
+                    </li>
+                    <li ><a href="#">Messages</a>
+                        <ul class="sous-menu" >
+                            {{if .IsAuthenticated}}
+                                <li><a href='/snippet/create'>Nouveau Message</a></li>
+                            {{end}}
+                            <li><a href="/snippet/view" >Liste des Messages</a></li>
+                        </ul>
+                    </li>
+                {{if .IsAuthenticated}}
+                <!--<form action='/user/logout' method='POST'>-->
+                    <!-- Include the CSRF token -->
+                    <input type='hidden' name='csrf_token' value='{{.CSRFToken}}'>
+                    <!--<button>Logout</button>-->
+                <a href='/user/logout'>Logout</a>
+                <!--</form>-->
+            {{else}}
+
+                <a href='/user/signup'>S'inscrire</a>
+                <a href='/user/login'>Se connecter</a>
+
+            {{end}}
+                {{- if .IsAuthenticated }}
+                    <li class ="menu-connect"><a href="#"><img src="/static/css/personne_connectee.png" class="iconeconnect" alt="Image vraie"></a></li>
+                    <li class ="menu-connect"><a href="/user/modif">{{.Username}}</a></li>
+                {{- end }}
+                <li class ="menu-connect"><a href="/user/modif"><img src="/static/css/faviconhb.png"></a></li>
+            </ul>
+        </div>
+    </nav>
+{{end}}

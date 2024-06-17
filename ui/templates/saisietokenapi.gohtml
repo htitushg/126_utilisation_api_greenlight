@@ -1,0 +1,22 @@
+{{define "title"}}Livre{{end}}
+{{define "main"}}
+<div class="login-container">
+<p class="modifusertitre">Entrez un token reçu de l'API</p>
+<form action="/movies/activeuserapi" method="POST" class="modifuserform">
+    <!-- Include the CSRF token -->
+    <input type='hidden' name='csrf_token' value='{{.CSRFToken}}'>
+    {{range .Form.NonFieldErrors}}
+        <div class='error'>{{.}}</div>
+    {{end}}
+    <label name="id">ID</label>
+    <input type='readonly' value={{.Form.ID}}>
+    <div class="modifuserlabel"><label name="pseudo">Token</label>
+        {{with .Form.FieldErrors.token}}
+            <label class='error'>{{.}}</label>
+        {{end}}
+        <input type="text" name="token" id="token" class="modifuserinput" value='{{.Form.Token}}' required autofocus>
+    <button class="bouton2">Valider</button>
+    </div>
+</form>
+</div>
+{{end}}

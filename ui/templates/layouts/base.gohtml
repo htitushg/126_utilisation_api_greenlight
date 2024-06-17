@@ -1,0 +1,32 @@
+{{define "base"}}
+    <!doctype html>
+    <html lang='en'>
+    <head>
+        <meta charset='utf-8'>
+        <title>{{template "title" .}} - Bibliothèque</title>
+        <link rel='stylesheet' href='/static/css/style2.css'>
+        <link rel='shortcut icon' href='/static/css/faviconhb.png' type='image/x-icon'>
+        <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700'>
+    </head>
+    <body>
+    <header>
+        <h1><a href='/'>Bibliothèque</a></h1>
+        <a href='/'><img src="/static/css/livres.png"></a>
+        <time class="datesite">{{.Date}}</time>
+    </header>
+    {{template "nav" .}}
+    <main>
+        <!-- Display the flash message if one exists -->
+        {{with .Flash}}
+            <div class='flash'>{{.}}</div>
+        {{end}}
+        {{template "main" .}}
+    </main>
+
+    <footer>
+        Powered by <a href='https://golang.org/'>Go</a> in {{.CurrentYear}}
+    </footer>
+    <script src='/static/js/main.js' type='text/javascript'></script>
+    </body>
+    </html>
+{{end}}

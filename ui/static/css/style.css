@@ -1,0 +1,77 @@
+:root {
+  /* change those values (variables) instead of doing it in every element */
+  --elem-container-padding: 0.8vw;
+  --elems-gap: 0.8vw;
+  --element-width: 16.2vw;
+  --element-ratio: 2/3;
+  --element-ratio2: 5/3;
+  --element-ratio3: 15/3;
+  --element-radius: 0.7vw;
+}
+* {
+  padding: 0;
+  margin: 0;
+}
+.ctn {
+  display: flex;
+  flex-direction: column; /* possible change to column-reverse */
+  align-items: left; /*center;*/
+  padding: var(--elem-container-padding);
+  gap: var(--elems-gap);
+  background-color: #444444;
+
+  /* testing values (to remove when using this snippet as a simple element) */
+  /*min-height: 50svh;
+  justify-content: center;*/
+  /* testing values end */
+}
+.top-elems {
+  display: flex;
+  flex-direction: row;
+  gap: var(--elems-gap);
+}
+.middle-elems {
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--element-radius);
+}
+.bottom-elems {
+  display: flex;
+  flex-direction: row; /* possible change to row-reverse */
+  /*gap: var(--elems-gap);*/
+}
+.top-right {
+  display: flex;
+  flex-direction: row;
+  gap: var(--elems-gap);
+}
+.elem {
+  aspect-ratio: var(--element-ratio);
+  border-radius: var(--element-radius);
+}
+.elem2 {
+  aspect-ratio: var(--element-ratio2);
+  border-radius: var(--element-radius);
+}
+.elem-big {
+  aspect-ratio: var(--element-ratio3);
+  border-radius: var(--element-radius);
+}
+.elem {
+  width: var(--element-width);
+  background-color: #666666;
+}
+.elem2 {
+  width: calc(calc((--element-width) * 3)+ var(--elems-gap));
+  background-color: #666666;
+}
+.elem3 {
+  aspect-ratio: var(--element-ratio3);
+  width: calc((--element-width) * 3);
+  border-radius: var(--element-radius);
+  background-color: #555555;
+}
+.elem-big {
+  width: calc(calc(var(--element-width) * 6) + var(--elems-gap) * 2);
+  background-color: #666666;
+}

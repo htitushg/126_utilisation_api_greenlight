@@ -1,0 +1,11 @@
+{{define "title"}}Erreur 404{{end}}
+{{define "main"}}
+<html lang="en">
+    <div class="login-container">
+        {{with .Message}}
+            <label class='error'>{{.Message}}</label>
+        {{end}}
+        <div class="corps"><a href="/" class="bouton3">Retour</a></div>
+    </div>
+</html>
+{{end}}

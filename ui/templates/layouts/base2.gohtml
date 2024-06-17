@@ -1,0 +1,79 @@
+{{ define "base" }}
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Henry">
+    <meta name="description" content="Un programme web avec entete et bas de page, accès à une SGBD Mysql et templates">
+    <meta name="robots" content="index, follow">
+    <link rel="stylesheet" href="/static/css/style2.css">
+    <script type="text/javascript" src="/static/js/codew3.js"></script>
+    <link rel="icon" href="/static/css/faviconhb.png" type="image/x-icon">
+    <title>Livre</title>
+</head>
+<body>
+  <header>
+    <div class="entete" >Site de test des Middlewares, sessions et Mysql</div>
+    <img src="/static/css/livres.png">
+    <time class="datesite">18/03/2024</time>
+  </header>
+  <nav>
+    <ul class="menu">
+      <li ><a href="html.html">Livres</a>
+        <ul class="sous-menu" >
+          <li><a href="/affichelivres" method="get">Liste des Livres</a></li>
+          <li><a href="/listeediteurs" method="get">Liste des Editeurs</a></li>
+          <li><a href="/listelivresetauteurs" method="get">Liste des Livres et des auteurs</a></li>
+          <li><a href="/listeauteurs" method="get">Liste des auteurs</a></li>
+        </ul>
+      </li>
+      <li ><a href="#">Utilisateurs</a>
+        <ul class="sous-menu">
+          <li><a href="/listusers" method="get">Liste des Utilisateurs</a></li>
+        </ul>
+      </li>
+      <li >
+      <a href="/apropos" method="get">A propos de ce site</a></li>
+      
+      <li class ="menu-connect"><a href="/home" method="get"><img src="/static/css/faviconhb.png"></a></li>
+    </ul>
+  </nav>
+  {{ block "content" . }}
+  {{ end }}
+  <footer>
+    <div id="main">
+      <div class=”footer-services”>
+        <h3>Nos services</h3>
+        <ul class=”liste-services”>
+          <li><a href=”#”>Création de sites web</a></li>
+          <li><a href=”#”>SEO</a></li>
+          <li><a href=”#”>SEA</a></li>
+        </ul>
+      </div>
+      <div class=”footer-informations”>
+        <h3>A propos</h3>
+        <ul class=”liste-informations”>
+          <li><a href=”#”>Actualités</a></li>
+          <li><a href=”#”>Notre histoire</a></li>
+          <li><a href=”#”>Investisseurs</a></li>
+          <li><a href=”#”>Développement durable</a></li>
+        </ul>
+      </div>
+      <div class=”footer-contact”>
+        <h3>Restons en contact</h3>
+        <p>06 06 06 06 06</p>
+        <p>supportclient@contact.com</p>
+        <p>12 rue de l'invention, Paris, 75011</p>
+      </div>
+    </div>  
+    <div class="copyright">
+      <h3>Les programmeurs débrouillards © 2023</h3>
+      <a> Site réalisé par Henry </a>
+      <a> en étroite collaboration avec Antoine</a>
+    </div>
+  
+  </footer>
+</body>
+
+</html>
+{{ end }}

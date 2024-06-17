@@ -1,0 +1,20 @@
+{{define "title"}}Movie{{end}}
+{{define "main"}}
+<div class="login-container">
+<p class="modifusertitre">Entrez un numéro de film</p>
+<form action="/movie/view" method="POST" class="modifuserform">
+    <!-- Include the CSRF token -->
+    <input type='hidden' name='csrf_token' value='{{.CSRFToken}}'>
+    {{range .Form.NonFieldErrors}}
+        <div class='error'>{{.}}</div>
+    {{end}}
+    <div class="modifuserlabel"><label name="pseudo">Movie Number</label>
+        {{with .Form.FieldErrors.id}}
+            <label class='error'>{{.Message}}</label>
+        {{end}}
+        <input type="text" name="id" id="id" class="modifuserinput" required autofocus>
+    <button class="bouton2">Valider</button>
+    </div>
+</form>
+</div>
+{{end}}

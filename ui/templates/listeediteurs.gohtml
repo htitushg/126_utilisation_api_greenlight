@@ -1,0 +1,37 @@
+{{define "title"}}Affiche Editeurs{{end}}
+{{define "main"}}
+<div class="corps">
+    <div class="container">
+        <div class="part2">
+          <h1  >{{.Message}}</h1>
+        </div>  
+        <div>
+          <table class="table">
+            <thead>
+            <th>Id</th>
+            <th>Nom</th>
+            <th>Created_At</th>
+            <th>Description</th>
+            <!--<th>Delete</th>-->
+            </thead>
+            <tbody>
+                {{range .Editeurs}}
+                <tr class="tutils">
+                  <td class="data">{{.Editeur_Id}}</td>
+                  <td class="data">{{.Nom}} </td>
+                  <td class="data">{{.CreatedAt}} </td>
+                  <td class="data">{{.Description}} </td>
+                  <!--<td class="cell-buttons">
+                  <a href="/deleteediteur?id={{.Editeur_Id}}" class="bouton3">Delete</a>
+                  </td>-->
+                </tr>
+                {{end}}
+            </tbody>
+          </table>
+        </div>
+        <div class="part2">
+        <a href="/" class="bouton3">Retour</a>
+        </div>
+    </div>
+  </div>
+  {{end}}

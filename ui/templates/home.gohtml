@@ -1,0 +1,25 @@
+{{define "title"}}Home{{end}}
+{{define "main"}}
+    <h2>Derniers messages</h2>
+    {{if .Snippets}}
+        <table>
+            <tr>
+                <th>N°</th>
+                <th>Tître</th>
+                <th>Date de création</th>
+                <th>Date d'expiration</th>
+            </tr>
+            {{range .Snippets}}
+                <tr>
+                    <td>{{.ID}}</td>
+                    <td  class="bouton1"><a href='/snippet/view/{{.ID}}'>{{.Title}}</a></td>
+                    <!-- Use the new template function here -->
+                    <td>{{humanDate .Created}}</td>
+                    <td>{{humanDate .Expires}}</td>
+                </tr>
+            {{end}}
+        </table>
+    {{else}}
+        <p>There's nothing to see here... yet!</p>
+    {{end}}
+{{end}}

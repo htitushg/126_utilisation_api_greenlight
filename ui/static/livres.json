@@ -1,0 +1,2877 @@
+[
+  {
+    "kind": "books#volumes",
+    "totalItems": 1,
+    "items": [
+      {
+        "kind": "books#volume",
+        "id": "6BhauAEACAAJ",
+        "etag": "COBAdPXURMQ",
+        "selfLink": "https://www.googleapis.com/books/v1/volumes/6BhauAEACAAJ",
+        "volumeInfo": {
+          "title": "Et Dieu dans tout ca ?",
+          "authors": [
+            "André Léonard"
+          ],
+          "publisher": "",
+          "publishedDate": "2018-06-06",
+          "description": "Un petit guide pour entrer sans peine, voire en souriant, dans l'univers passionnant mais redouté de la philosophie, et même, et oui ! de la métaphysique. Evitant tout jargon mais non sans esprit, l'auteur nous initie à une réflexion sur Dieu à partir de la simple observation du monde qui nous entoure. De courts chapitres décortiquent le vocabulaire philosophique pour le rendre lumineux. Cet ouvrage s'adresse à tous et spécialement à ceux qui pensent que cette matière n'est pas pour eux ! Auteur de nombreux ouvrages, Mgr André Léonard a été pendant plus de vingt ans professeur de Philosophie à l'université catholique de Louvain, puis évêque de Namur et archevêque de Malines-Bruxelles jusqu'en 2015.",
+          "industryIdentifiers": [
+            {
+              "type": "ISBN_13",
+              "identifier": "9791033607304"
+            }
+          ],
+          "readingModes": {
+            "text": false,
+            "image": false
+          },
+          "pageCount": 130,
+          "printType": "BOOK",
+          "maturityRating": "NOT_MATURE",
+          "allowAnonLogging": false,
+          "contentVersion": "preview-1.0.0",
+          "panelizationSummary": {
+            "containsEpubBubbles": false,
+            "containsImageBubbles": false
+          },
+          "imageLinks": {
+            "smallThumbnail": "",
+            "thumbnail": ""
+          },
+          "language": "fr",
+          "previewLink": "http://books.google.fr/books?id=6BhauAEACAAJ\u0026dq=isbn:9791033607304\u0026hl=\u0026cd=1\u0026source=gbs_api",
+          "infoLink": "http://books.google.fr/books?id=6BhauAEACAAJ\u0026dq=isbn:9791033607304\u0026hl=\u0026source=gbs_api",
+          "canonicalVolumeLink": "https://books.google.com/books/about/Et_Dieu_dans_tout_ca.html?hl=\u0026id=6BhauAEACAAJ"
+        },
+        "saleInfo": {
+          "country": "FR",
+          "saleability": "NOT_FOR_SALE",
+          "isEbook": false
+        },
+        "accessInfo": {
+          "country": "FR",
+          "viewability": "NO_PAGES",
+          "embeddable": false,
+          "publicDomain": false,
+          "textToSpeechPermission": "ALLOWED",
+          "epub": {
+            "isAvailable": false
+          },
+          "pdf": {
+            "isAvailable": false
+          },
+          "webReaderLink": "http://play.google.com/books/reader?id=6BhauAEACAAJ\u0026hl=\u0026source=gbs_api",
+          "accessViewStatus": "NONE",
+          "quoteSharingAllowed": false
+        },
+        "searchInfo": {
+          "textSnippet": "Un petit guide pour entrer sans peine, voire en souriant, dans l\u0026#39;univers passionnant mais redouté de la philosophie, et même, et oui ! de la métaphysique. Évitant tout jargon mais non sans esprit, l\u0026#39;auteur nous initie à une réflexion ..."
+        }
+      }
+    ]
+  },
+  {
+    "kind": "books#volumes",
+    "totalItems": 1,
+    "items": [
+      {
+        "kind": "books#volume",
+        "id": "84tzvgEACAAJ",
+        "etag": "2FGaYdVze2Q",
+        "selfLink": "https://www.googleapis.com/books/v1/volumes/84tzvgEACAAJ",
+        "volumeInfo": {
+          "title": "Mon dernier rêve sera pour vous : une biographie sentimentale de Chateaubriand",
+          "authors": [
+            "Jean d' Ormesson"
+          ],
+          "publisher": "",
+          "publishedDate": "1982",
+          "description": "",
+          "industryIdentifiers": [
+            {
+              "type": "ISBN_10",
+              "identifier": "2724215168"
+            },
+            {
+              "type": "ISBN_13",
+              "identifier": "9782724215168"
+            }
+          ],
+          "readingModes": {
+            "text": false,
+            "image": false
+          },
+          "pageCount": 444,
+          "printType": "BOOK",
+          "maturityRating": "NOT_MATURE",
+          "allowAnonLogging": false,
+          "contentVersion": "preview-1.0.0",
+          "panelizationSummary": {
+            "containsEpubBubbles": false,
+            "containsImageBubbles": false
+          },
+          "imageLinks": {
+            "smallThumbnail": "",
+            "thumbnail": ""
+          },
+          "language": "fr",
+          "previewLink": "http://books.google.fr/books?id=84tzvgEACAAJ\u0026dq=isbn:2724215168\u0026hl=\u0026cd=1\u0026source=gbs_api",
+          "infoLink": "http://books.google.fr/books?id=84tzvgEACAAJ\u0026dq=isbn:2724215168\u0026hl=\u0026source=gbs_api",
+          "canonicalVolumeLink": "https://books.google.com/books/about/Mon_dernier_r%C3%AAve_sera_pour_vous_une_bio.html?hl=\u0026id=84tzvgEACAAJ"
+        },
+        "saleInfo": {
+          "country": "FR",
+          "saleability": "NOT_FOR_SALE",
+          "isEbook": false
+        },
+        "accessInfo": {
+          "country": "FR",
+          "viewability": "NO_PAGES",
+          "embeddable": false,
+          "publicDomain": false,
+          "textToSpeechPermission": "ALLOWED",
+          "epub": {
+            "isAvailable": false
+          },
+          "pdf": {
+            "isAvailable": false
+          },
+          "webReaderLink": "http://play.google.com/books/reader?id=84tzvgEACAAJ\u0026hl=\u0026source=gbs_api",
+          "accessViewStatus": "NONE",
+          "quoteSharingAllowed": false
+        },
+        "searchInfo": {
+          "textSnippet": ""
+        }
+      }
+    ]
+  },
+  {
+    "kind": "books#volumes",
+    "totalItems": 1,
+    "items": [
+      {
+        "kind": "books#volume",
+        "id": "93J7rgEACAAJ",
+        "etag": "cDjJjNvy4Mo",
+        "selfLink": "https://www.googleapis.com/books/v1/volumes/93J7rgEACAAJ",
+        "volumeInfo": {
+          "title": "Rosa candida",
+          "authors": [
+            "Audur Ava Olafsdottir"
+          ],
+          "publisher": "",
+          "publishedDate": "2015-05-07",
+          "description": "En route pour une ancienne roseraie du continent, avec dans ses bagages deux ou trois boutures de Rosa candida, Arnljôtur part sans le savoir à la rencontre d'Anna et de sa petite fille, là-bas, dans un autre éden, oublié du monde et gardé par un moine cinéphile.",
+          "industryIdentifiers": [
+            {
+              "type": "ISBN_10",
+              "identifier": "2843047331"
+            },
+            {
+              "type": "ISBN_13",
+              "identifier": "9782843047336"
+            }
+          ],
+          "readingModes": {
+            "text": false,
+            "image": false
+          },
+          "pageCount": 263,
+          "printType": "BOOK",
+          "maturityRating": "NOT_MATURE",
+          "allowAnonLogging": false,
+          "contentVersion": "preview-1.0.0",
+          "panelizationSummary": {
+            "containsEpubBubbles": false,
+            "containsImageBubbles": false
+          },
+          "imageLinks": {
+            "smallThumbnail": "",
+            "thumbnail": ""
+          },
+          "language": "fr",
+          "previewLink": "http://books.google.fr/books?id=93J7rgEACAAJ\u0026dq=isbn:9782843047336\u0026hl=\u0026cd=1\u0026source=gbs_api",
+          "infoLink": "http://books.google.fr/books?id=93J7rgEACAAJ\u0026dq=isbn:9782843047336\u0026hl=\u0026source=gbs_api",
+          "canonicalVolumeLink": "https://books.google.com/books/about/Rosa_candida.html?hl=\u0026id=93J7rgEACAAJ"
+        },
+        "saleInfo": {
+          "country": "FR",
+          "saleability": "NOT_FOR_SALE",
+          "isEbook": false
+        },
+        "accessInfo": {
+          "country": "FR",
+          "viewability": "NO_PAGES",
+          "embeddable": false,
+          "publicDomain": false,
+          "textToSpeechPermission": "ALLOWED",
+          "epub": {
+            "isAvailable": false
+          },
+          "pdf": {
+            "isAvailable": false
+          },
+          "webReaderLink": "http://play.google.com/books/reader?id=93J7rgEACAAJ\u0026hl=\u0026source=gbs_api",
+          "accessViewStatus": "NONE",
+          "quoteSharingAllowed": false
+        },
+        "searchInfo": {
+          "textSnippet": "En route pour une ancienne roseraie du continent, avec dans ses bagages deux ou trois boutures de Rosa candida, Arnljôtur part sans le savoir à la rencontre d\u0026#39;Anna et de sa petite fille, là-bas, dans un autre éden, oublié du monde et ..."
+        }
+      }
+    ]
+  },
+  {
+    "kind": "books#volumes",
+    "totalItems": 1,
+    "items": [
+      {
+        "kind": "books#volume",
+        "id": "BR1W0AEACAAJ",
+        "etag": "wLeoafXl98c",
+        "selfLink": "https://www.googleapis.com/books/v1/volumes/BR1W0AEACAAJ",
+        "volumeInfo": {
+          "title": "Avec les fées",
+          "authors": [
+            "Sylvain Tesson"
+          ],
+          "publisher": "",
+          "publishedDate": "2024-01-10",
+          "description": "L'été venait de commencer quand je partis chercher les fées sur la côte atlantique. Je ne crois pas à leur existence. Aucune fille-libellule ne volette en tutu au-dessus des fontaines. C'est dommage : les yeux de l'homme moderne ne captent plus de fantasmagories. Au XIIe siècle, le moindre pâtre cheminait au milieu des fantômes. On vivait dans les visions. Un Belge pâle (et très oublié), Maeterlinck, avait dit : « C'est bien curieux les hommes... Depuis la mort des fées, ils n'y voient plus du tout et ne s'en doutent point. »Le mot fée signifie autre chose. C'est une qualité du réel révélée par une disposition du regard. Il y a une façon d'attraper le monde et d'y déceler le miracle de l'immémorial et de la perfection. Le reflet revenu du soleil sur la mer, le froissement du vent dans les feuilles d'un hêtre, le sang sur la neige et la rosée perlant sur une fourrure de mustélidé : là sont les fées.Elles apparaissent parce qu'on regarde la nature avec déférence. Soudain, un signal. La beauté d'une forme éclate. Je donne le nom de fée à ce jaillissement. Les promontoires de la Galice, de la Bretagne, de la Cornouailles, du pays de Galles, de l'île de Man, de l'Irlande et de l'Écosse dessinaient un arc. Par voie de mer j'allais relier les miettes de ce déchiquètement. En équilibre sur cette courbe, on était certain de capter le surgissement du merveilleux.Puisque la nuit était tombée sur ce monde de machines et de banquiers, je me donnais trois mois pour essayer d'y voir. Je partais. Avec les fées. [éditeur]",
+          "industryIdentifiers": [
+            {
+              "type": "ISBN_10",
+              "identifier": "2382843713"
+            },
+            {
+              "type": "ISBN_13",
+              "identifier": "9782382843710"
+            }
+          ],
+          "readingModes": {
+            "text": false,
+            "image": false
+          },
+          "pageCount": 0,
+          "printType": "BOOK",
+          "maturityRating": "NOT_MATURE",
+          "allowAnonLogging": false,
+          "contentVersion": "preview-1.0.0",
+          "panelizationSummary": {
+            "containsEpubBubbles": false,
+            "containsImageBubbles": false
+          },
+          "imageLinks": {
+            "smallThumbnail": "http://books.google.com/books/content?id=BR1W0AEACAAJ\u0026printsec=frontcover\u0026img=1\u0026zoom=5\u0026source=gbs_api",
+            "thumbnail": "http://books.google.com/books/content?id=BR1W0AEACAAJ\u0026printsec=frontcover\u0026img=1\u0026zoom=1\u0026source=gbs_api"
+          },
+          "language": "fr",
+          "previewLink": "http://books.google.fr/books?id=BR1W0AEACAAJ\u0026dq=isbn:9782382843710\u0026hl=\u0026cd=1\u0026source=gbs_api",
+          "infoLink": "http://books.google.fr/books?id=BR1W0AEACAAJ\u0026dq=isbn:9782382843710\u0026hl=\u0026source=gbs_api",
+          "canonicalVolumeLink": "https://books.google.com/books/about/Avec_les_f%C3%A9es.html?hl=\u0026id=BR1W0AEACAAJ"
+        },
+        "saleInfo": {
+          "country": "FR",
+          "saleability": "NOT_FOR_SALE",
+          "isEbook": false
+        },
+        "accessInfo": {
+          "country": "FR",
+          "viewability": "NO_PAGES",
+          "embeddable": false,
+          "publicDomain": false,
+          "textToSpeechPermission": "ALLOWED",
+          "epub": {
+            "isAvailable": false
+          },
+          "pdf": {
+            "isAvailable": false
+          },
+          "webReaderLink": "http://play.google.com/books/reader?id=BR1W0AEACAAJ\u0026hl=\u0026source=gbs_api",
+          "accessViewStatus": "NONE",
+          "quoteSharingAllowed": false
+        },
+        "searchInfo": {
+          "textSnippet": "Je partais. Avec les fées. [éditeur]"
+        }
+      }
+    ]
+  },
+  {
+    "kind": "books#volumes",
+    "totalItems": 1,
+    "items": [
+      {
+        "kind": "books#volume",
+        "id": "BZvuGwAACAAJ",
+        "etag": "4ZGd4yM844c",
+        "selfLink": "https://www.googleapis.com/books/v1/volumes/BZvuGwAACAAJ",
+        "volumeInfo": {
+          "title": "Paris - Saint-Pétersbourg",
+          "authors": [
+            "Vladimir Fedorovski"
+          ],
+          "publisher": "",
+          "publishedDate": "2005",
+          "description": "Après ses romans sur l'âme slave, Vladimir Fédorovski rend hommage au génie français. Fidèle à un style qui a fait de lui l'un des écrivains les plus lus de France, il nous entraîne dans une aventure tumultueuse, celle de l'affinité extraordinaire entre Paris et Saint-Pétersbourg. Grands tsars, aventuriers passionnés, artistes désespérés et leurs égéries sont les personnages de ce \" roman français \". En recevant Diderot et en achetant la bibliothèque de Voltaire, la Grande Catherine rend hommage à l'universalité féconde du génie français. Le marquis de la Chétardie, favori d'Elisabeth de Russie, faillit devenir \" son tsar \". La cantatrice Pauline Viardot enchante le tout Saint-Pétersbourg et ramène en France un ours nommé Ivan Tourgueniev qui, de Paris, fera connaître au monde Tolstoï et Dostoïevski. Mais il y aussi les amours démesurées, terribles. Et Moscou incendiée, Napoléon défait, Paris occupée par les cosaques dans une fête dont le souvenir demeure. Au XXe siècle, les figures d'une étonnante modernité - Matisse, Diaghilev, Cocteau ou encore aujourd'hui Gorbatchev - sont toutes au centre d'une fresque composée d'une multitude de touches drôles, sensibles, tragiques qui font vibrer à chaque page.",
+          "industryIdentifiers": [
+            {
+              "type": "ISBN_10",
+              "identifier": "2750900107"
+            },
+            {
+              "type": "ISBN_13",
+              "identifier": "9782750900106"
+            }
+          ],
+          "readingModes": {
+            "text": false,
+            "image": false
+          },
+          "pageCount": 286,
+          "printType": "BOOK",
+          "maturityRating": "NOT_MATURE",
+          "allowAnonLogging": false,
+          "contentVersion": "preview-1.0.0",
+          "panelizationSummary": {
+            "containsEpubBubbles": false,
+            "containsImageBubbles": false
+          },
+          "imageLinks": {
+            "smallThumbnail": "",
+            "thumbnail": ""
+          },
+          "language": "fr",
+          "previewLink": "http://books.google.fr/books?id=BZvuGwAACAAJ\u0026dq=isbn:9782750900106\u0026hl=\u0026cd=1\u0026source=gbs_api",
+          "infoLink": "http://books.google.fr/books?id=BZvuGwAACAAJ\u0026dq=isbn:9782750900106\u0026hl=\u0026source=gbs_api",
+          "canonicalVolumeLink": "https://books.google.com/books/about/Paris_Saint_P%C3%A9tersbourg.html?hl=\u0026id=BZvuGwAACAAJ"
+        },
+        "saleInfo": {
+          "country": "FR",
+          "saleability": "NOT_FOR_SALE",
+          "isEbook": false
+        },
+        "accessInfo": {
+          "country": "FR",
+          "viewability": "NO_PAGES",
+          "embeddable": false,
+          "publicDomain": false,
+          "textToSpeechPermission": "ALLOWED",
+          "epub": {
+            "isAvailable": false
+          },
+          "pdf": {
+            "isAvailable": false
+          },
+          "webReaderLink": "http://play.google.com/books/reader?id=BZvuGwAACAAJ\u0026hl=\u0026source=gbs_api",
+          "accessViewStatus": "NONE",
+          "quoteSharingAllowed": false
+        },
+        "searchInfo": {
+          "textSnippet": "Après ses romans sur l\u0026#39;âme slave, Vladimir Fédorovski rend hommage au génie français."
+        }
+      }
+    ]
+  },
+  {
+    "kind": "books#volumes",
+    "totalItems": 1,
+    "items": [
+      {
+        "kind": "books#volume",
+        "id": "BoV3AAAACAAJ",
+        "etag": "17AzP3WMyVE",
+        "selfLink": "https://www.googleapis.com/books/v1/volumes/BoV3AAAACAAJ",
+        "volumeInfo": {
+          "title": "Changer d'alimentation",
+          "authors": [
+            "Henri Joyeux",
+            "Bernard Saint-Aubert"
+          ],
+          "publisher": "",
+          "publishedDate": "1990",
+          "description": "",
+          "industryIdentifiers": [
+            {
+              "type": "ISBN_10",
+              "identifier": "2868391508"
+            },
+            {
+              "type": "ISBN_13",
+              "identifier": "9782868391506"
+            }
+          ],
+          "readingModes": {
+            "text": false,
+            "image": false
+          },
+          "pageCount": 246,
+          "printType": "BOOK",
+          "maturityRating": "NOT_MATURE",
+          "allowAnonLogging": false,
+          "contentVersion": "preview-1.0.0",
+          "panelizationSummary": {
+            "containsEpubBubbles": false,
+            "containsImageBubbles": false
+          },
+          "imageLinks": {
+            "smallThumbnail": "",
+            "thumbnail": ""
+          },
+          "language": "fr",
+          "previewLink": "http://books.google.fr/books?id=BoV3AAAACAAJ\u0026dq=isbn:9782868391506\u0026hl=\u0026cd=1\u0026source=gbs_api",
+          "infoLink": "http://books.google.fr/books?id=BoV3AAAACAAJ\u0026dq=isbn:9782868391506\u0026hl=\u0026source=gbs_api",
+          "canonicalVolumeLink": "https://books.google.com/books/about/Changer_d_alimentation.html?hl=\u0026id=BoV3AAAACAAJ"
+        },
+        "saleInfo": {
+          "country": "FR",
+          "saleability": "NOT_FOR_SALE",
+          "isEbook": false
+        },
+        "accessInfo": {
+          "country": "FR",
+          "viewability": "NO_PAGES",
+          "embeddable": false,
+          "publicDomain": false,
+          "textToSpeechPermission": "ALLOWED",
+          "epub": {
+            "isAvailable": false
+          },
+          "pdf": {
+            "isAvailable": false
+          },
+          "webReaderLink": "http://play.google.com/books/reader?id=BoV3AAAACAAJ\u0026hl=\u0026source=gbs_api",
+          "accessViewStatus": "NONE",
+          "quoteSharingAllowed": false
+        },
+        "searchInfo": {
+          "textSnippet": "Seuls 15 % environ des cancers ont une origine génétique."
+        }
+      }
+    ]
+  },
+  {
+    "kind": "books#volumes",
+    "totalItems": 1,
+    "items": [
+      {
+        "kind": "books#volume",
+        "id": "E7q7zgEACAAJ",
+        "etag": "GhKrMv1QaY0",
+        "selfLink": "https://www.googleapis.com/books/v1/volumes/E7q7zgEACAAJ",
+        "volumeInfo": {
+          "title": "Le grand livre du pain",
+          "authors": [
+            "Éric Kayser"
+          ],
+          "publisher": "",
+          "publishedDate": "2021-10-27",
+          "description": "",
+          "industryIdentifiers": [
+            {
+              "type": "ISBN_10",
+              "identifier": "2036006140"
+            },
+            {
+              "type": "ISBN_13",
+              "identifier": "9782036006140"
+            }
+          ],
+          "readingModes": {
+            "text": false,
+            "image": false
+          },
+          "pageCount": 189,
+          "printType": "BOOK",
+          "maturityRating": "NOT_MATURE",
+          "allowAnonLogging": false,
+          "contentVersion": "preview-1.0.0",
+          "panelizationSummary": {
+            "containsEpubBubbles": false,
+            "containsImageBubbles": false
+          },
+          "imageLinks": {
+            "smallThumbnail": "http://books.google.com/books/content?id=E7q7zgEACAAJ\u0026printsec=frontcover\u0026img=1\u0026zoom=5\u0026source=gbs_api",
+            "thumbnail": "http://books.google.com/books/content?id=E7q7zgEACAAJ\u0026printsec=frontcover\u0026img=1\u0026zoom=1\u0026source=gbs_api"
+          },
+          "language": "fr",
+          "previewLink": "http://books.google.fr/books?id=E7q7zgEACAAJ\u0026dq=isbn:9782036006140\u0026hl=\u0026cd=1\u0026source=gbs_api",
+          "infoLink": "http://books.google.fr/books?id=E7q7zgEACAAJ\u0026dq=isbn:9782036006140\u0026hl=\u0026source=gbs_api",
+          "canonicalVolumeLink": "https://books.google.com/books/about/Le_grand_livre_du_pain.html?hl=\u0026id=E7q7zgEACAAJ"
+        },
+        "saleInfo": {
+          "country": "FR",
+          "saleability": "NOT_FOR_SALE",
+          "isEbook": false
+        },
+        "accessInfo": {
+          "country": "FR",
+          "viewability": "NO_PAGES",
+          "embeddable": false,
+          "publicDomain": false,
+          "textToSpeechPermission": "ALLOWED",
+          "epub": {
+            "isAvailable": false
+          },
+          "pdf": {
+            "isAvailable": false
+          },
+          "webReaderLink": "http://play.google.com/books/reader?id=E7q7zgEACAAJ\u0026hl=\u0026source=gbs_api",
+          "accessViewStatus": "NONE",
+          "quoteSharingAllowed": false
+        },
+        "searchInfo": {
+          "textSnippet": "Cinquante recettes de pains à réaliser avec divers types de farine comme le seigle, le sarrasin ou l\u0026#39;épeautre, de la pâte à pizza à la focaccia en passant par la brioche, le pain aux fleurs, le pain au sésame et le wrap."
+        }
+      }
+    ]
+  },
+  {
+    "kind": "books#volumes",
+    "totalItems": 1,
+    "items": [
+      {
+        "kind": "books#volume",
+        "id": "EDocQwAACAAJ",
+        "etag": "4kdoS/n3FRo",
+        "selfLink": "https://www.googleapis.com/books/v1/volumes/EDocQwAACAAJ",
+        "volumeInfo": {
+          "title": "Provence des santons, Liliane Guiomar, santonnière",
+          "authors": [
+            "Liliane Guiomar"
+          ],
+          "publisher": "",
+          "publishedDate": "2007",
+          "description": "",
+          "industryIdentifiers": [
+            {
+              "type": "ISBN_10",
+              "identifier": "2841355918"
+            },
+            {
+              "type": "ISBN_13",
+              "identifier": "9782841355914"
+            }
+          ],
+          "readingModes": {
+            "text": false,
+            "image": false
+          },
+          "pageCount": 174,
+          "printType": "BOOK",
+          "maturityRating": "NOT_MATURE",
+          "allowAnonLogging": false,
+          "contentVersion": "preview-1.0.0",
+          "panelizationSummary": {
+            "containsEpubBubbles": false,
+            "containsImageBubbles": false
+          },
+          "imageLinks": {
+            "smallThumbnail": "",
+            "thumbnail": ""
+          },
+          "language": "fr",
+          "previewLink": "http://books.google.fr/books?id=EDocQwAACAAJ\u0026dq=isbn:9782841355914\u0026hl=\u0026cd=1\u0026source=gbs_api",
+          "infoLink": "http://books.google.fr/books?id=EDocQwAACAAJ\u0026dq=isbn:9782841355914\u0026hl=\u0026source=gbs_api",
+          "canonicalVolumeLink": "https://books.google.com/books/about/Provence_des_santons_Liliane_Guiomar_san.html?hl=\u0026id=EDocQwAACAAJ"
+        },
+        "saleInfo": {
+          "country": "FR",
+          "saleability": "NOT_FOR_SALE",
+          "isEbook": false
+        },
+        "accessInfo": {
+          "country": "FR",
+          "viewability": "NO_PAGES",
+          "embeddable": false,
+          "publicDomain": false,
+          "textToSpeechPermission": "ALLOWED",
+          "epub": {
+            "isAvailable": false
+          },
+          "pdf": {
+            "isAvailable": false
+          },
+          "webReaderLink": "http://play.google.com/books/reader?id=EDocQwAACAAJ\u0026hl=\u0026source=gbs_api",
+          "accessViewStatus": "NONE",
+          "quoteSharingAllowed": false
+        },
+        "searchInfo": {
+          "textSnippet": ""
+        }
+      }
+    ]
+  },
+  {
+    "kind": "books#volumes",
+    "totalItems": 1,
+    "items": [
+      {
+        "kind": "books#volume",
+        "id": "EUzCtAEACAAJ",
+        "etag": "b2cEW1XAhVk",
+        "selfLink": "https://www.googleapis.com/books/v1/volumes/EUzCtAEACAAJ",
+        "volumeInfo": {
+          "title": "Les enchères au bridge",
+          "authors": [
+            "Michel Bessis",
+            "Philippe Cronier",
+            "Jean-Christophe Quantin"
+          ],
+          "publisher": "",
+          "publishedDate": "2017-08",
+          "description": "Après le succès du premier tome traitant des enchères à deux, les trois auteurs abordent maintenant le domaine des enchères compétitives. Ils vous présentent une vraie réponse aux questions que vous vous posez, un développement en profondeur de toutes les situations d'enchères et une proposition de pistes de progression.",
+          "industryIdentifiers": [
+            {
+              "type": "ISBN_10",
+              "identifier": "2372400134"
+            },
+            {
+              "type": "ISBN_13",
+              "identifier": "9782372400138"
+            }
+          ],
+          "readingModes": {
+            "text": false,
+            "image": false
+          },
+          "pageCount": 216,
+          "printType": "BOOK",
+          "maturityRating": "NOT_MATURE",
+          "allowAnonLogging": false,
+          "contentVersion": "preview-1.0.0",
+          "panelizationSummary": {
+            "containsEpubBubbles": false,
+            "containsImageBubbles": false
+          },
+          "imageLinks": {
+            "smallThumbnail": "",
+            "thumbnail": ""
+          },
+          "language": "fr",
+          "previewLink": "http://books.google.fr/books?id=EUzCtAEACAAJ\u0026dq=isbn:9782372400138\u0026hl=\u0026cd=1\u0026source=gbs_api",
+          "infoLink": "http://books.google.fr/books?id=EUzCtAEACAAJ\u0026dq=isbn:9782372400138\u0026hl=\u0026source=gbs_api",
+          "canonicalVolumeLink": "https://books.google.com/books/about/Les_ench%C3%A8res_au_bridge.html?hl=\u0026id=EUzCtAEACAAJ"
+        },
+        "saleInfo": {
+          "country": "FR",
+          "saleability": "NOT_FOR_SALE",
+          "isEbook": false
+        },
+        "accessInfo": {
+          "country": "FR",
+          "viewability": "NO_PAGES",
+          "embeddable": false,
+          "publicDomain": false,
+          "textToSpeechPermission": "ALLOWED",
+          "epub": {
+            "isAvailable": false
+          },
+          "pdf": {
+            "isAvailable": false
+          },
+          "webReaderLink": "http://play.google.com/books/reader?id=EUzCtAEACAAJ\u0026hl=\u0026source=gbs_api",
+          "accessViewStatus": "NONE",
+          "quoteSharingAllowed": false
+        },
+        "searchInfo": {
+          "textSnippet": ""
+        }
+      }
+    ]
+  },
+  {
+    "kind": "books#volumes",
+    "totalItems": 1,
+    "items": [
+      {
+        "kind": "books#volume",
+        "id": "G1GtxQEACAAJ",
+        "etag": "EJxXKXcMBGE",
+        "selfLink": "https://www.googleapis.com/books/v1/volumes/G1GtxQEACAAJ",
+        "volumeInfo": {
+          "title": "Monique",
+          "authors": [
+            "Anne Bernet"
+          ],
+          "publisher": "",
+          "publishedDate": "2019-04-10",
+          "description": "Née dans une famille de la classe moyenne de Thagaste, modeste bourgade de Numidie, en 331, Monique aurait dû, à l'instar de ses contemporaines, sombrer dans l'oubli absolu de l'anonymat. Il n'en sera rien, parce que son troisième enfant, Augustin, emplira l'histoire de sa présence et de son génie. Après une jeunesse dissipée et l'abandon du catholicisme maternel, il revient à la foi et demande le baptême en 387. Il attribuera toujours sa conversion aux prières, aux sacrifices et aux larmes de sa mère. Si, à lire Les Confessions, Monique n'apparaît pas toujours exemplaire, il n'en reste pas moins qu'avoir donné à l'Eglise l'une de ses plus grandes figures l'a haussée à son tour à la sainteté. D'une plume élégante et cultivée, Anne Bernet retrace le destin d'une mère ardente et femme intrépide des premiers siècles de l'Eglise. Auteur d'une quarantaine d'ouvrages historiques traduits en une douzaine de langues, Anne Bernet est spécialiste de l'histoire de la primitive Eglise et des Pères latins.",
+          "industryIdentifiers": [
+            {
+              "type": "ISBN_13",
+              "identifier": "9791033608363"
+            }
+          ],
+          "readingModes": {
+            "text": false,
+            "image": false
+          },
+          "pageCount": 175,
+          "printType": "BOOK",
+          "maturityRating": "NOT_MATURE",
+          "allowAnonLogging": false,
+          "contentVersion": "preview-1.0.0",
+          "panelizationSummary": {
+            "containsEpubBubbles": false,
+            "containsImageBubbles": false
+          },
+          "imageLinks": {
+            "smallThumbnail": "",
+            "thumbnail": ""
+          },
+          "language": "fr",
+          "previewLink": "http://books.google.fr/books?id=G1GtxQEACAAJ\u0026dq=isbn:9791033608363\u0026hl=\u0026cd=1\u0026source=gbs_api",
+          "infoLink": "http://books.google.fr/books?id=G1GtxQEACAAJ\u0026dq=isbn:9791033608363\u0026hl=\u0026source=gbs_api",
+          "canonicalVolumeLink": "https://books.google.com/books/about/Monique.html?hl=\u0026id=G1GtxQEACAAJ"
+        },
+        "saleInfo": {
+          "country": "FR",
+          "saleability": "NOT_FOR_SALE",
+          "isEbook": false
+        },
+        "accessInfo": {
+          "country": "FR",
+          "viewability": "NO_PAGES",
+          "embeddable": false,
+          "publicDomain": false,
+          "textToSpeechPermission": "ALLOWED",
+          "epub": {
+            "isAvailable": false
+          },
+          "pdf": {
+            "isAvailable": false
+          },
+          "webReaderLink": "http://play.google.com/books/reader?id=G1GtxQEACAAJ\u0026hl=\u0026source=gbs_api",
+          "accessViewStatus": "NONE",
+          "quoteSharingAllowed": false
+        },
+        "searchInfo": {
+          "textSnippet": ""
+        }
+      }
+    ]
+  },
+  {
+    "kind": "books#volumes",
+    "totalItems": 1,
+    "items": [
+      {
+        "kind": "books#volume",
+        "id": "JkP2GwAACAAJ",
+        "etag": "qw+lmvbPtcE",
+        "selfLink": "https://www.googleapis.com/books/v1/volumes/JkP2GwAACAAJ",
+        "volumeInfo": {
+          "title": "De l'exaltation à la dépression",
+          "authors": [
+            "Kay Redfield Jamison"
+          ],
+          "publisher": "Robert Laffont",
+          "publishedDate": "2000-09-01",
+          "description": "\" Il y a une souffrance, une jubilation, une solitude et une terreur propres à la folie maniaco-dépressive. Dans les envolées, c'est fantastique. Les idées et les émotions fusent à la vitesse des étoiles filantes. Et puis soudain tout change. La lucidité fait place à une confusion accablante..., on devient irritable, mauvais, craintif, insupportable, totalement égaré dans les plus sombres cavernes de l'esprit. Et cela n'a pas de fin, la folie creusant elle-même sa propre demeure. \" Psychiatre de renom, elle-même atteinte par cette maladie particulière qui conduit de l'exaltation à la dépression, Kay Redfield Jamison donne ici un témoignage unique de vérité et de justesse. Elle raconte son parcours, les moments de folie et les éclairs de lucidité, elle révèle sa lutte contre la maladie depuis l'adolescence et en quoi ses troubles ont conditionné toute sa vie, jusqu'à sa carrière elle-même. \" Le livre de Kay Redfield Jamison s'est emparé de moi dès les premières pages. Il est unique dans la littérature sur la maniaco-dépression par son courage, son éclat, sa beauté \" (Oliver Sacks, auteur de L'Homme qui prenait sa femme pour un chapeau).",
+          "industryIdentifiers": [
+            {
+              "type": "ISBN_10",
+              "identifier": "2221099303"
+            },
+            {
+              "type": "ISBN_13",
+              "identifier": "9782221099308"
+            }
+          ],
+          "readingModes": {
+            "text": false,
+            "image": false
+          },
+          "pageCount": 235,
+          "printType": "BOOK",
+          "maturityRating": "NOT_MATURE",
+          "allowAnonLogging": false,
+          "contentVersion": "preview-1.0.0",
+          "panelizationSummary": {
+            "containsEpubBubbles": false,
+            "containsImageBubbles": false
+          },
+          "imageLinks": {
+            "smallThumbnail": "",
+            "thumbnail": ""
+          },
+          "language": "fr",
+          "previewLink": "http://books.google.fr/books?id=JkP2GwAACAAJ\u0026dq=isbn:9782221099308\u0026hl=\u0026cd=1\u0026source=gbs_api",
+          "infoLink": "http://books.google.fr/books?id=JkP2GwAACAAJ\u0026dq=isbn:9782221099308\u0026hl=\u0026source=gbs_api",
+          "canonicalVolumeLink": "https://books.google.com/books/about/De_l_exaltation_%C3%A0_la_d%C3%A9pression.html?hl=\u0026id=JkP2GwAACAAJ"
+        },
+        "saleInfo": {
+          "country": "FR",
+          "saleability": "NOT_FOR_SALE",
+          "isEbook": false
+        },
+        "accessInfo": {
+          "country": "FR",
+          "viewability": "NO_PAGES",
+          "embeddable": false,
+          "publicDomain": false,
+          "textToSpeechPermission": "ALLOWED",
+          "epub": {
+            "isAvailable": false
+          },
+          "pdf": {
+            "isAvailable": false
+          },
+          "webReaderLink": "http://play.google.com/books/reader?id=JkP2GwAACAAJ\u0026hl=\u0026source=gbs_api",
+          "accessViewStatus": "NONE",
+          "quoteSharingAllowed": false
+        },
+        "searchInfo": {
+          "textSnippet": "\u0026quot; Psychiatre de renom, elle-même atteinte par cette maladie particulière qui conduit de l\u0026#39;exaltation à la dépression, Kay Redfield Jamison donne ici un témoignage unique de vérité et de justesse."
+        }
+      }
+    ]
+  },
+  {
+    "kind": "books#volumes",
+    "totalItems": 1,
+    "items": [
+      {
+        "kind": "books#volume",
+        "id": "KYSbtgAACAAJ",
+        "etag": "kq5IVLPfEX8",
+        "selfLink": "https://www.googleapis.com/books/v1/volumes/KYSbtgAACAAJ",
+        "volumeInfo": {
+          "title": "\"Tant souffrir et tant aimer\" selon Etty Hillesum",
+          "authors": [
+            "Marie-Hélène Du Parc Locmaria"
+          ],
+          "publisher": "",
+          "publishedDate": "2011",
+          "description": "Avec une liberté souveraine, Etty Hillesum (1914-1943) affronte la misère extrême, la sienne et celle des autres, jusqu'au coeur de la persécution nazie, sans jamais perdre sa foi en la vie \"belle et bonne\". Cet essai décrypte d'une manière inédite comment elle s'y prend pour appréhender la souffrance, avec l'aide de Julius Spier qui lui fait découvrir la source de Dieu en elle. Par son expérience, Etty Hillesum dévoile une vérité universelle, éprouvée à l'intersection de la souffrance et de l'amour. Grande figure spirituelle, Etty Hillesum témoigne d'une mentalité en adéquation étonnante avec notre époque.",
+          "industryIdentifiers": [
+            {
+              "type": "ISBN_10",
+              "identifier": "2706708522"
+            },
+            {
+              "type": "ISBN_13",
+              "identifier": "9782706708527"
+            }
+          ],
+          "readingModes": {
+            "text": false,
+            "image": false
+          },
+          "pageCount": 248,
+          "printType": "BOOK",
+          "maturityRating": "NOT_MATURE",
+          "allowAnonLogging": false,
+          "contentVersion": "preview-1.0.0",
+          "panelizationSummary": {
+            "containsEpubBubbles": false,
+            "containsImageBubbles": false
+          },
+          "imageLinks": {
+            "smallThumbnail": "",
+            "thumbnail": ""
+          },
+          "language": "fr",
+          "previewLink": "http://books.google.fr/books?id=KYSbtgAACAAJ\u0026dq=isbn:9782706708527\u0026hl=\u0026cd=1\u0026source=gbs_api",
+          "infoLink": "http://books.google.fr/books?id=KYSbtgAACAAJ\u0026dq=isbn:9782706708527\u0026hl=\u0026source=gbs_api",
+          "canonicalVolumeLink": "https://books.google.com/books/about/Tant_souffrir_et_tant_aimer_selon_Etty_H.html?hl=\u0026id=KYSbtgAACAAJ"
+        },
+        "saleInfo": {
+          "country": "FR",
+          "saleability": "NOT_FOR_SALE",
+          "isEbook": false
+        },
+        "accessInfo": {
+          "country": "FR",
+          "viewability": "NO_PAGES",
+          "embeddable": false,
+          "publicDomain": false,
+          "textToSpeechPermission": "ALLOWED",
+          "epub": {
+            "isAvailable": false
+          },
+          "pdf": {
+            "isAvailable": false
+          },
+          "webReaderLink": "http://play.google.com/books/reader?id=KYSbtgAACAAJ\u0026hl=\u0026source=gbs_api",
+          "accessViewStatus": "NONE",
+          "quoteSharingAllowed": false
+        },
+        "searchInfo": {
+          "textSnippet": ""
+        }
+      }
+    ]
+  },
+  {
+    "kind": "books#volumes",
+    "totalItems": 1,
+    "items": [
+      {
+        "kind": "books#volume",
+        "id": "LqG9ngEACAAJ",
+        "etag": "D3b0f3YL740",
+        "selfLink": "https://www.googleapis.com/books/v1/volumes/LqG9ngEACAAJ",
+        "volumeInfo": {
+          "title": "Blaise Pascal",
+          "authors": [
+            "Xavier Patier"
+          ],
+          "publisher": "Cerf",
+          "publishedDate": "2014",
+          "description": "\"Beau mystère que ce Mémorial l Que s'est-il exactement passé, ce 23 novembre 1653 ? Qu'a voulu dire Pascal avec ces phrases tronquées ou allusives ? De quel Feu parle-t-il ? De quelle certitude ? De quelle séparation ? A qui s'adresse-t-il ? Les mots énigmatiques qu'il énonce, je pressens qu'ils sont la clef d'une vie. Je suis aussi curieux de les décortiquer que si j'avais retrouvé la bande sonore de l'Annonciation ou la vidéo de la chute de Paul de Tarse sur le chemin de Damas. Mais au-delà de la curiosité vient l'aventure : la lecture de Pascal m'entraîne plus loin que je voudrais\". Par le commentaire suivi qu'il fait du Mémorial en tant qu'écrivain et romancier, Xavier Patier nous offre une entrée personnelle et magnifique dans l'oeuvre et la pensée de Blaise Pascal.",
+          "industryIdentifiers": [
+            {
+              "type": "ISBN_10",
+              "identifier": "2204101834"
+            },
+            {
+              "type": "ISBN_13",
+              "identifier": "9782204101837"
+            }
+          ],
+          "readingModes": {
+            "text": false,
+            "image": false
+          },
+          "pageCount": 176,
+          "printType": "BOOK",
+          "maturityRating": "NOT_MATURE",
+          "allowAnonLogging": false,
+          "contentVersion": "preview-1.0.0",
+          "panelizationSummary": {
+            "containsEpubBubbles": false,
+            "containsImageBubbles": false
+          },
+          "imageLinks": {
+            "smallThumbnail": "",
+            "thumbnail": ""
+          },
+          "language": "fr",
+          "previewLink": "http://books.google.fr/books?id=LqG9ngEACAAJ\u0026dq=isbn:9782204101837\u0026hl=\u0026cd=1\u0026source=gbs_api",
+          "infoLink": "http://books.google.fr/books?id=LqG9ngEACAAJ\u0026dq=isbn:9782204101837\u0026hl=\u0026source=gbs_api",
+          "canonicalVolumeLink": "https://books.google.com/books/about/Blaise_Pascal.html?hl=\u0026id=LqG9ngEACAAJ"
+        },
+        "saleInfo": {
+          "country": "FR",
+          "saleability": "NOT_FOR_SALE",
+          "isEbook": false
+        },
+        "accessInfo": {
+          "country": "FR",
+          "viewability": "NO_PAGES",
+          "embeddable": false,
+          "publicDomain": false,
+          "textToSpeechPermission": "ALLOWED",
+          "epub": {
+            "isAvailable": false
+          },
+          "pdf": {
+            "isAvailable": false
+          },
+          "webReaderLink": "http://play.google.com/books/reader?id=LqG9ngEACAAJ\u0026hl=\u0026source=gbs_api",
+          "accessViewStatus": "NONE",
+          "quoteSharingAllowed": false
+        },
+        "searchInfo": {
+          "textSnippet": "Mais au-delà de la curiosité vient l\u0026#39;aventure : la lecture de Pascal m\u0026#39;entraîne plus loin que je voudrais. » Par le commentaire suivi qu\u0026#39;il fait du Mémorial en tant qu\u0026#39;écrivain et romancier, Xavier Patier nous offre une entrée ..."
+        }
+      }
+    ]
+  },
+  {
+    "kind": "books#volumes",
+    "totalItems": 1,
+    "items": [
+      {
+        "kind": "books#volume",
+        "id": "Mu0BPQAACAAJ",
+        "etag": "zfI3MO3Dqog",
+        "selfLink": "https://www.googleapis.com/books/v1/volumes/Mu0BPQAACAAJ",
+        "volumeInfo": {
+          "title": "GUIDE DE CUISINE VEGETARIENNE",
+          "authors": [
+            "Jane Collignon"
+          ],
+          "publisher": "",
+          "publishedDate": "1994-05-01",
+          "description": "",
+          "industryIdentifiers": [
+            {
+              "type": "ISBN_10",
+              "identifier": "2857447353"
+            },
+            {
+              "type": "ISBN_13",
+              "identifier": "9782857447351"
+            }
+          ],
+          "readingModes": {
+            "text": false,
+            "image": false
+          },
+          "pageCount": 199,
+          "printType": "BOOK",
+          "maturityRating": "NOT_MATURE",
+          "allowAnonLogging": false,
+          "contentVersion": "preview-1.0.0",
+          "panelizationSummary": {
+            "containsEpubBubbles": false,
+            "containsImageBubbles": false
+          },
+          "imageLinks": {
+            "smallThumbnail": "",
+            "thumbnail": ""
+          },
+          "language": "fr",
+          "previewLink": "http://books.google.fr/books?id=Mu0BPQAACAAJ\u0026dq=isbn:9782857447351\u0026hl=\u0026cd=1\u0026source=gbs_api",
+          "infoLink": "http://books.google.fr/books?id=Mu0BPQAACAAJ\u0026dq=isbn:9782857447351\u0026hl=\u0026source=gbs_api",
+          "canonicalVolumeLink": "https://books.google.com/books/about/GUIDE_DE_CUISINE_VEGETARIENNE.html?hl=\u0026id=Mu0BPQAACAAJ"
+        },
+        "saleInfo": {
+          "country": "FR",
+          "saleability": "NOT_FOR_SALE",
+          "isEbook": false
+        },
+        "accessInfo": {
+          "country": "FR",
+          "viewability": "NO_PAGES",
+          "embeddable": false,
+          "publicDomain": false,
+          "textToSpeechPermission": "ALLOWED",
+          "epub": {
+            "isAvailable": false
+          },
+          "pdf": {
+            "isAvailable": false
+          },
+          "webReaderLink": "http://play.google.com/books/reader?id=Mu0BPQAACAAJ\u0026hl=\u0026source=gbs_api",
+          "accessViewStatus": "NONE",
+          "quoteSharingAllowed": false
+        },
+        "searchInfo": {
+          "textSnippet": ""
+        }
+      }
+    ]
+  },
+  {
+    "kind": "books#volumes",
+    "totalItems": 1,
+    "items": [
+      {
+        "kind": "books#volume",
+        "id": "OhKLXWf7jHUC",
+        "etag": "zvK5zoLHsF0",
+        "selfLink": "https://www.googleapis.com/books/v1/volumes/OhKLXWf7jHUC",
+        "volumeInfo": {
+          "title": "Le monde invisible des anges et leur mission dans le plan de Dieu",
+          "authors": [
+            "Jean-Miguel Garrigues"
+          ],
+          "publisher": "Editions de l'Emmanuel",
+          "publishedDate": "2004",
+          "description": "Alors que beaucoup de croyants, influencés par une culture positiviste, sont tentés par le scepticisme à l'égard des créatures spirituelles, les nouvelles religiosités, friandes de mystères, n'hésitent plus à faire resurgir l'univers invisible des anges... Pourtant, la Bible, tout en opérant une véritable démythologisation par rapport aux religions environnantes, assigne aux anges une place et un rôle dans la création et dans le dessein de salut de Dieu, rôle qu'il faut savoir déchiffrer dans la discrétion de l'Écriture. C'est à cette découverte que l'auteur de ce livre, théologien de renom, nous introduit. En le lisant, vous renouerez sans inquiétude et sans illuminisme avec le monde des créatures angéliques.",
+          "industryIdentifiers": [
+            {
+              "type": "ISBN_10",
+              "identifier": "2915313040"
+            },
+            {
+              "type": "ISBN_13",
+              "identifier": "9782915313048"
+            }
+          ],
+          "readingModes": {
+            "text": false,
+            "image": true
+          },
+          "pageCount": 68,
+          "printType": "BOOK",
+          "maturityRating": "NOT_MATURE",
+          "allowAnonLogging": false,
+          "contentVersion": "2.5.3.0.preview.1",
+          "panelizationSummary": {
+            "containsEpubBubbles": false,
+            "containsImageBubbles": false
+          },
+          "imageLinks": {
+            "smallThumbnail": "http://books.google.com/books/content?id=OhKLXWf7jHUC\u0026printsec=frontcover\u0026img=1\u0026zoom=5\u0026edge=curl\u0026source=gbs_api",
+            "thumbnail": "http://books.google.com/books/content?id=OhKLXWf7jHUC\u0026printsec=frontcover\u0026img=1\u0026zoom=1\u0026edge=curl\u0026source=gbs_api"
+          },
+          "language": "fr",
+          "previewLink": "http://books.google.fr/books?id=OhKLXWf7jHUC\u0026printsec=frontcover\u0026dq=isbn:9782915313048\u0026hl=\u0026cd=1\u0026source=gbs_api",
+          "infoLink": "http://books.google.fr/books?id=OhKLXWf7jHUC\u0026dq=isbn:9782915313048\u0026hl=\u0026source=gbs_api",
+          "canonicalVolumeLink": "https://books.google.com/books/about/Le_monde_invisible_des_anges_et_leur_mis.html?hl=\u0026id=OhKLXWf7jHUC"
+        },
+        "saleInfo": {
+          "country": "FR",
+          "saleability": "NOT_FOR_SALE",
+          "isEbook": false
+        },
+        "accessInfo": {
+          "country": "FR",
+          "viewability": "PARTIAL",
+          "embeddable": true,
+          "publicDomain": false,
+          "textToSpeechPermission": "ALLOWED",
+          "epub": {
+            "isAvailable": false
+          },
+          "pdf": {
+            "isAvailable": true
+          },
+          "webReaderLink": "http://play.google.com/books/reader?id=OhKLXWf7jHUC\u0026hl=\u0026source=gbs_api",
+          "accessViewStatus": "SAMPLE",
+          "quoteSharingAllowed": false
+        },
+        "searchInfo": {
+          "textSnippet": "Alors que beaucoup de croyants, influencés par une culture positiviste, sont tentés par le scepticisme à l\u0026#39;égard des créatures spirituelles, les nouvelles religiosités, friandes de mystères, n\u0026#39;hésitent plus à faire resurgir l ..."
+        }
+      }
+    ]
+  },
+  {
+    "kind": "books#volumes",
+    "totalItems": 1,
+    "items": [
+      {
+        "kind": "books#volume",
+        "id": "PZWeOwAACAAJ",
+        "etag": "lOU792n/Gdg",
+        "selfLink": "https://www.googleapis.com/books/v1/volumes/PZWeOwAACAAJ",
+        "volumeInfo": {
+          "title": "Le château intérieur",
+          "authors": [
+            "Sainte Thérèse d'Avila,"
+          ],
+          "publisher": "",
+          "publishedDate": "2003",
+          "description": "Ce volume réunit Le Château intérieur, rédigé vers la fin de mai 1577, dans un moment de grande sérénité spirituelle, et Pensées sur l'amour de Dieu, œuvre publiée pour la première fois en 1611, à Bruxelles. Le Château intérieur décrit le chemin que l'âme doit parcourir pour être au plus près de Dieu. Notre âme même est ce \" château fait d'un seul diamant ou d'un cristal parfaitement limpide \", qui renferme sept demeures. Au centre de toutes se trouve celle où Dieu seul réside, \" la principale, où se passent, entre Dieu et l'âme, les choses les plus secrètes \". Thérèse nous guide de demeure en demeure, selon sa propre perception, ses propres expériences, animée d'un désir de clarté extrême : pour ce faire, elle recourt à de nombreuses images tirées du récit de la Création, de l'expérience humaine. Sur ce chemin, le Christ est notre guide, car Il est \" Celui qui voit le Père \". Union au Christ, croix rédemptrice, prière sacerdotale, amour du prochain, tels sont les thèmes récurrents développés ici et qui tous conduisent à une nouvelle vie. Pensées sur l'amour de Dieu nous livre ses méditations sur sa lecture du Cantique des cantiques.",
+          "industryIdentifiers": [
+            {
+              "type": "ISBN_10",
+              "identifier": "2204071838"
+            },
+            {
+              "type": "ISBN_13",
+              "identifier": "9782204071833"
+            }
+          ],
+          "readingModes": {
+            "text": false,
+            "image": false
+          },
+          "pageCount": 282,
+          "printType": "BOOK",
+          "maturityRating": "NOT_MATURE",
+          "allowAnonLogging": false,
+          "contentVersion": "preview-1.0.0",
+          "panelizationSummary": {
+            "containsEpubBubbles": false,
+            "containsImageBubbles": false
+          },
+          "imageLinks": {
+            "smallThumbnail": "",
+            "thumbnail": ""
+          },
+          "language": "fr",
+          "previewLink": "http://books.google.fr/books?id=PZWeOwAACAAJ\u0026dq=isbn:9782204071833\u0026hl=\u0026cd=1\u0026source=gbs_api",
+          "infoLink": "http://books.google.fr/books?id=PZWeOwAACAAJ\u0026dq=isbn:9782204071833\u0026hl=\u0026source=gbs_api",
+          "canonicalVolumeLink": "https://books.google.com/books/about/Le_ch%C3%A2teau_int%C3%A9rieur.html?hl=\u0026id=PZWeOwAACAAJ"
+        },
+        "saleInfo": {
+          "country": "FR",
+          "saleability": "NOT_FOR_SALE",
+          "isEbook": false
+        },
+        "accessInfo": {
+          "country": "FR",
+          "viewability": "NO_PAGES",
+          "embeddable": false,
+          "publicDomain": false,
+          "textToSpeechPermission": "ALLOWED",
+          "epub": {
+            "isAvailable": false
+          },
+          "pdf": {
+            "isAvailable": false
+          },
+          "webReaderLink": "http://play.google.com/books/reader?id=PZWeOwAACAAJ\u0026hl=\u0026source=gbs_api",
+          "accessViewStatus": "NONE",
+          "quoteSharingAllowed": false
+        },
+        "searchInfo": {
+          "textSnippet": ""
+        }
+      }
+    ]
+  },
+  {
+    "kind": "books#volumes",
+    "totalItems": 1,
+    "items": [
+      {
+        "kind": "books#volume",
+        "id": "RLNTzQEACAAJ",
+        "etag": "y22/zCz3vEQ",
+        "selfLink": "https://www.googleapis.com/books/v1/volumes/RLNTzQEACAAJ",
+        "volumeInfo": {
+          "title": "Le Pays Des Autres",
+          "authors": [
+            "Leïla Slimani"
+          ],
+          "publisher": "Editions Gallimard",
+          "publishedDate": "2020-03-05",
+          "description": "En 1944, Mathilde, une jeune Alsacienne, s'éprend d'Amine Belhaj, un Marocain combattant dans l'armée française. Après la Libération, elle quitte son pays pour suivre au Maroc celui qui va devenir son mari. Le couple s'installe à Meknès, ville de garnison et de colons, où le système de ségrégation coloniale s'applique avec rigueur. Amine récupère ses terres, rocailleuses ingrates et commence alors une période très dure pour la famille. Mathilde accouche de deux enfants : Aïcha et Sélim. Au prix de nombreux sacrifices et vexations, Amine parvient à organiser son domaine, en s'alliant avec un médecin hongrois, Dragan Palosi, qui va devenir un ami très proche. Mathilde se sent étouffée par le climat rigoriste du Maroc, par sa solitude à la ferme, par la méfiance qu'elle inspire en tant qu'étrangère et par le manque d'argent. Les relations entre les colons et les indigènes sont très tendues, et Amine se trouve pris entre deux feux : marié à une Française, propriétaire terrien employant des ouvriers marocains, il est assimilé aux colons par les autochtones, et méprisé et humilié par les Français parce qu'il est marocain. Il est fier de sa femme, de son courage, de sa beauté particulière, de son fort tempérament, mais il en a honte aussi car elle ne fait pas preuve de la modestie ni de la soumission convenables. Aïcha grandit dans ce climat de violence, suivant l'éducation que lui prodiguent les Soeurs à Meknès, où elle fréquente des fillettes françaises issues de familles riches qui l'humilient. Selma, la soeur d'Amine, nourrit des rêves de liberté sans cesse brimés par les hommes qui l'entourent. Alors qu'Amine commence à récolter les fruits de son travail harassant, des émeutes éclatent, les plantations sont incendiées : le roman se clôt sur des scènes de violence inaugurant l'accès du pays à l'indépendance en 1956. [payot.ch]",
+          "industryIdentifiers": [
+            {
+              "type": "ISBN_10",
+              "identifier": "2072887992"
+            },
+            {
+              "type": "ISBN_13",
+              "identifier": "9782072887994"
+            }
+          ],
+          "readingModes": {
+            "text": false,
+            "image": false
+          },
+          "pageCount": 368,
+          "printType": "BOOK",
+          "maturityRating": "NOT_MATURE",
+          "allowAnonLogging": false,
+          "contentVersion": "preview-1.0.0",
+          "panelizationSummary": {
+            "containsEpubBubbles": false,
+            "containsImageBubbles": false
+          },
+          "imageLinks": {
+            "smallThumbnail": "http://books.google.com/books/content?id=RLNTzQEACAAJ\u0026printsec=frontcover\u0026img=1\u0026zoom=5\u0026source=gbs_api",
+            "thumbnail": "http://books.google.com/books/content?id=RLNTzQEACAAJ\u0026printsec=frontcover\u0026img=1\u0026zoom=1\u0026source=gbs_api"
+          },
+          "language": "fr",
+          "previewLink": "http://books.google.fr/books?id=RLNTzQEACAAJ\u0026dq=isbn:9782072887994\u0026hl=\u0026cd=1\u0026source=gbs_api",
+          "infoLink": "http://books.google.fr/books?id=RLNTzQEACAAJ\u0026dq=isbn:9782072887994\u0026hl=\u0026source=gbs_api",
+          "canonicalVolumeLink": "https://books.google.com/books/about/Le_Pays_Des_Autres.html?hl=\u0026id=RLNTzQEACAAJ"
+        },
+        "saleInfo": {
+          "country": "FR",
+          "saleability": "NOT_FOR_SALE",
+          "isEbook": false
+        },
+        "accessInfo": {
+          "country": "FR",
+          "viewability": "NO_PAGES",
+          "embeddable": false,
+          "publicDomain": false,
+          "textToSpeechPermission": "ALLOWED",
+          "epub": {
+            "isAvailable": false
+          },
+          "pdf": {
+            "isAvailable": false
+          },
+          "webReaderLink": "http://play.google.com/books/reader?id=RLNTzQEACAAJ\u0026hl=\u0026source=gbs_api",
+          "accessViewStatus": "NONE",
+          "quoteSharingAllowed": false
+        },
+        "searchInfo": {
+          "textSnippet": "Après la Libération, Mathilde, une jeune Alsacienne, et Amine Belhaj, un Marocain ancien combattant dans l\u0026#39;armée française, s\u0026#39;installent à Meknès."
+        }
+      }
+    ]
+  },
+  {
+    "kind": "books#volumes",
+    "totalItems": 1,
+    "items": [
+      {
+        "kind": "books#volume",
+        "id": "SUwzOAAACAAJ",
+        "etag": "juEXfFoFMfI",
+        "selfLink": "https://www.googleapis.com/books/v1/volumes/SUwzOAAACAAJ",
+        "volumeInfo": {
+          "title": "La puissance de la Croix",
+          "authors": [
+            "Edith Stein"
+          ],
+          "publisher": "",
+          "publishedDate": "2007",
+          "description": "Edith Stein, philosophe allemande assistante d'Edmund Husserl, le père de la phénoménologie, se convertit au catholicisme en 1922 à la lecture de la vie de Thérèse d'Avila. Elle entre au Carmel en 1933. Juive, elle veut rester solidaire de ses frères et meurt martyre au camp d'Auschwitz en 1942. Mystique au sens le plus fort du terme, Edith Stein écrivit beaucoup à partir de sa conversion. Cette anthologie nous donne les textes les plus saillants de son itinéraire et de sa spiritualité, toute centrée sur la participation à la Croix du Christ au service de l'humanité. Canonisée en octobre 1998, Edith Stein a été proclamée copatronne de l'Europe par Jean-Paul II, avec sainte Brigitte de Suède et sainte Catherine de Sienne. Elle est fêtée le 9 août sous le nom de Sœur Thérèse-Bénédicte de la Croix.",
+          "industryIdentifiers": [
+            {
+              "type": "ISBN_10",
+              "identifier": "2853135381"
+            },
+            {
+              "type": "ISBN_13",
+              "identifier": "9782853135382"
+            }
+          ],
+          "readingModes": {
+            "text": false,
+            "image": false
+          },
+          "pageCount": 127,
+          "printType": "BOOK",
+          "maturityRating": "NOT_MATURE",
+          "allowAnonLogging": false,
+          "contentVersion": "preview-1.0.0",
+          "panelizationSummary": {
+            "containsEpubBubbles": false,
+            "containsImageBubbles": false
+          },
+          "imageLinks": {
+            "smallThumbnail": "",
+            "thumbnail": ""
+          },
+          "language": "fr",
+          "previewLink": "http://books.google.fr/books?id=SUwzOAAACAAJ\u0026dq=isbn:9782853135382\u0026hl=\u0026cd=1\u0026source=gbs_api",
+          "infoLink": "http://books.google.fr/books?id=SUwzOAAACAAJ\u0026dq=isbn:9782853135382\u0026hl=\u0026source=gbs_api",
+          "canonicalVolumeLink": "https://books.google.com/books/about/La_puissance_de_la_Croix.html?hl=\u0026id=SUwzOAAACAAJ"
+        },
+        "saleInfo": {
+          "country": "FR",
+          "saleability": "NOT_FOR_SALE",
+          "isEbook": false
+        },
+        "accessInfo": {
+          "country": "FR",
+          "viewability": "NO_PAGES",
+          "embeddable": false,
+          "publicDomain": false,
+          "textToSpeechPermission": "ALLOWED",
+          "epub": {
+            "isAvailable": false
+          },
+          "pdf": {
+            "isAvailable": false
+          },
+          "webReaderLink": "http://play.google.com/books/reader?id=SUwzOAAACAAJ\u0026hl=\u0026source=gbs_api",
+          "accessViewStatus": "NONE",
+          "quoteSharingAllowed": false
+        },
+        "searchInfo": {
+          "textSnippet": ""
+        }
+      }
+    ]
+  },
+  {
+    "kind": "books#volumes",
+    "totalItems": 1,
+    "items": [
+      {
+        "kind": "books#volume",
+        "id": "T1VTAAAACAAJ",
+        "etag": "twnCjDdkhsc",
+        "selfLink": "https://www.googleapis.com/books/v1/volumes/T1VTAAAACAAJ",
+        "volumeInfo": {
+          "title": "Le dictionnaire HTML XML-WML",
+          "authors": [
+            "Oliver Kürten"
+          ],
+          "publisher": "",
+          "publishedDate": "2000",
+          "description": "Le dictionnaire HTML XML-WML est la référence compacte pour une utilisation optimale du langage Web HTML 4 jusqu'aux modèles de documents XML, en passant par le XHTML et le langage pour le WAP, le WML. Les chapitres sont divisés en thèmes consultables indépendamment, et toutes les commandes illustrant ces thèmes sont classées par ordre alphabétique. Chaque définition comprend : la syntaxe, une description de la commande, les paramètres d'utilisation, et généralement un exemple d'application. Ainsi, vous disposez de tous les éléments pour mieux comprendre le langage HTML et dynamiser vos pages Web !",
+          "industryIdentifiers": [
+            {
+              "type": "ISBN_10",
+              "identifier": "2742918582"
+            },
+            {
+              "type": "ISBN_13",
+              "identifier": "9782742918584"
+            }
+          ],
+          "readingModes": {
+            "text": false,
+            "image": false
+          },
+          "pageCount": 468,
+          "printType": "BOOK",
+          "maturityRating": "NOT_MATURE",
+          "allowAnonLogging": false,
+          "contentVersion": "preview-1.0.0",
+          "panelizationSummary": {
+            "containsEpubBubbles": false,
+            "containsImageBubbles": false
+          },
+          "imageLinks": {
+            "smallThumbnail": "",
+            "thumbnail": ""
+          },
+          "language": "fr",
+          "previewLink": "http://books.google.fr/books?id=T1VTAAAACAAJ\u0026dq=isbn:9782742918584\u0026hl=\u0026cd=1\u0026source=gbs_api",
+          "infoLink": "http://books.google.fr/books?id=T1VTAAAACAAJ\u0026dq=isbn:9782742918584\u0026hl=\u0026source=gbs_api",
+          "canonicalVolumeLink": "https://books.google.com/books/about/Le_dictionnaire_HTML_XML_WML.html?hl=\u0026id=T1VTAAAACAAJ"
+        },
+        "saleInfo": {
+          "country": "FR",
+          "saleability": "NOT_FOR_SALE",
+          "isEbook": false
+        },
+        "accessInfo": {
+          "country": "FR",
+          "viewability": "NO_PAGES",
+          "embeddable": false,
+          "publicDomain": false,
+          "textToSpeechPermission": "ALLOWED",
+          "epub": {
+            "isAvailable": false
+          },
+          "pdf": {
+            "isAvailable": false
+          },
+          "webReaderLink": "http://play.google.com/books/reader?id=T1VTAAAACAAJ\u0026hl=\u0026source=gbs_api",
+          "accessViewStatus": "NONE",
+          "quoteSharingAllowed": false
+        },
+        "searchInfo": {
+          "textSnippet": "Référence pour une utilisation optimale du langage web HTML 4 jusqu\u0026#39;aux modèles de documents XML, en passant par le XHTML et le langage pour le Wap, le WML."
+        }
+      }
+    ]
+  },
+  {
+    "kind": "books#volumes",
+    "totalItems": 1,
+    "items": [
+      {
+        "kind": "books#volume",
+        "id": "VgtdAAAAMAAJ",
+        "etag": "4L79eZ65gkI",
+        "selfLink": "https://www.googleapis.com/books/v1/volumes/VgtdAAAAMAAJ",
+        "volumeInfo": {
+          "title": "La comtesse de Ségur, née Rostopchine",
+          "authors": [
+            "Ghislain de Diesbach"
+          ],
+          "publisher": "Gourcuff Gradenigo",
+          "publishedDate": "1999",
+          "description": "Considérée par les catholiques comme une Mère de l'Eglise pour avoir écrit La Bible d'une grand-mère et enfanté un saint, Mgr de Ségur, regardée par la postérité comme une émule de Balzac pour avoir écrit une véritable \" Comédie humaine \" du monde enfantin, étudiée par les psychanalystes, admirée par les sociologues lorsqu'ils se sont aperçus que cette même oeuvre est un tableau très précis de la France au temps du Second Empire, enfin, prise au sérieux par les critiques littéraires d'aujourd'hui qui la mettent désormais au rang des grands écrivains du XIXe siècle, la comtesse de Ségur, créateur de types immortels comme le général Dourakine, est un auteur dont le succès ne s'est jamais démenti et dont les livres, traduits dans toutes les langues, se sont vendus à plusieurs millions d'exemplaires. L'oeuvre de Sophie Rostopchine, comtesse de Ségur, est inséparable de son enfance et de son milieu familial dont Diesbach fait une peinture piquante. Née à Saint-Pétersbourg en juillet 1799, fille de l'impétueux, original et sarcastique comte Rostopchine, qui incendia Moscou pour soustraire la ville à Napoléon, mariée au neveu du général de Ségur, aide de camp de Napoléon pendant la campagne de Russie et historien de cette campagne, la comtesse de Ségur, héritière de deux mondes, a pressenti - notamment avec La Fortune de Gaspard - les grandes mutations économiques et sociales de son siècle, tout en restant fidèle à l'idéal aristocratique enseigné par son père et transposé à l'usage des Français. Comme pour Mme de Staël, la gloire fut la compensation d'une vie d'épreuves et d'aléas dont l'auteur retrace les principales étapes avec, alliés à la sûreté documentaire, l'élégance de style, le brio et la finesse d'analyse dont il a toujours fait preuve, particulièrement quand les sujets lui conviennent aussi bien que la comtesse de Ségur.",
+          "industryIdentifiers": [
+            {
+              "type": "OTHER",
+              "identifier": "UOM:39015048919537"
+            }
+          ],
+          "readingModes": {
+            "text": false,
+            "image": false
+          },
+          "pageCount": 376,
+          "printType": "BOOK",
+          "maturityRating": "NOT_MATURE",
+          "allowAnonLogging": false,
+          "contentVersion": "0.13.2.0.preview.0",
+          "panelizationSummary": {
+            "containsEpubBubbles": false,
+            "containsImageBubbles": false
+          },
+          "imageLinks": {
+            "smallThumbnail": "",
+            "thumbnail": ""
+          },
+          "language": "fr",
+          "previewLink": "http://books.google.fr/books?id=VgtdAAAAMAAJ\u0026dq=isbn:9782262015183\u0026hl=\u0026cd=1\u0026source=gbs_api",
+          "infoLink": "http://books.google.fr/books?id=VgtdAAAAMAAJ\u0026dq=isbn:9782262015183\u0026hl=\u0026source=gbs_api",
+          "canonicalVolumeLink": "https://books.google.com/books/about/La_comtesse_de_S%C3%A9gur_n%C3%A9e_Rostopchine.html?hl=\u0026id=VgtdAAAAMAAJ"
+        },
+        "saleInfo": {
+          "country": "FR",
+          "saleability": "NOT_FOR_SALE",
+          "isEbook": false
+        },
+        "accessInfo": {
+          "country": "FR",
+          "viewability": "NO_PAGES",
+          "embeddable": false,
+          "publicDomain": false,
+          "textToSpeechPermission": "ALLOWED",
+          "epub": {
+            "isAvailable": false
+          },
+          "pdf": {
+            "isAvailable": false
+          },
+          "webReaderLink": "http://play.google.com/books/reader?id=VgtdAAAAMAAJ\u0026hl=\u0026source=gbs_api",
+          "accessViewStatus": "NONE",
+          "quoteSharingAllowed": false
+        },
+        "searchInfo": {
+          "textSnippet": "Née à Saint-Pétersbourg en juillet 1799, fille de l\u0026#39;impétueux, original et sarcastique comte Rostopchine, qui incendia Moscou pour soustraire la ville à Napoléon, mariée au neveu du général de Ségur, aide de camp de Napoléon ..."
+        }
+      }
+    ]
+  },
+  {
+    "kind": "books#volumes",
+    "totalItems": 1,
+    "items": [
+      {
+        "kind": "books#volume",
+        "id": "VywZygAACAAJ",
+        "etag": "ssdz/D2f1B8",
+        "selfLink": "https://www.googleapis.com/books/v1/volumes/VywZygAACAAJ",
+        "volumeInfo": {
+          "title": "Le chemin de l'imperfection : la sainteté des pauvres",
+          "authors": [
+            "André Daigneault"
+          ],
+          "publisher": "Sillery, Québec : A. Sigier",
+          "publishedDate": "2000",
+          "description": "",
+          "industryIdentifiers": [
+            {
+              "type": "ISBN_10",
+              "identifier": "2891293614"
+            },
+            {
+              "type": "ISBN_13",
+              "identifier": "9782891293617"
+            }
+          ],
+          "readingModes": {
+            "text": false,
+            "image": false
+          },
+          "pageCount": 154,
+          "printType": "BOOK",
+          "maturityRating": "NOT_MATURE",
+          "allowAnonLogging": false,
+          "contentVersion": "preview-1.0.0",
+          "panelizationSummary": {
+            "containsEpubBubbles": false,
+            "containsImageBubbles": false
+          },
+          "imageLinks": {
+            "smallThumbnail": "",
+            "thumbnail": ""
+          },
+          "language": "fr",
+          "previewLink": "http://books.google.fr/books?id=VywZygAACAAJ\u0026dq=isbn:9782891293617\u0026hl=\u0026cd=1\u0026source=gbs_api",
+          "infoLink": "http://books.google.fr/books?id=VywZygAACAAJ\u0026dq=isbn:9782891293617\u0026hl=\u0026source=gbs_api",
+          "canonicalVolumeLink": "https://books.google.com/books/about/Le_chemin_de_l_imperfection_la_saintet%C3%A9.html?hl=\u0026id=VywZygAACAAJ"
+        },
+        "saleInfo": {
+          "country": "FR",
+          "saleability": "NOT_FOR_SALE",
+          "isEbook": false
+        },
+        "accessInfo": {
+          "country": "FR",
+          "viewability": "NO_PAGES",
+          "embeddable": false,
+          "publicDomain": false,
+          "textToSpeechPermission": "ALLOWED",
+          "epub": {
+            "isAvailable": false
+          },
+          "pdf": {
+            "isAvailable": false
+          },
+          "webReaderLink": "http://play.google.com/books/reader?id=VywZygAACAAJ\u0026hl=\u0026source=gbs_api",
+          "accessViewStatus": "NONE",
+          "quoteSharingAllowed": false
+        },
+        "searchInfo": {
+          "textSnippet": ""
+        }
+      }
+    ]
+  },
+  {
+    "kind": "books#volumes",
+    "totalItems": 1,
+    "items": [
+      {
+        "kind": "books#volume",
+        "id": "Z03bzwEACAAJ",
+        "etag": "/gJZdlv5aIg",
+        "selfLink": "https://www.googleapis.com/books/v1/volumes/Z03bzwEACAAJ",
+        "volumeInfo": {
+          "title": "Je n'ai pas dit mon dernier mot",
+          "authors": [
+            "Éric Zemmour"
+          ],
+          "publisher": "",
+          "publishedDate": "2023",
+          "description": "E. Zemmour retrace les coulisses, les acteurs et les méandres de la campagne à l'élection présidentielle française 2022, à laquelle il a pris part. Il tire les leçons de sa défaite et conteste l'analyse qui a été faite de ses idées et du parti Reconquête.",
+          "industryIdentifiers": [
+            {
+              "type": "ISBN_10",
+              "identifier": "2957930528"
+            },
+            {
+              "type": "ISBN_13",
+              "identifier": "9782957930524"
+            }
+          ],
+          "readingModes": {
+            "text": false,
+            "image": false
+          },
+          "pageCount": 0,
+          "printType": "BOOK",
+          "maturityRating": "NOT_MATURE",
+          "allowAnonLogging": false,
+          "contentVersion": "preview-1.0.0",
+          "panelizationSummary": {
+            "containsEpubBubbles": false,
+            "containsImageBubbles": false
+          },
+          "imageLinks": {
+            "smallThumbnail": "",
+            "thumbnail": ""
+          },
+          "language": "fr",
+          "previewLink": "http://books.google.fr/books?id=Z03bzwEACAAJ\u0026dq=isbn:9782957930524\u0026hl=\u0026cd=1\u0026source=gbs_api",
+          "infoLink": "http://books.google.fr/books?id=Z03bzwEACAAJ\u0026dq=isbn:9782957930524\u0026hl=\u0026source=gbs_api",
+          "canonicalVolumeLink": "https://books.google.com/books/about/Je_n_ai_pas_dit_mon_dernier_mot.html?hl=\u0026id=Z03bzwEACAAJ"
+        },
+        "saleInfo": {
+          "country": "FR",
+          "saleability": "NOT_FOR_SALE",
+          "isEbook": false
+        },
+        "accessInfo": {
+          "country": "FR",
+          "viewability": "NO_PAGES",
+          "embeddable": false,
+          "publicDomain": false,
+          "textToSpeechPermission": "ALLOWED",
+          "epub": {
+            "isAvailable": false
+          },
+          "pdf": {
+            "isAvailable": false
+          },
+          "webReaderLink": "http://play.google.com/books/reader?id=Z03bzwEACAAJ\u0026hl=\u0026source=gbs_api",
+          "accessViewStatus": "NONE",
+          "quoteSharingAllowed": false
+        },
+        "searchInfo": {
+          "textSnippet": "E. Zemmour retrace les coulisses, les acteurs et les méandres de la campagne à l\u0026#39;élection présidentielle française 2022, à laquelle il a pris part."
+        }
+      }
+    ]
+  },
+  {
+    "kind": "books#volumes",
+    "totalItems": 1,
+    "items": [
+      {
+        "kind": "books#volume",
+        "id": "_GD7PQAACAAJ",
+        "etag": "x5hurLoTHZQ",
+        "selfLink": "https://www.googleapis.com/books/v1/volumes/_GD7PQAACAAJ",
+        "volumeInfo": {
+          "title": "La Vendée-Vengé",
+          "authors": [
+            "Reynald Secher"
+          ],
+          "publisher": "Librairie Académique Perrin",
+          "publishedDate": "2006",
+          "description": "On a voulu oublier la Vendée. Comme les camisards ou les cathares. Mais on n'efface pas les lieux trahis de la mémoire de la France. A l'été 1790 se déclenche presque unanime contre la prétention des autorités révolutionnaires de réglementer le culte. Elle est suivie, trois ans plus tard, par le refus de la conscription au service d'une armée jugée impie. En réponse à cette insurrection des humbles, la Convention a organisé l' \" extermination \" des Vendéens, à commencer par les femmes, ces \" sillons reproducteurs \", et les enfants, de \" futurs brigands \" et l' \" anéantissement de la Vendée \" ; 770 communes deviennent hors-la-loi et comme condamnés à la \" vindicte nationale \" ; le nom même de Vendée cède la place au département \" Vengé \". Les moyens sont éloquents : camps, fours crématoires, sabrades. Les bilans, tant humains que matériels, sont impressionnants. A sa sortie, voilà vingt ans, ce livre avait choqué par la crudité que révélaient les archives. Aujourd'hui que les recherches ont confirmé les travaux pionniers de Reynald Secher, force est de reconnaître l'importance de cette contribution à l'histoire de la Révolution.",
+          "industryIdentifiers": [
+            {
+              "type": "ISBN_10",
+              "identifier": "2262025649"
+            },
+            {
+              "type": "ISBN_13",
+              "identifier": "9782262025649"
+            }
+          ],
+          "readingModes": {
+            "text": false,
+            "image": false
+          },
+          "pageCount": 351,
+          "printType": "BOOK",
+          "maturityRating": "NOT_MATURE",
+          "allowAnonLogging": false,
+          "contentVersion": "preview-1.0.0",
+          "panelizationSummary": {
+            "containsEpubBubbles": false,
+            "containsImageBubbles": false
+          },
+          "imageLinks": {
+            "smallThumbnail": "",
+            "thumbnail": ""
+          },
+          "language": "fr",
+          "previewLink": "http://books.google.fr/books?id=_GD7PQAACAAJ\u0026dq=isbn:9782262025649\u0026hl=\u0026cd=1\u0026source=gbs_api",
+          "infoLink": "http://books.google.fr/books?id=_GD7PQAACAAJ\u0026dq=isbn:9782262025649\u0026hl=\u0026source=gbs_api",
+          "canonicalVolumeLink": "https://books.google.com/books/about/La_Vend%C3%A9e_Veng%C3%A9.html?hl=\u0026id=_GD7PQAACAAJ"
+        },
+        "saleInfo": {
+          "country": "FR",
+          "saleability": "NOT_FOR_SALE",
+          "isEbook": false
+        },
+        "accessInfo": {
+          "country": "FR",
+          "viewability": "NO_PAGES",
+          "embeddable": false,
+          "publicDomain": false,
+          "textToSpeechPermission": "ALLOWED",
+          "epub": {
+            "isAvailable": false
+          },
+          "pdf": {
+            "isAvailable": false
+          },
+          "webReaderLink": "http://play.google.com/books/reader?id=_GD7PQAACAAJ\u0026hl=\u0026source=gbs_api",
+          "accessViewStatus": "NONE",
+          "quoteSharingAllowed": false
+        },
+        "searchInfo": {
+          "textSnippet": ""
+        }
+      }
+    ]
+  },
+  {
+    "kind": "books#volumes",
+    "totalItems": 1,
+    "items": [
+      {
+        "kind": "books#volume",
+        "id": "ae5AGwAACAAJ",
+        "etag": "MuxExUok6gI",
+        "selfLink": "https://www.googleapis.com/books/v1/volumes/ae5AGwAACAAJ",
+        "volumeInfo": {
+          "title": "Cours d'orthographe",
+          "authors": [
+            "Édouard Bled",
+            "Odette Bled"
+          ],
+          "publisher": "",
+          "publishedDate": "1985-01-01",
+          "description": "",
+          "industryIdentifiers": [
+            {
+              "type": "ISBN_10",
+              "identifier": "2010115058"
+            },
+            {
+              "type": "ISBN_13",
+              "identifier": "9782010115059"
+            }
+          ],
+          "readingModes": {
+            "text": false,
+            "image": false
+          },
+          "pageCount": 219,
+          "printType": "BOOK",
+          "maturityRating": "NOT_MATURE",
+          "allowAnonLogging": false,
+          "contentVersion": "preview-1.0.0",
+          "panelizationSummary": {
+            "containsEpubBubbles": false,
+            "containsImageBubbles": false
+          },
+          "imageLinks": {
+            "smallThumbnail": "",
+            "thumbnail": ""
+          },
+          "language": "fr",
+          "previewLink": "http://books.google.fr/books?id=ae5AGwAACAAJ\u0026dq=isbn:9782010115059\u0026hl=\u0026cd=1\u0026source=gbs_api",
+          "infoLink": "http://books.google.fr/books?id=ae5AGwAACAAJ\u0026dq=isbn:9782010115059\u0026hl=\u0026source=gbs_api",
+          "canonicalVolumeLink": "https://books.google.com/books/about/Cours_d_orthographe.html?hl=\u0026id=ae5AGwAACAAJ"
+        },
+        "saleInfo": {
+          "country": "FR",
+          "saleability": "NOT_FOR_SALE",
+          "isEbook": false
+        },
+        "accessInfo": {
+          "country": "FR",
+          "viewability": "NO_PAGES",
+          "embeddable": false,
+          "publicDomain": false,
+          "textToSpeechPermission": "ALLOWED",
+          "epub": {
+            "isAvailable": false
+          },
+          "pdf": {
+            "isAvailable": false
+          },
+          "webReaderLink": "http://play.google.com/books/reader?id=ae5AGwAACAAJ\u0026hl=\u0026source=gbs_api",
+          "accessViewStatus": "NONE",
+          "quoteSharingAllowed": false
+        },
+        "searchInfo": {
+          "textSnippet": ""
+        }
+      }
+    ]
+  },
+  {
+    "kind": "books#volumes",
+    "totalItems": 1,
+    "items": [
+      {
+        "kind": "books#volume",
+        "id": "cg__zQEACAAJ",
+        "etag": "515TcM1BQ6c",
+        "selfLink": "https://www.googleapis.com/books/v1/volumes/cg__zQEACAAJ",
+        "volumeInfo": {
+          "title": "Prier 15 jours avec Saint Césaire d'Arles",
+          "authors": [
+            "Antoine Barlier"
+          ],
+          "publisher": "",
+          "publishedDate": "2020-10-29",
+          "description": "",
+          "industryIdentifiers": [
+            {
+              "type": "ISBN_10",
+              "identifier": "2375822021"
+            },
+            {
+              "type": "ISBN_13",
+              "identifier": "9782375822029"
+            }
+          ],
+          "readingModes": {
+            "text": false,
+            "image": false
+          },
+          "pageCount": 128,
+          "printType": "BOOK",
+          "maturityRating": "NOT_MATURE",
+          "allowAnonLogging": false,
+          "contentVersion": "preview-1.0.0",
+          "panelizationSummary": {
+            "containsEpubBubbles": false,
+            "containsImageBubbles": false
+          },
+          "imageLinks": {
+            "smallThumbnail": "",
+            "thumbnail": ""
+          },
+          "language": "fr",
+          "previewLink": "http://books.google.fr/books?id=cg__zQEACAAJ\u0026dq=isbn:9782375822029\u0026hl=\u0026cd=1\u0026source=gbs_api",
+          "infoLink": "http://books.google.fr/books?id=cg__zQEACAAJ\u0026dq=isbn:9782375822029\u0026hl=\u0026source=gbs_api",
+          "canonicalVolumeLink": "https://books.google.com/books/about/Prier_15_jours_avec_Saint_C%C3%A9saire_d_Arl.html?hl=\u0026id=cg__zQEACAAJ"
+        },
+        "saleInfo": {
+          "country": "FR",
+          "saleability": "NOT_FOR_SALE",
+          "isEbook": false
+        },
+        "accessInfo": {
+          "country": "FR",
+          "viewability": "NO_PAGES",
+          "embeddable": false,
+          "publicDomain": false,
+          "textToSpeechPermission": "ALLOWED",
+          "epub": {
+            "isAvailable": false
+          },
+          "pdf": {
+            "isAvailable": false
+          },
+          "webReaderLink": "http://play.google.com/books/reader?id=cg__zQEACAAJ\u0026hl=\u0026source=gbs_api",
+          "accessViewStatus": "NONE",
+          "quoteSharingAllowed": false
+        },
+        "searchInfo": {
+          "textSnippet": ""
+        }
+      }
+    ]
+  },
+  {
+    "kind": "books#volumes",
+    "totalItems": 1,
+    "items": [
+      {
+        "kind": "books#volume",
+        "id": "dP84YgEACAAJ",
+        "etag": "VTpLyeRNmK0",
+        "selfLink": "https://www.googleapis.com/books/v1/volumes/dP84YgEACAAJ",
+        "volumeInfo": {
+          "title": "Aimer sans dévorer",
+          "authors": [
+            "Lytta Basset"
+          ],
+          "publisher": "Albin Michel",
+          "publishedDate": "2010",
+          "description": "L'anesthésie affective et l'enfermement en soi-même sont des expériences beaucoup plus communes qu'on ne veut bien l'avouer. Car, pour la plupart, nous ne croyons pas, ou plus, à la possibilité d'un amour véritable, vivant, puissant sans être dévorant. Et ce n'est pas l'idéologie de l'amour tel que l'a enseigné un certain christianisme qui peut nous être d'un quelconque secours : il nous emprisonne au contraire dans une relation mortifère. Lytta Basset nous montre pourtant qu'existe en chaque personne une étonnante réceptivité à l'amour, prête à s'épanouir dès lors que l'on consent à accueillir le manque comme une bénédiction. L'amour qui se sait indigent laisse la place à un \" souffle de vérité \" qui déstabilise, mais pour venir à bout des confusions, blocages et ressentiments. Il mène alors à la découverte d'une \" part de feu \" en soi dont on ne savait rien. Ce feu, ce souffle qui traversent tout être humain, sont ceux dont parle l'Évangile. Nous sommes invités à nous y exposer, hors de toute contrainte sociale, morale ou religieuse, pour accéder à des relations affectives fécondes.",
+          "industryIdentifiers": [
+            {
+              "type": "ISBN_10",
+              "identifier": "2226215573"
+            },
+            {
+              "type": "ISBN_13",
+              "identifier": "9782226215574"
+            }
+          ],
+          "readingModes": {
+            "text": false,
+            "image": false
+          },
+          "pageCount": 437,
+          "printType": "BOOK",
+          "maturityRating": "NOT_MATURE",
+          "allowAnonLogging": false,
+          "contentVersion": "preview-1.0.0",
+          "panelizationSummary": {
+            "containsEpubBubbles": false,
+            "containsImageBubbles": false
+          },
+          "imageLinks": {
+            "smallThumbnail": "",
+            "thumbnail": ""
+          },
+          "language": "fr",
+          "previewLink": "http://books.google.fr/books?id=dP84YgEACAAJ\u0026dq=isbn:9782226215574\u0026hl=\u0026cd=1\u0026source=gbs_api",
+          "infoLink": "http://books.google.fr/books?id=dP84YgEACAAJ\u0026dq=isbn:9782226215574\u0026hl=\u0026source=gbs_api",
+          "canonicalVolumeLink": "https://books.google.com/books/about/Aimer_sans_d%C3%A9vorer.html?hl=\u0026id=dP84YgEACAAJ"
+        },
+        "saleInfo": {
+          "country": "FR",
+          "saleability": "NOT_FOR_SALE",
+          "isEbook": false
+        },
+        "accessInfo": {
+          "country": "FR",
+          "viewability": "NO_PAGES",
+          "embeddable": false,
+          "publicDomain": false,
+          "textToSpeechPermission": "ALLOWED",
+          "epub": {
+            "isAvailable": false
+          },
+          "pdf": {
+            "isAvailable": false
+          },
+          "webReaderLink": "http://play.google.com/books/reader?id=dP84YgEACAAJ\u0026hl=\u0026source=gbs_api",
+          "accessViewStatus": "NONE",
+          "quoteSharingAllowed": false
+        },
+        "searchInfo": {
+          "textSnippet": "La pasteure et théologienne invite à trouver en soi le souffle d\u0026#39;amour capable de mener à une relation vraie, non destructrice."
+        }
+      }
+    ]
+  },
+  {
+    "kind": "books#volumes",
+    "totalItems": 1,
+    "items": [
+      {
+        "kind": "books#volume",
+        "id": "f-wrvgAACAAJ",
+        "etag": "rVW6qC5RNiY",
+        "selfLink": "https://www.googleapis.com/books/v1/volumes/f-wrvgAACAAJ",
+        "volumeInfo": {
+          "title": "Sur les chemins noirs",
+          "authors": [
+            "Sylvain Tesson"
+          ],
+          "publisher": "",
+          "publishedDate": "2016-10-13",
+          "description": "2014. \"L'année avait été rude. Je m'étais cassé la gueule d'un toit où je faisais le pitre. J'étais tombé du rebord de la nuit, m'étais écrasé sur la Terre. Il avait suffit de huit mètres pour me briser les côtes, les vertèbres, le crâne. J'étais tombé sur un tas d'os. Je regretterais longtemps cette chute parce que je disposais jusqu'alors d'une machine physique qui m'autorisait à vivre en surchauffe. Pour moi, une noble existence ressemblait aux écrans de contrôle des camions sibériens : tous les voyants d'alerte sont au rouge mais la machine taille sa route. La grande santé ? Elle menait au désastre, j'avais pris cinquante ans en dix mètres. A l'hôpital, tout m'avait souri. Le système de santé français a ceci de merveilleux qu'il ne vous place jamais devant vos responsabilités. On ne m'avait rien reproché, on m'avait sauvé. La médecine de fine pointe, la sollicitude des infirmières, l'amour de mes proches, la lecture de Villon-le-punk, tout cela m'avait soigné. Un arbre par la fenêtre m'avait insufflé sa joie vibrante et quatre mois plus tard j'étais dehors, bancal, le corps en peine, avec le sang d'un autre dans les veines, le crâne enfoncé, le ventre paralysé, les poumons cicatrisés, la colonne cloutée de vis et le visage difforme. La vie allait moins swinguer. Il fallait à présent me montrer fidèle au serment de mes nuits de pitié. Corseté dans un lit étroit, je m'étais dit à voix presque haute : \"si je m'en sors, je traverse la France à pied\". Je m'étais vu sur les chemins de pierre ! Je voulais m'en aller par les chemins cachés, flanqués de haies, par les sous-bois de ronces et les pistes à ornières reliant les villages abandonnés. Il existait encore une géographie de traverse pour peu que l'on lise les cartes, que l'on accepte le détour et force les passages. Loin des routes, il existait une France ombreuse protégée du vacarme, épargnée par l'aménagement qui est la pollution du mystère. Une campagne du silence, du sorbier et de la chouette effraie. Des motifs pour courir la campagne, j'aurais pu en aligner des dizaines. Me seriner par exemple que j'avais passé vingt ans à courir le monde entre Oulan- Bator et Valparaiso et qu'il était absurde de connaître Samarcande alors qu'il y avait l'Indre- et-Loire. Mais la vraie raison de cette fuite à travers champs, je la tenais serrée sous la forme d'un papier froissé, au fond de mon sac...\" Avec cette traversée à pied de la France réalisée entre août et novembre 2015, Sylvain Tesson part à la rencontre d'un pays sauvage, bizarre et méconnu. C'est aussi l'occasion d'une reconquête intérieure après le terrible accident qui a failli lui coûter la vie en août 2014. Le voici donc en route, par les petits chemins que plus personne n'emprunte, en route vers ces vastes territoires non connectés, qui ont miraculeusement échappé aux assauts de l'urbanisme et de la technologie, mais qui apparaissent sous sa plume habités par une vie ardente, turbulente et fascinante.",
+          "industryIdentifiers": [
+            {
+              "type": "ISBN_10",
+              "identifier": "2070146375"
+            },
+            {
+              "type": "ISBN_13",
+              "identifier": "9782070146376"
+            }
+          ],
+          "readingModes": {
+            "text": false,
+            "image": false
+          },
+          "pageCount": 144,
+          "printType": "BOOK",
+          "maturityRating": "NOT_MATURE",
+          "allowAnonLogging": false,
+          "contentVersion": "preview-1.0.0",
+          "panelizationSummary": {
+            "containsEpubBubbles": false,
+            "containsImageBubbles": false
+          },
+          "imageLinks": {
+            "smallThumbnail": "",
+            "thumbnail": ""
+          },
+          "language": "fr",
+          "previewLink": "http://books.google.fr/books?id=f-wrvgAACAAJ\u0026dq=isbn:9782070146376\u0026hl=\u0026cd=1\u0026source=gbs_api",
+          "infoLink": "http://books.google.fr/books?id=f-wrvgAACAAJ\u0026dq=isbn:9782070146376\u0026hl=\u0026source=gbs_api",
+          "canonicalVolumeLink": "https://books.google.com/books/about/Sur_les_chemins_noirs.html?hl=\u0026id=f-wrvgAACAAJ"
+        },
+        "saleInfo": {
+          "country": "FR",
+          "saleability": "NOT_FOR_SALE",
+          "isEbook": false
+        },
+        "accessInfo": {
+          "country": "FR",
+          "viewability": "NO_PAGES",
+          "embeddable": false,
+          "publicDomain": false,
+          "textToSpeechPermission": "ALLOWED",
+          "epub": {
+            "isAvailable": false
+          },
+          "pdf": {
+            "isAvailable": false
+          },
+          "webReaderLink": "http://play.google.com/books/reader?id=f-wrvgAACAAJ\u0026hl=\u0026source=gbs_api",
+          "accessViewStatus": "NONE",
+          "quoteSharingAllowed": false
+        },
+        "searchInfo": {
+          "textSnippet": "Après une mauvaise chute qui a failli lui coûter la vie et qui lui a causé de multiples fractures, le narrateur se retrouve à l\u0026#39;hôpital pendant plusieurs mois."
+        }
+      }
+    ]
+  },
+  {
+    "kind": "books#volumes",
+    "totalItems": 1,
+    "items": [
+      {
+        "kind": "books#volume",
+        "id": "gFunQwAACAAJ",
+        "etag": "L46WVC2M+jQ",
+        "selfLink": "https://www.googleapis.com/books/v1/volumes/gFunQwAACAAJ",
+        "volumeInfo": {
+          "title": "L'Homéopathie",
+          "authors": [
+            "Adrien Gesta"
+          ],
+          "publisher": "",
+          "publishedDate": "1984",
+          "description": "",
+          "industryIdentifiers": [
+            {
+              "type": "ISBN_10",
+              "identifier": "2724218604"
+            },
+            {
+              "type": "ISBN_13",
+              "identifier": "9782724218602"
+            }
+          ],
+          "readingModes": {
+            "text": false,
+            "image": false
+          },
+          "pageCount": 192,
+          "printType": "BOOK",
+          "maturityRating": "NOT_MATURE",
+          "allowAnonLogging": false,
+          "contentVersion": "preview-1.0.0",
+          "panelizationSummary": {
+            "containsEpubBubbles": false,
+            "containsImageBubbles": false
+          },
+          "imageLinks": {
+            "smallThumbnail": "",
+            "thumbnail": ""
+          },
+          "language": "fr",
+          "previewLink": "http://books.google.fr/books?id=gFunQwAACAAJ\u0026dq=isbn:2724218604\u0026hl=\u0026cd=1\u0026source=gbs_api",
+          "infoLink": "http://books.google.fr/books?id=gFunQwAACAAJ\u0026dq=isbn:2724218604\u0026hl=\u0026source=gbs_api",
+          "canonicalVolumeLink": "https://books.google.com/books/about/L_Hom%C3%A9opathie.html?hl=\u0026id=gFunQwAACAAJ"
+        },
+        "saleInfo": {
+          "country": "FR",
+          "saleability": "NOT_FOR_SALE",
+          "isEbook": false
+        },
+        "accessInfo": {
+          "country": "FR",
+          "viewability": "NO_PAGES",
+          "embeddable": false,
+          "publicDomain": false,
+          "textToSpeechPermission": "ALLOWED",
+          "epub": {
+            "isAvailable": false
+          },
+          "pdf": {
+            "isAvailable": false
+          },
+          "webReaderLink": "http://play.google.com/books/reader?id=gFunQwAACAAJ\u0026hl=\u0026source=gbs_api",
+          "accessViewStatus": "NONE",
+          "quoteSharingAllowed": false
+        },
+        "searchInfo": {
+          "textSnippet": ""
+        }
+      }
+    ]
+  },
+  {
+    "kind": "books#volumes",
+    "totalItems": 1,
+    "items": [
+      {
+        "kind": "books#volume",
+        "id": "ico8HQAACAAJ",
+        "etag": "L3Qk6XZZtDI",
+        "selfLink": "https://www.googleapis.com/books/v1/volumes/ico8HQAACAAJ",
+        "volumeInfo": {
+          "title": "Guide de l'homéopathie",
+          "authors": [
+            "Gérard Pacaud"
+          ],
+          "publisher": "",
+          "publishedDate": "2000-03-29",
+          "description": "Un guide de référence, simple et clair, qui permet de se soigner sans risques au bon moment. Un dictionnaire des maladies et affections les plus courantes où sont évoqués : - les symptômes - les premiers conseils - la sélection des médicaments les mieux adaptés en fonction des circonstances - les précautions à prendre. Un répertoire des médicaments les plus souvent utilisés. De Aconitum napellus à Zincum metallicum, les remèdes d'urgence ou de \" terrain \" sont décrits en détail pour expliquer leur action, leurs indications aiguës ou chroniques et le profil type auquel ils correspondent. Ce livre explique aussi comment l'homéopathe raisonne face à la maladie, comment agit le remède homéopathique, pourquoi la notion de terrain est si importante et comment renforcer les défenses immunitaires de l'organisme pour préserver son .",
+          "industryIdentifiers": [
+            {
+              "type": "ISBN_10",
+              "identifier": "2501032535"
+            },
+            {
+              "type": "ISBN_13",
+              "identifier": "9782501032537"
+            }
+          ],
+          "readingModes": {
+            "text": false,
+            "image": false
+          },
+          "pageCount": 311,
+          "printType": "BOOK",
+          "maturityRating": "NOT_MATURE",
+          "allowAnonLogging": false,
+          "contentVersion": "preview-1.0.0",
+          "panelizationSummary": {
+            "containsEpubBubbles": false,
+            "containsImageBubbles": false
+          },
+          "imageLinks": {
+            "smallThumbnail": "",
+            "thumbnail": ""
+          },
+          "language": "fr",
+          "previewLink": "http://books.google.fr/books?id=ico8HQAACAAJ\u0026dq=isbn:9782501032537\u0026hl=\u0026cd=1\u0026source=gbs_api",
+          "infoLink": "http://books.google.fr/books?id=ico8HQAACAAJ\u0026dq=isbn:9782501032537\u0026hl=\u0026source=gbs_api",
+          "canonicalVolumeLink": "https://books.google.com/books/about/Guide_de_l_hom%C3%A9opathie.html?hl=\u0026id=ico8HQAACAAJ"
+        },
+        "saleInfo": {
+          "country": "FR",
+          "saleability": "NOT_FOR_SALE",
+          "isEbook": false
+        },
+        "accessInfo": {
+          "country": "FR",
+          "viewability": "NO_PAGES",
+          "embeddable": false,
+          "publicDomain": false,
+          "textToSpeechPermission": "ALLOWED",
+          "epub": {
+            "isAvailable": false
+          },
+          "pdf": {
+            "isAvailable": false
+          },
+          "webReaderLink": "http://play.google.com/books/reader?id=ico8HQAACAAJ\u0026hl=\u0026source=gbs_api",
+          "accessViewStatus": "NONE",
+          "quoteSharingAllowed": false
+        },
+        "searchInfo": {
+          "textSnippet": "Un guide de référence, simple et clair, qui permet de se soigner sans risques au bon moment."
+        }
+      }
+    ]
+  },
+  {
+    "kind": "books#volumes",
+    "totalItems": 1,
+    "items": [
+      {
+        "kind": "books#volume",
+        "id": "ifwUDAEACAAJ",
+        "etag": "iClLjuM6Lac",
+        "selfLink": "https://www.googleapis.com/books/v1/volumes/ifwUDAEACAAJ",
+        "volumeInfo": {
+          "title": "Les enchères au bridge",
+          "authors": [
+            "Michel Bessis",
+            "Philippe Cronier",
+            "Jean-Christophe Quantin"
+          ],
+          "publisher": "",
+          "publishedDate": "2016-04-01",
+          "description": "",
+          "industryIdentifiers": [
+            {
+              "type": "ISBN_10",
+              "identifier": "2372400037"
+            },
+            {
+              "type": "ISBN_13",
+              "identifier": "9782372400039"
+            }
+          ],
+          "readingModes": {
+            "text": false,
+            "image": false
+          },
+          "pageCount": 264,
+          "printType": "BOOK",
+          "maturityRating": "NOT_MATURE",
+          "allowAnonLogging": false,
+          "contentVersion": "preview-1.0.0",
+          "panelizationSummary": {
+            "containsEpubBubbles": false,
+            "containsImageBubbles": false
+          },
+          "imageLinks": {
+            "smallThumbnail": "",
+            "thumbnail": ""
+          },
+          "language": "fr",
+          "previewLink": "http://books.google.fr/books?id=ifwUDAEACAAJ\u0026dq=isbn:9782372400039\u0026hl=\u0026cd=1\u0026source=gbs_api",
+          "infoLink": "http://books.google.fr/books?id=ifwUDAEACAAJ\u0026dq=isbn:9782372400039\u0026hl=\u0026source=gbs_api",
+          "canonicalVolumeLink": "https://books.google.com/books/about/Les_ench%C3%A8res_au_bridge.html?hl=\u0026id=ifwUDAEACAAJ"
+        },
+        "saleInfo": {
+          "country": "FR",
+          "saleability": "NOT_FOR_SALE",
+          "isEbook": false
+        },
+        "accessInfo": {
+          "country": "FR",
+          "viewability": "NO_PAGES",
+          "embeddable": false,
+          "publicDomain": false,
+          "textToSpeechPermission": "ALLOWED",
+          "epub": {
+            "isAvailable": false
+          },
+          "pdf": {
+            "isAvailable": false
+          },
+          "webReaderLink": "http://play.google.com/books/reader?id=ifwUDAEACAAJ\u0026hl=\u0026source=gbs_api",
+          "accessViewStatus": "NONE",
+          "quoteSharingAllowed": false
+        },
+        "searchInfo": {
+          "textSnippet": ""
+        }
+      }
+    ]
+  },
+  {
+    "kind": "books#volumes",
+    "totalItems": 1,
+    "items": [
+      {
+        "kind": "books#volume",
+        "id": "mRjPzgEACAAJ",
+        "etag": "1pUY6Q1SPaI",
+        "selfLink": "https://www.googleapis.com/books/v1/volumes/mRjPzgEACAAJ",
+        "volumeInfo": {
+          "title": "L'annonce faite à Marie",
+          "authors": [
+            "Paul Claudel"
+          ],
+          "publisher": "",
+          "publishedDate": "1940",
+          "description": "",
+          "industryIdentifiers": [
+            {
+              "type": "ISBN_10",
+              "identifier": "2070360261"
+            },
+            {
+              "type": "ISBN_13",
+              "identifier": "9782070360260"
+            }
+          ],
+          "readingModes": {
+            "text": false,
+            "image": false
+          },
+          "pageCount": 217,
+          "printType": "BOOK",
+          "maturityRating": "NOT_MATURE",
+          "allowAnonLogging": false,
+          "contentVersion": "preview-1.0.0",
+          "panelizationSummary": {
+            "containsEpubBubbles": false,
+            "containsImageBubbles": false
+          },
+          "imageLinks": {
+            "smallThumbnail": "http://books.google.com/books/content?id=mRjPzgEACAAJ\u0026printsec=frontcover\u0026img=1\u0026zoom=5\u0026source=gbs_api",
+            "thumbnail": "http://books.google.com/books/content?id=mRjPzgEACAAJ\u0026printsec=frontcover\u0026img=1\u0026zoom=1\u0026source=gbs_api"
+          },
+          "language": "fr",
+          "previewLink": "http://books.google.fr/books?id=mRjPzgEACAAJ\u0026dq=isbn:9782070360260\u0026hl=\u0026cd=1\u0026source=gbs_api",
+          "infoLink": "http://books.google.fr/books?id=mRjPzgEACAAJ\u0026dq=isbn:9782070360260\u0026hl=\u0026source=gbs_api",
+          "canonicalVolumeLink": "https://books.google.com/books/about/L_annonce_faite_%C3%A0_Marie.html?hl=\u0026id=mRjPzgEACAAJ"
+        },
+        "saleInfo": {
+          "country": "FR",
+          "saleability": "NOT_FOR_SALE",
+          "isEbook": false
+        },
+        "accessInfo": {
+          "country": "FR",
+          "viewability": "NO_PAGES",
+          "embeddable": false,
+          "publicDomain": false,
+          "textToSpeechPermission": "ALLOWED",
+          "epub": {
+            "isAvailable": false
+          },
+          "pdf": {
+            "isAvailable": false
+          },
+          "webReaderLink": "http://play.google.com/books/reader?id=mRjPzgEACAAJ\u0026hl=\u0026source=gbs_api",
+          "accessViewStatus": "NONE",
+          "quoteSharingAllowed": false
+        },
+        "searchInfo": {
+          "textSnippet": ""
+        }
+      }
+    ]
+  },
+  {
+    "kind": "books#volumes",
+    "totalItems": 1,
+    "items": [
+      {
+        "kind": "books#volume",
+        "id": "my0bAAAACAAJ",
+        "etag": "PDu9EkhTkDI",
+        "selfLink": "https://www.googleapis.com/books/v1/volumes/my0bAAAACAAJ",
+        "volumeInfo": {
+          "title": "La vie d'Arséniev",
+          "authors": [
+            "Ivan Alekseevich Bunin",
+            "Claire Hauchard"
+          ],
+          "publisher": "",
+          "publishedDate": "1999",
+          "description": "A travers le personnage d'Arséniev, Ivan Bounine, décrit sa jeunesse russe passée à la campagne dans la région des steppes. Roman du destin, de l'émotion et de la quête du bonheur, La Vie d'Arséniev nous plonge d'emblée dans l'univers intime d'un enfant solitaire élevé dans une nature nue et sans bornes. L'immensité du domaine familial, la terre, les animaux, les premières expériences de la mort façonneront une intelligence intuitive, comme habitée par une prescience des être et du monde. Intense travail de mémoire, canevas précis d'une enfance passée au temps d'une extrême déchéance de la noblesse russe, un père oisif, une mère douce, deux frères, deux sœurs, les périples au cœur d'une Russie poétique, chaude, interlope, la rencontre avec les figures insolites à jamais enfuies, la vie sentimentale violente d'un homme aussi despote que séduisant, forment la trame de ce magnifique et puissant exercice de réminiscence et d'écriture. Sur la toile de fond d'un monde destiné à disparaître, alternent le charme et la jouissance, puis dans l'abandon la solitude et le déclin.",
+          "industryIdentifiers": [
+            {
+              "type": "ISBN_10",
+              "identifier": "2841002020"
+            },
+            {
+              "type": "ISBN_13",
+              "identifier": "9782841002023"
+            }
+          ],
+          "readingModes": {
+            "text": false,
+            "image": false
+          },
+          "pageCount": 476,
+          "printType": "BOOK",
+          "maturityRating": "NOT_MATURE",
+          "allowAnonLogging": false,
+          "contentVersion": "preview-1.0.0",
+          "panelizationSummary": {
+            "containsEpubBubbles": false,
+            "containsImageBubbles": false
+          },
+          "imageLinks": {
+            "smallThumbnail": "",
+            "thumbnail": ""
+          },
+          "language": "fr",
+          "previewLink": "http://books.google.fr/books?id=my0bAAAACAAJ\u0026dq=isbn:9782841002023\u0026hl=\u0026cd=1\u0026source=gbs_api",
+          "infoLink": "http://books.google.fr/books?id=my0bAAAACAAJ\u0026dq=isbn:9782841002023\u0026hl=\u0026source=gbs_api",
+          "canonicalVolumeLink": "https://books.google.com/books/about/La_vie_d_Ars%C3%A9niev.html?hl=\u0026id=my0bAAAACAAJ"
+        },
+        "saleInfo": {
+          "country": "FR",
+          "saleability": "NOT_FOR_SALE",
+          "isEbook": false
+        },
+        "accessInfo": {
+          "country": "FR",
+          "viewability": "NO_PAGES",
+          "embeddable": false,
+          "publicDomain": false,
+          "textToSpeechPermission": "ALLOWED",
+          "epub": {
+            "isAvailable": false
+          },
+          "pdf": {
+            "isAvailable": false
+          },
+          "webReaderLink": "http://play.google.com/books/reader?id=my0bAAAACAAJ\u0026hl=\u0026source=gbs_api",
+          "accessViewStatus": "NONE",
+          "quoteSharingAllowed": false
+        },
+        "searchInfo": {
+          "textSnippet": "A travers le personnage d\u0026#39;Arseniev, Ivan Bounine décrit sa jeunesse passée à la campagne dans la région des steppes."
+        }
+      }
+    ]
+  },
+  {
+    "kind": "books#volumes",
+    "totalItems": 1,
+    "items": [
+      {
+        "kind": "books#volume",
+        "id": "p9cWPQAACAAJ",
+        "etag": "JZs7gZGephY",
+        "selfLink": "https://www.googleapis.com/books/v1/volumes/p9cWPQAACAAJ",
+        "volumeInfo": {
+          "title": "Par des sentiers resserrés",
+          "authors": [
+            "Jean-Miguel Garrigues"
+          ],
+          "publisher": "",
+          "publishedDate": "2007",
+          "description": "A quoi sont dus le plaisir et la joie que l'on ressent à la lecture de cette autobiographie étonnante de Jean- Miguel Garrigues ? Peut-être d'abord à la manière personnelle et cordiale dont ce religieux dominicain a choisi de présenter son œuvre. À travers des entretiens avec deux amis représentant deux générations plus jeunes que la sienne, l'auteur s'efforce de leur faire percevoir le monde et l'Église du milieu du XXe siècle au moment où s'opèrent des bouleversements religieux, moraux, et culturels fondamentaux. Après une enfance marquée par la vie internationale d'une famille de diplomates espagnols, il devient dominicain et étudie la théologie auprès de grands maîtres comme Congar, de Lubac, Le Guillou ou Ratzinger. Dès lors, il s'implique dans les projets les plus variés et les plus audacieux de l'Église : le Renouveau charismatique, la fondation de fraternités monastiques en paroisse, la présence du chrétien en politique, une pastorale spécifique pour les homosexuels, la rédaction du Catéchisme de l'Église catholique, la réévaluation de la vocation du peuple juif... La découverte de cette vie vouée à Dieu permet de faire le point sur les défis du catholicisme. Les mémoires de Jean-Miguel Garrigues sonnent toujours juste, elles touchent à la fois l'intelligence et le cœur et témoignent d'un homme qui s'est efforcé de comprendre l'Église dans toute sa richesse et sa diversité qui font sa grandeur.",
+          "industryIdentifiers": [
+            {
+              "type": "ISBN_10",
+              "identifier": "2750903505"
+            },
+            {
+              "type": "ISBN_13",
+              "identifier": "9782750903503"
+            }
+          ],
+          "readingModes": {
+            "text": false,
+            "image": false
+          },
+          "pageCount": 369,
+          "printType": "BOOK",
+          "maturityRating": "NOT_MATURE",
+          "allowAnonLogging": false,
+          "contentVersion": "preview-1.0.0",
+          "panelizationSummary": {
+            "containsEpubBubbles": false,
+            "containsImageBubbles": false
+          },
+          "imageLinks": {
+            "smallThumbnail": "",
+            "thumbnail": ""
+          },
+          "language": "fr",
+          "previewLink": "http://books.google.fr/books?id=p9cWPQAACAAJ\u0026dq=isbn:9782750903503\u0026hl=\u0026cd=1\u0026source=gbs_api",
+          "infoLink": "http://books.google.fr/books?id=p9cWPQAACAAJ\u0026dq=isbn:9782750903503\u0026hl=\u0026source=gbs_api",
+          "canonicalVolumeLink": "https://books.google.com/books/about/Par_des_sentiers_resserr%C3%A9s.html?hl=\u0026id=p9cWPQAACAAJ"
+        },
+        "saleInfo": {
+          "country": "FR",
+          "saleability": "NOT_FOR_SALE",
+          "isEbook": false
+        },
+        "accessInfo": {
+          "country": "FR",
+          "viewability": "NO_PAGES",
+          "embeddable": false,
+          "publicDomain": false,
+          "textToSpeechPermission": "ALLOWED",
+          "epub": {
+            "isAvailable": false
+          },
+          "pdf": {
+            "isAvailable": false
+          },
+          "webReaderLink": "http://play.google.com/books/reader?id=p9cWPQAACAAJ\u0026hl=\u0026source=gbs_api",
+          "accessViewStatus": "NONE",
+          "quoteSharingAllowed": false
+        },
+        "searchInfo": {
+          "textSnippet": ""
+        }
+      }
+    ]
+  },
+  {
+    "kind": "books#volumes",
+    "totalItems": 1,
+    "items": [
+      {
+        "kind": "books#volume",
+        "id": "qsSLZwEACAAJ",
+        "etag": "J12vw3FeWtY",
+        "selfLink": "https://www.googleapis.com/books/v1/volumes/qsSLZwEACAAJ",
+        "volumeInfo": {
+          "title": "Job ou La torture par les amis",
+          "authors": [
+            "Fabrice Hadjadj"
+          ],
+          "publisher": "",
+          "publishedDate": "2011",
+          "description": "Si tout livre de la Bible s'ouvre comme une faille, il en est certains qui s'ouvrent comme des blessures à vif. Tel est le Livre de Job, dont le héros (ou anti-héros) se tient au centre de toutes les tensions. Païen résidant dans le pays d'Ouç, il croit pourtant au Dieu d'Israël ; aimé de l'Eternel, il n'en est pas moins tourmenté par Satan ; figure de l'espérance, il ne craint pas de déclarer : La pendaison me séduit. Comment comprendre cette foi à la lisière de l'athéisme ? Comment admettre que ces apparents blasphèmes soient plus près de la confiance que toute résignation ? Plus que l'essai, le drame semble ici nécessaire. C'est un Job moderne qui surgit sur l'espace nu du théâtre. Et le voici qui subit l'une après l'autre les attaques de ceux qui sont pires que ses ennemis : ses amis trop compatissants, lesquels s'efforcent d'étouffer sa plainte par des consolations sirupeuses ou des désolations figées. De l'euthanasie au cynisme, de la \"pensée positive\" au catéchisme automatisé, comment Job résistera-t-il aux assauts de tant de sollicitude ? Une tragi-comédie à la fois drôle et dure, avec un Dieu myope et un diable soucieux, où la vérité de l'homme ne peut plus se résumer à des leçons, mais se proclame dans un cri vertical - une blessure par où passe une étrange lumière.",
+          "industryIdentifiers": [
+            {
+              "type": "ISBN_10",
+              "identifier": "2706708204"
+            },
+            {
+              "type": "ISBN_13",
+              "identifier": "9782706708206"
+            }
+          ],
+          "readingModes": {
+            "text": false,
+            "image": false
+          },
+          "pageCount": 59,
+          "printType": "BOOK",
+          "maturityRating": "NOT_MATURE",
+          "allowAnonLogging": false,
+          "contentVersion": "preview-1.0.0",
+          "panelizationSummary": {
+            "containsEpubBubbles": false,
+            "containsImageBubbles": false
+          },
+          "imageLinks": {
+            "smallThumbnail": "",
+            "thumbnail": ""
+          },
+          "language": "fr",
+          "previewLink": "http://books.google.fr/books?id=qsSLZwEACAAJ\u0026dq=isbn:9782706708206\u0026hl=\u0026cd=1\u0026source=gbs_api",
+          "infoLink": "http://books.google.fr/books?id=qsSLZwEACAAJ\u0026dq=isbn:9782706708206\u0026hl=\u0026source=gbs_api",
+          "canonicalVolumeLink": "https://books.google.com/books/about/Job_ou_La_torture_par_les_amis.html?hl=\u0026id=qsSLZwEACAAJ"
+        },
+        "saleInfo": {
+          "country": "FR",
+          "saleability": "NOT_FOR_SALE",
+          "isEbook": false
+        },
+        "accessInfo": {
+          "country": "FR",
+          "viewability": "NO_PAGES",
+          "embeddable": false,
+          "publicDomain": false,
+          "textToSpeechPermission": "ALLOWED",
+          "epub": {
+            "isAvailable": false
+          },
+          "pdf": {
+            "isAvailable": false
+          },
+          "webReaderLink": "http://play.google.com/books/reader?id=qsSLZwEACAAJ\u0026hl=\u0026source=gbs_api",
+          "accessViewStatus": "NONE",
+          "quoteSharingAllowed": false
+        },
+        "searchInfo": {
+          "textSnippet": ""
+        }
+      }
+    ]
+  },
+  {
+    "kind": "books#volumes",
+    "totalItems": 1,
+    "items": [
+      {
+        "kind": "books#volume",
+        "id": "uEEQAQAAIAAJ",
+        "etag": "ToxpTmaCLno",
+        "selfLink": "https://www.googleapis.com/books/v1/volumes/uEEQAQAAIAAJ",
+        "volumeInfo": {
+          "title": "Saint Augustin",
+          "authors": [
+            "Ivan Gobry"
+          ],
+          "publisher": "Pygmalion Editions",
+          "publishedDate": "2004",
+          "description": "Biographie de saint Augustin (354-430) montrant l'autorité et la personnalité de ce docteur de l'Eglise latine.",
+          "industryIdentifiers": [
+            {
+              "type": "OTHER",
+              "identifier": "STANFORD:36105114692135"
+            }
+          ],
+          "readingModes": {
+            "text": false,
+            "image": false
+          },
+          "pageCount": 382,
+          "printType": "BOOK",
+          "maturityRating": "NOT_MATURE",
+          "allowAnonLogging": false,
+          "contentVersion": "3.4.2.0.preview.0",
+          "panelizationSummary": {
+            "containsEpubBubbles": false,
+            "containsImageBubbles": false
+          },
+          "imageLinks": {
+            "smallThumbnail": "http://books.google.com/books/content?id=uEEQAQAAIAAJ\u0026printsec=frontcover\u0026img=1\u0026zoom=5\u0026source=gbs_api",
+            "thumbnail": "http://books.google.com/books/content?id=uEEQAQAAIAAJ\u0026printsec=frontcover\u0026img=1\u0026zoom=1\u0026source=gbs_api"
+          },
+          "language": "fr",
+          "previewLink": "http://books.google.fr/books?id=uEEQAQAAIAAJ\u0026dq=isbn:9782857049241\u0026hl=\u0026cd=1\u0026source=gbs_api",
+          "infoLink": "http://books.google.fr/books?id=uEEQAQAAIAAJ\u0026dq=isbn:9782857049241\u0026hl=\u0026source=gbs_api",
+          "canonicalVolumeLink": "https://books.google.com/books/about/Saint_Augustin.html?hl=\u0026id=uEEQAQAAIAAJ"
+        },
+        "saleInfo": {
+          "country": "FR",
+          "saleability": "NOT_FOR_SALE",
+          "isEbook": false
+        },
+        "accessInfo": {
+          "country": "FR",
+          "viewability": "NO_PAGES",
+          "embeddable": false,
+          "publicDomain": false,
+          "textToSpeechPermission": "ALLOWED",
+          "epub": {
+            "isAvailable": false
+          },
+          "pdf": {
+            "isAvailable": false
+          },
+          "webReaderLink": "http://play.google.com/books/reader?id=uEEQAQAAIAAJ\u0026hl=\u0026source=gbs_api",
+          "accessViewStatus": "NONE",
+          "quoteSharingAllowed": false
+        },
+        "searchInfo": {
+          "textSnippet": "Biographie de saint Augustin (354-430) montrant l\u0026#39;autorité et la personnalité de ce docteur de l\u0026#39;Eglise latine."
+        }
+      }
+    ]
+  },
+  {
+    "kind": "books#volumes",
+    "totalItems": 1,
+    "items": [
+      {
+        "kind": "books#volume",
+        "id": "xRAoAAAAMAAJ",
+        "etag": "gIY7t37jiQc",
+        "selfLink": "https://www.googleapis.com/books/v1/volumes/xRAoAAAAMAAJ",
+        "volumeInfo": {
+          "title": "Trente mille jours",
+          "authors": [
+            "Maurice Genevoix"
+          ],
+          "publisher": "Seuil",
+          "publishedDate": "1980",
+          "description": "",
+          "industryIdentifiers": [
+            {
+              "type": "OTHER",
+              "identifier": "UOM:39015005874519"
+            }
+          ],
+          "readingModes": {
+            "text": false,
+            "image": false
+          },
+          "pageCount": 292,
+          "printType": "BOOK",
+          "maturityRating": "NOT_MATURE",
+          "allowAnonLogging": false,
+          "contentVersion": "0.7.1.0.preview.0",
+          "panelizationSummary": {
+            "containsEpubBubbles": false,
+            "containsImageBubbles": false
+          },
+          "imageLinks": {
+            "smallThumbnail": "http://books.google.com/books/content?id=xRAoAAAAMAAJ\u0026printsec=frontcover\u0026img=1\u0026zoom=5\u0026source=gbs_api",
+            "thumbnail": "http://books.google.com/books/content?id=xRAoAAAAMAAJ\u0026printsec=frontcover\u0026img=1\u0026zoom=1\u0026source=gbs_api"
+          },
+          "language": "fr",
+          "previewLink": "http://books.google.fr/books?id=xRAoAAAAMAAJ\u0026dq=isbn:9782020056038\u0026hl=\u0026cd=1\u0026source=gbs_api",
+          "infoLink": "http://books.google.fr/books?id=xRAoAAAAMAAJ\u0026dq=isbn:9782020056038\u0026hl=\u0026source=gbs_api",
+          "canonicalVolumeLink": "https://books.google.com/books/about/Trente_mille_jours.html?hl=\u0026id=xRAoAAAAMAAJ"
+        },
+        "saleInfo": {
+          "country": "FR",
+          "saleability": "NOT_FOR_SALE",
+          "isEbook": false
+        },
+        "accessInfo": {
+          "country": "FR",
+          "viewability": "NO_PAGES",
+          "embeddable": false,
+          "publicDomain": false,
+          "textToSpeechPermission": "ALLOWED",
+          "epub": {
+            "isAvailable": false
+          },
+          "pdf": {
+            "isAvailable": false
+          },
+          "webReaderLink": "http://play.google.com/books/reader?id=xRAoAAAAMAAJ\u0026hl=\u0026source=gbs_api",
+          "accessViewStatus": "NONE",
+          "quoteSharingAllowed": false
+        },
+        "searchInfo": {
+          "textSnippet": ""
+        }
+      }
+    ]
+  },
+  {
+    "kind": "books#volumes",
+    "totalItems": 1,
+    "items": [
+      {
+        "kind": "books#volume",
+        "id": "zG54MgAACAAJ",
+        "etag": "VIfzT4n0hno",
+        "selfLink": "https://www.googleapis.com/books/v1/volumes/zG54MgAACAAJ",
+        "volumeInfo": {
+          "title": "Histoire de l'Eglise",
+          "authors": [
+            "Guy-Marie Oury"
+          ],
+          "publisher": "Editions de Solesmes",
+          "publishedDate": "2001",
+          "description": "Deux mille ans d'histoire à la dimension du monde ne se laissent pas facilement assimiler, et pourtant il est nécessaire à tout chrétien d'avoir une connaissance suffisante des grands événements, des courants de pensée, des ruptures et des progrès qui font de l'Église ce qu'elle est au 21ème siècle. L'auteur, Dom Guy-Marie Oury, prématurément décédé en 2000, était un spécialiste de l'histoire de la spiritualité et de l'histoire monastique, universellement apprécié pour ses nombreux travaux, livres et articles, sachant allier l'agrément du style à la solidité de l'information. L'Histoire de l'Eglise qu'il a publiée en 1978 offre une synthèse rapide et dense, mettant en valeur l'extension missionnaire de l'Eglise à toutes les étapes de son histoire, les courants de vie spirituelle qui l'ont animée, les développements de l'explicitation progressive des dogmes, les difficultés doctrinales de chaque époque, l'apparition, au cours des siècles, des divers ordres religieux. Dans une perspective œcuménique, il s'est attaché à décrire la vie des Eglises séparées depuis leur naissance. Un livre qui apporte une réponse à bien des interrogations du présent, et dont la réédition était souhaitée par beaucoup.",
+          "industryIdentifiers": [
+            {
+              "type": "ISBN_10",
+              "identifier": "2852742187"
+            },
+            {
+              "type": "ISBN_13",
+              "identifier": "9782852742185"
+            }
+          ],
+          "readingModes": {
+            "text": false,
+            "image": false
+          },
+          "pageCount": 300,
+          "printType": "BOOK",
+          "maturityRating": "NOT_MATURE",
+          "allowAnonLogging": false,
+          "contentVersion": "preview-1.0.0",
+          "panelizationSummary": {
+            "containsEpubBubbles": false,
+            "containsImageBubbles": false
+          },
+          "imageLinks": {
+            "smallThumbnail": "",
+            "thumbnail": ""
+          },
+          "language": "fr",
+          "previewLink": "http://books.google.fr/books?id=zG54MgAACAAJ\u0026dq=isbn:9782852742185\u0026hl=\u0026cd=1\u0026source=gbs_api",
+          "infoLink": "http://books.google.fr/books?id=zG54MgAACAAJ\u0026dq=isbn:9782852742185\u0026hl=\u0026source=gbs_api",
+          "canonicalVolumeLink": "https://books.google.com/books/about/Histoire_de_l_Eglise.html?hl=\u0026id=zG54MgAACAAJ"
+        },
+        "saleInfo": {
+          "country": "FR",
+          "saleability": "NOT_FOR_SALE",
+          "isEbook": false
+        },
+        "accessInfo": {
+          "country": "FR",
+          "viewability": "NO_PAGES",
+          "embeddable": false,
+          "publicDomain": false,
+          "textToSpeechPermission": "ALLOWED",
+          "epub": {
+            "isAvailable": false
+          },
+          "pdf": {
+            "isAvailable": false
+          },
+          "webReaderLink": "http://play.google.com/books/reader?id=zG54MgAACAAJ\u0026hl=\u0026source=gbs_api",
+          "accessViewStatus": "NONE",
+          "quoteSharingAllowed": false
+        },
+        "searchInfo": {
+          "textSnippet": ""
+        }
+      }
+    ]
+  },
+  {
+    "kind": "books#volumes",
+    "totalItems": 1,
+    "items": [
+      {
+        "kind": "books#volume",
+        "id": "zidW0AEACAAJ",
+        "etag": "c2PF2Sdkejg",
+        "selfLink": "https://www.googleapis.com/books/v1/volumes/zidW0AEACAAJ",
+        "volumeInfo": {
+          "title": "Pêcheur de perles",
+          "authors": [
+            "Alain Finkielkraut"
+          ],
+          "publisher": "Editions Gallimard",
+          "publishedDate": "2024-01-04",
+          "description": "Walter Benjamin collectionnait amoureusement les citations. Dans la magnifique étude qu'elle lui a consacrée, Hannah Arendt compare ce penseur inclassable à un pêcheur de perles qui va au fond des mers « pour en arracher le riche et l'étrange ».Subjugué par cette image, je me suis plongé dans les carnets de citations que j'accumule pieusement depuis plusieurs décennies. J'ai tiré de ce vagabondage les phrases qui me font signe, qui m'ouvrent la voie, qui désentravent mon intelligence 3e la vie et du monde.Arendt, Kundera, Levinas, mais aussi Valéry, Canetti, Tocqueville, Nietzsche, Thomas Mann, Virginia Woolf ont été quelques-uns de mes guides. Dans leur sillage, j'ai essayé de penser à nouveaux frais l'expérience de l'amour, la mort, les avatars de la civilité, le destin de l'Europe, la fragilité de l'humour, le monde comme il va et surtout comme il ne va pas.[lelivre.ch]",
+          "industryIdentifiers": [
+            {
+              "type": "ISBN_10",
+              "identifier": "2073048986"
+            },
+            {
+              "type": "ISBN_13",
+              "identifier": "9782073048981"
+            }
+          ],
+          "readingModes": {
+            "text": false,
+            "image": false
+          },
+          "pageCount": 0,
+          "printType": "BOOK",
+          "maturityRating": "NOT_MATURE",
+          "allowAnonLogging": false,
+          "contentVersion": "preview-1.0.0",
+          "panelizationSummary": {
+            "containsEpubBubbles": false,
+            "containsImageBubbles": false
+          },
+          "imageLinks": {
+            "smallThumbnail": "http://books.google.com/books/content?id=zidW0AEACAAJ\u0026printsec=frontcover\u0026img=1\u0026zoom=5\u0026source=gbs_api",
+            "thumbnail": "http://books.google.com/books/content?id=zidW0AEACAAJ\u0026printsec=frontcover\u0026img=1\u0026zoom=1\u0026source=gbs_api"
+          },
+          "language": "fr",
+          "previewLink": "http://books.google.fr/books?id=zidW0AEACAAJ\u0026dq=isbn:9782073048981\u0026hl=\u0026cd=1\u0026source=gbs_api",
+          "infoLink": "http://books.google.fr/books?id=zidW0AEACAAJ\u0026dq=isbn:9782073048981\u0026hl=\u0026source=gbs_api",
+          "canonicalVolumeLink": "https://books.google.com/books/about/P%C3%AAcheur_de_perles.html?hl=\u0026id=zidW0AEACAAJ"
+        },
+        "saleInfo": {
+          "country": "FR",
+          "saleability": "NOT_FOR_SALE",
+          "isEbook": false
+        },
+        "accessInfo": {
+          "country": "FR",
+          "viewability": "NO_PAGES",
+          "embeddable": false,
+          "publicDomain": false,
+          "textToSpeechPermission": "ALLOWED",
+          "epub": {
+            "isAvailable": false
+          },
+          "pdf": {
+            "isAvailable": false
+          },
+          "webReaderLink": "http://play.google.com/books/reader?id=zidW0AEACAAJ\u0026hl=\u0026source=gbs_api",
+          "accessViewStatus": "NONE",
+          "quoteSharingAllowed": false
+        },
+        "searchInfo": {
+          "textSnippet": "Dans la magnifique étude qu\u0026#39;elle lui a consacrée, Hannah Arendt compare ce penseur inclassable à un pêcheur de perles qui va au fond des mers « pour en arracher le riche et l\u0026#39;étrange ».Subjugué par cette image, je me suis plongé ..."
+        }
+      }
+    ]
+  }
+]
