@@ -673,13 +673,18 @@ func (app *application) userLoginPost(w http.ResponseWriter, r *http.Request) {
 	form.Name = user2.Name
 	// Controle ou établissement de la conection avec l'API
 	data.Message = ""
-	nom, err := app.InfoUserApi(form.Name, form.Email, form.Password)
-	if err != nil {
-		app.sessionManager.Put(r.Context(), "flash", "La connection avec l'API a echoué.")
+	_, err = app.InfoUserApi(form.Name, form.Email, form.Password)
+	switch err {
+	case models.ErrErreurServer:
+		app.sessionManager.Put(r.Context(), "flash", "Erreur serveur, La connection avec l'API a echoué.")
 		http.Redirect(w, r, "/", http.StatusSeeOther)
-	}
-	// #### Fin de Etablir la connection avec l'API #### */
-	if nom == form.Name {
+	case models.ErrEmailNonTrouve:
+		app.sessionManager.Put(r.Context(), "flash", "Email non trouvé La connection avec l'API a echoué.")
+		http.Redirect(w, r, "/", http.StatusSeeOther)
+	case models.ErrMdPIncorrect:
+		app.sessionManager.Put(r.Context(), "flash", "Mot de passe incorrect La connection avec l'API a echoué.")
+		http.Redirect(w, r, "/", http.StatusSeeOther)
+	case models.UserOk:
 		// Appeler la fonction d'authentification à l'API
 		cmovie, errAUM := app.AuthenticateUserApi(form.Email, form.Password, user2.Id)
 		if errAUM != nil {
@@ -709,14 +714,15 @@ func (app *application) userLoginPost(w http.ResponseWriter, r *http.Request) {
 		app.sessionManager.Put(r.Context(), "tokenApi", tokenBytes)
 		app.sessionManager.Put(r.Context(), "flash", "L'utilisateur est bien authentifié et connecté avec l'API")
 		http.Redirect(w, r, "/", http.StatusSeeOther)
-	} else {
-		app.sessionManager.Put(r.Context(), "flash", "La connection avec l'API a echoué.")
+	case models.ErrNomIncorrect:
+		app.sessionManager.Put(r.Context(), "flash", "Nom incorrect La connection avec l'API a echoué.")
 		http.Redirect(w, r, "/", http.StatusSeeOther)
 	}
 }
 func (app *application) userLogoutGet(w http.ResponseWriter, r *http.Request) {
 	// Use the RenewToken() method on the current session to change the session
 	// ID again.
+	app.sessionManager.Remove(r.Context(), "tokenApi")
 	err := app.sessionManager.RenewToken(r.Context())
 	if err != nil {
 		app.serverError(w, r, err)

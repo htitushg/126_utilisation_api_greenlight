@@ -57,10 +57,17 @@ func (app application) InfoUserApi(name string, email string, password string) (
 	}
 	defer resp.Body.Close()
 
+	type jsonInfoUserApi struct {
+		User struct {
+			Name      string `json:"Name"`
+			Email     string `json:"Email"`
+			Password  string `json:"Password"`
+			Activated bool   `json:"Activated"`
+			CreatedAt string `json:"CreatedAt"`
+			Code      int    `json:"Code"`
+		} `json:"user"`
+	}
 	// Vérification du code de statut HTTP
-	/* if resp.StatusCode != http.StatusCreated {
-		return cmovie, err
-	} */
 
 	// Décodage du corps de la réponse JSON dans une nouvelle structure User
 	body, err := io.ReadAll(resp.Body)
@@ -74,9 +81,34 @@ func (app application) InfoUserApi(name string, email string, password string) (
 	// Rechercher le mot "error"
 	if strings.Contains(bodyString, name) {
 		// Le nom figure bien dans la réponse
-		return name, nil
+		var jsonInfoApi jsonInfoUserApi
+		err = json.Unmarshal(body, &jsonInfoApi)
+		if err != nil {
+			return nom, nil
+		}
+		// Traitement du code de retour
+		// Si 0 email non trouvé
+		// Si -1 erreur serveur
+		// Si 1 erreur Mot de passe incorrect
+		// Si 2 Ok utilisateur reconnu
+		// Si 4 le nom de l'utilisateur n'est pas correct
+		switch jsonInfoApi.User.Code {
+		case -1:
+			err = models.ErrErreurServer
+		case 0:
+			err = models.ErrEmailNonTrouve
+		case 1:
+			err = models.ErrMdPIncorrect
+		case 2:
+			err = models.UserOk
+		case 4:
+			err = models.ErrNomIncorrect
+		default:
+
+		}
+		return name, err
 	} else {
-		return nom, nil
+		return nom, err
 	}
 }
 
