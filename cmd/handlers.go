@@ -37,11 +37,6 @@ type movieForm struct {
 	Id                  int64 `form:"id"`
 	validator.Validator `form:"-"`
 }
-type tokenForm struct {
-	Token               string `form:"token"`
-	Name                string `form:"name"`
-	validator.Validator `form:"-"`
-}
 type snippetCreateForm struct {
 	Title               string `form:"title"`
 	Content             string `form:"content"`

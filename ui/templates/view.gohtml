@@ -2,18 +2,20 @@
 {{define "title"}}Snippet #{{.Snippet.ID}}{{end}}
 {{define "main"}}
     {{with .Snippet}}
-        <div class='snippet'>
-            <div class='metadata'>
+        <div class='container'>
+            <div class='ctn'>
                 <strong>{{.Title}}</strong>
                 <span>{{.ID}}</span>
             </div>
-            <pre><code>{{.Content}}</code></pre>
-            <div class='metadata'>
+            <pre class='ctn'><code>{{.Content}}</code></pre>
+            <div class='ctn'>
                 <!-- Use the new template function here -->
                 <time>Created: {{humanDate .Created}}</time>
                 <time>Expires: {{humanDate .Expires}}</time>
             </div>
-            <a href='/snippet/view'>Retour</a>
+        </div>
+        <div>
+        <a class = "bouton3" href='/snippet/view'>Retour</a>
         </div>
     {{end}}
 {{end}}
