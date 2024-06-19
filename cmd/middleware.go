@@ -66,19 +66,19 @@ func (app *application) requireCompteapi(next http.Handler) http.Handler {
 		user, ok := app.user.GetUser(data.Username)
 		if !ok {
 			//pas de connexion
-			data.Message = "Il n'a pas été possible de lire le jeton API dans la base"
+			data.Message = "Vous n'êtes pas connecté !"
 			app.render(w, r, http.StatusUnprocessableEntity, "home.gohtml", data)
 			return
 		}
 		token, err := app.movies.LireJetonDansBase(user.Id)
 		if err != nil {
 			data.Message = "Il n'a pas été possible de lire le jeton API dans la base"
-			app.render(w, r, http.StatusUnprocessableEntity, "home.gohtml", data)
+			app.render(w, r, http.StatusUnprocessableEntity, "saisietokenapi.gohtml", data)
 		}
 		// vérifier si le token est valide
 		if token.Expiry.Before(time.Now()) || (token.Token == "") {
 			data.Message = "Le jeton est expiré"
-			app.render(w, r, http.StatusUnprocessableEntity, "home.gohtml", data)
+			app.render(w, r, http.StatusUnprocessableEntity, "loginapi.gohtml", data)
 		}
 		next.ServeHTTP(w, r)
 	})

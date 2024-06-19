@@ -67,6 +67,7 @@ func (app *application) routes() http.Handler {
 	router.Handler(http.MethodGet, "/snippet/create", protected.ThenFunc(app.snippetCreate))
 	router.Handler(http.MethodPost, "/snippet/create", protected.ThenFunc(app.snippetCreatePost))
 	router.Handler(http.MethodGet, "/user/logout", protected.ThenFunc(app.userLogoutGet))
+
 	protectedmovie := alice.New(app.sessionManager.LoadAndSave, noSurf, app.authenticate, app.requireAuthentication, app.requireCompteapi)
 	router.Handler(http.MethodGet, "/movies/connectuserapi", protectedmovie.ThenFunc(app.ConnectUserApiGet))
 	router.Handler(http.MethodPost, "/movies/connectuserapi", protectedmovie.ThenFunc(app.ConnectUserApiPost))
