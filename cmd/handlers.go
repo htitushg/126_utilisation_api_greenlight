@@ -698,11 +698,18 @@ func (app *application) userLoginPost(w http.ResponseWriter, r *http.Request) {
 			http.Redirect(w, r, "/", http.StatusSeeOther)
 			return
 		}
-
+		fmt.Printf("token = %#v\n", token)
+		// Marshal the token into JSON bytes
+		tokenBytes, err := json.Marshal(token)
+		if err != nil {
+			fmt.Println("Error marshalling token to JSON:", err)
+			return
+		}
+		// Store the JSON bytes in the session
+		app.sessionManager.Put(r.Context(), "tokenApi", tokenBytes)
 		app.sessionManager.Put(r.Context(), "flash", "L'utilisateur est bien authentifié et connecté avec l'API")
 		http.Redirect(w, r, "/", http.StatusSeeOther)
 	} else {
-
 		app.sessionManager.Put(r.Context(), "flash", "La connection avec l'API a echoué.")
 		http.Redirect(w, r, "/", http.StatusSeeOther)
 	}
