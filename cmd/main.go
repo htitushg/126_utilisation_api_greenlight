@@ -34,15 +34,14 @@ type config struct {
 	}
 }
 type application struct {
-	config   config
-	logger   *slog.Logger
-	snippets *models.SnippetModel
-	user     *models.UsersModel
-	livres   *models.LivresModel
-	editeurs *models.EditeursModel
-	auteurs  *models.AuteursModel
-	movies   *models.MoviesModel
-	//users          *models.UserModelInterface
+	config         config
+	logger         *slog.Logger
+	snippets       *models.SnippetModel
+	user           *models.UsersModel
+	livres         *models.LivresModel
+	editeurs       *models.EditeursModel
+	auteurs        *models.AuteursModel
+	movies         *models.MoviesModel
 	templateCache  map[string]*template.Template
 	formDecoder    *form.Decoder
 	sessionManager *scs.SessionManager
