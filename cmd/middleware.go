@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"log/slog"
 	"net/http"
+	"time"
 
 	"github.com/justinas/nosurf"
 )
@@ -45,8 +46,9 @@ func (app *application) Log(next http.Handler) http.Handler {
 		/* name := r.Context().Value("UserName")
 		if name == nil { */
 		//session, _ := r.Cookie("session")
+		//fmt.Printf("Middleware Log app.user : %v\n", app.user)
 		status := app.isAuthenticated(r)
-		fmt.Printf("status= %v\n", status)
+		//fmt.Printf("Middleware Log status= %v\n", status)
 		if !status {
 			app.logger.Info("Visitor", slog.Int("req_id", LogId), "ip", ip, "proto", proto, "method", method, "uri", uri)
 		} else {
@@ -56,20 +58,32 @@ func (app *application) Log(next http.Handler) http.Handler {
 	})
 }
 
-/*
-	 func (app *application) logRequest(next http.Handler) http.Handler {
-		return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-			var (
-				ip     = r.RemoteAddr
-				proto  = r.Proto
-				method = r.Method
-				uri    = r.URL.RequestURI()
-			)
-			//app.logger.Info("received request", "ip", ip, "proto", proto, "method", method, "uri", uri)
-			next.ServeHTTP(w, r)
-		})
-	}
-*/
+func (app *application) requireCompteapi(next http.Handler) http.Handler {
+	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		// vérifier l'existence d'un compte vers l'API greenlight
+		data := app.newTemplateData(r)
+
+		user, ok := app.user.GetUser(data.Username)
+		if !ok {
+			//pas de connexion
+			data.Message = "Il n'a pas été possible de lire le jeton API dans la base"
+			app.render(w, r, http.StatusUnprocessableEntity, "home.gohtml", data)
+			return
+		}
+		token, err := app.movies.LireJetonDansBase(user.Id)
+		if err != nil {
+			data.Message = "Il n'a pas été possible de lire le jeton API dans la base"
+			app.render(w, r, http.StatusUnprocessableEntity, "home.gohtml", data)
+		}
+		// vérifier si le token est valide
+		if token.Expiry.Before(time.Now()) || (token.Token == "") {
+			data.Message = "Le jeton est expiré"
+			app.render(w, r, http.StatusUnprocessableEntity, "home.gohtml", data)
+		}
+		next.ServeHTTP(w, r)
+	})
+}
+
 func (app *application) recoverPanic(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		//app.logger.Info("Entrée dans recoverPanic")
@@ -122,26 +136,29 @@ func noSurf(next http.Handler) http.Handler {
 func (app *application) authenticate(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		//app.logger.Info("Entrée dans authenticate")
-		// Retrieve the authenticatedUserID value from the session using the
-		// GetInt() method. This will return the zero value for an int (0) if no
-		// "authenticatedUserID" value is in the session -- in which case we
-		// call the next handler in the chain as normal and return.
+
+		// Récupérons la valeur AuthenticatedUserID de la session à l'aide de la
+		// Méthode GetInt(). Cela renvoie la valeur int zéro si
+		// La valeur "authenticatedUserID" n'est pas dans la session -- auquel cas nous
+		// appellons le gestionnaire(handler) suivant dans la chaîne (next.ServeHTTP(w, r))
+		// comme d'habitude et "return".
 		id := app.sessionManager.GetInt(r.Context(), "authenticatedUserID")
 		if id == 0 {
 			next.ServeHTTP(w, r)
 			return
 		}
-		// Otherwise, we check to see if a user with that ID exists in our
-		// database.
+		// Sinon, nous vérifions si un utilisateur avec cet identifiant existe dans notre
+		// base de données.
 		exists, err := app.user.Exists(id)
 		if err != nil {
 			app.serverError(w, r, err)
 			return
 		}
-		// If a matching user is found, we know that the request is
-		// coming from an authenticated user who exists in our database. We
-		// create a new copy of the request (with an isAuthenticatedContextKey
-		// value of true in the request context) and assign it to r.
+
+		// Si un utilisateur correspondant est trouvé, nous savons que la demande
+		// provient d'un utilisateur authentifié qui existe dans notre base de données. Nous
+		// créons une nouvelle copie de la requête (avec un isAuthenticatedContextKey
+		// valeur à true dans le contexte de la requête) et nous l'assignons à r.
 		if exists {
 			ctx := context.WithValue(r.Context(), isAuthenticatedContextKey, true)
 			user, _ := app.user.SelectUserwithId(id)

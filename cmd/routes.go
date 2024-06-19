@@ -58,16 +58,6 @@ func (app *application) routes() http.Handler {
 	router.Handler(http.MethodGet, "/user/modif", dynamic.ThenFunc(app.userModifGet))
 	router.Handler(http.MethodPost, "/user/modif", dynamic.ThenFunc(app.userModifPost))
 
-	router.Handler(http.MethodGet, "/movies/connectuserapi", dynamic.ThenFunc(app.ConnectUserApiGet))
-	router.Handler(http.MethodPost, "/movies/connectuserapi", dynamic.ThenFunc(app.ConnectUserApiPost))
-	router.Handler(http.MethodPost, "/movies/activeuserapi", dynamic.ThenFunc(app.ActiveUserPost))
-	router.Handler(http.MethodGet, "/movies/authenticateuserapi", dynamic.ThenFunc(app.AuthenticateUserApiGet))
-	router.Handler(http.MethodPost, "/movies/authenticateuserapi", dynamic.ThenFunc(app.AuthenticateUserApiPost))
-
-	router.Handler(http.MethodGet, "/movie/view", dynamic.ThenFunc(app.MovieViewGet))
-	router.Handler(http.MethodPost, "/movie/view", dynamic.ThenFunc(app.MovieViewPost))
-	router.Handler(http.MethodGet, "/movies/view", dynamic.ThenFunc(app.MoviesViewGet))
-
 	protected := dynamic.Append(app.requireAuthentication)
 	router.Handler(http.MethodGet, "/home", protected.ThenFunc(app.HomeHandlerGet))
 	router.Handler(http.MethodGet, "/livre", protected.ThenFunc(app.LivreHandlerGet))
@@ -77,6 +67,15 @@ func (app *application) routes() http.Handler {
 	router.Handler(http.MethodGet, "/snippet/create", protected.ThenFunc(app.snippetCreate))
 	router.Handler(http.MethodPost, "/snippet/create", protected.ThenFunc(app.snippetCreatePost))
 	router.Handler(http.MethodGet, "/user/logout", protected.ThenFunc(app.userLogoutGet))
+	protectedmovie := alice.New(app.sessionManager.LoadAndSave, noSurf, app.authenticate, app.requireAuthentication, app.requireCompteapi)
+	router.Handler(http.MethodGet, "/movies/connectuserapi", protectedmovie.ThenFunc(app.ConnectUserApiGet))
+	router.Handler(http.MethodPost, "/movies/connectuserapi", protectedmovie.ThenFunc(app.ConnectUserApiPost))
+	router.Handler(http.MethodPost, "/movies/activeuserapi", protectedmovie.ThenFunc(app.ActiveUserPost))
+	router.Handler(http.MethodGet, "/movies/authenticateuserapi", protectedmovie.ThenFunc(app.AuthenticateUserApiGet))
+	router.Handler(http.MethodPost, "/movies/authenticateuserapi", protectedmovie.ThenFunc(app.AuthenticateUserApiPost))
+	router.Handler(http.MethodGet, "/movie/view", protectedmovie.ThenFunc(app.MovieViewGet))
+	router.Handler(http.MethodPost, "/movie/view", protectedmovie.ThenFunc(app.MovieViewPost))
+	router.Handler(http.MethodGet, "/movies/view", protectedmovie.ThenFunc(app.MoviesViewGet))
 
 	standard := alice.New(app.recoverPanic, app.Log, app.commonHeaders)
 	return standard.Then(router)

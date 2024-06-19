@@ -110,8 +110,7 @@ func (m *SnippetModel) EmailExist(email string) (user User, ok bool) {
 	return user, resultat
 }
 
-// GetUser
-// returns the models.User which models.User.Pseudo matches the `Pseudo` argument.
+// GetUser returns the models.User which models.User.Pseudo matches the `Pseudo` argument.
 func (m *UsersModel) GetUser(name string) (user User, ok bool) {
 	// DB simulation
 	// Il faut ici se connecter à la base et vérifier si l'utilisateur
@@ -119,6 +118,31 @@ func (m *UsersModel) GetUser(name string) (user User, ok bool) {
 	var err error
 
 	rows, err := m.DB.Query("SELECT id, name, email, hashed_password FROM users where name = ? ", name)
+	if err != nil {
+		panic(err)
+	}
+	ok = true
+	defer rows.Close()
+
+	i := 0
+	for rows.Next() {
+		err = rows.Scan(&user.Id, &user.Name, &user.Email, &user.HashedPwd)
+		if err != nil {
+			ok = false
+		}
+		i++
+	}
+	return user, ok
+}
+
+// GetUserWithEmail returns the models.User which models.User.Pseudo matches the `Pseudo` argument.
+func (m *UsersModel) GetUserWithEmail(email string) (user User, ok bool) {
+	// DB simulation
+	// Il faut ici se connecter à la base et vérifier si l'utilisateur
+	// est bien enregistré
+	var err error
+
+	rows, err := m.DB.Query("SELECT id, name, email, hashed_password FROM users where email = ? ", email)
 	if err != nil {
 		panic(err)
 	}

@@ -14,19 +14,75 @@ import (
 	"time"
 )
 
-// ##################################################################
+// #####################################################################
+func (app application) InfoUserApi(name string, email string, password string) (nom string, err error) {
+
+	data := map[string]string{
+		"name":     name,
+		"email":    email,
+		"password": password,
+	}
+
+	// Encodage de la structure User en JSON
+	jsonData, err := json.Marshal(data)
+	if err != nil {
+		return nom, err
+	}
+
+	// Création de l'URL de l'API
+	url := "https://localhost:4000/v1/user/info"
+
+	// Création de la requête HTTP POST
+	req, err := http.NewRequest("POST", url, bytes.NewReader(jsonData))
+	if err != nil {
+		return nom, err
+	}
+
+	// Définir le type de contenu du body
+	req.Header.Set("Content-Type", "application/json")
+	// Ajouté le 17/06/2024 9h36
+	tlsConfig := &tls.Config{InsecureSkipVerify: true}
+
+	transport := &http.Transport{TLSClientConfig: tlsConfig}
+	client := &http.Client{Transport: transport}
+
+	// Fin de Ajouté le 17/06/2024 9h36
+	// Création d'un client HTTP
+	//client := &http.Client{}
+
+	// Envoi de la requête et récupération de la réponse
+	resp, err := client.Do(req)
+	if err != nil {
+		return nom, err
+	}
+	defer resp.Body.Close()
+
+	// Vérification du code de statut HTTP
+	/* if resp.StatusCode != http.StatusCreated {
+		return cmovie, err
+	} */
+
+	// Décodage du corps de la réponse JSON dans une nouvelle structure User
+	body, err := io.ReadAll(resp.Body)
+	if err != nil {
+		fmt.Println("Error reading response body:", err)
+		return nom, err
+	}
+	// Convertir le corps en chaîne de caractères
+	bodyString := string(body)
+
+	// Rechercher le mot "error"
+	if strings.Contains(bodyString, name) {
+		// Le nom figure bien dans la réponse
+		return name, nil
+	} else {
+		return nom, nil
+	}
+}
+
+// #####################################################################
 // CreateUserApi : fonction de création d'un utlisateur de l'API Greenlight
 func (app application) CreateUserApi(name string, email string, password string, ID int) (err error) {
-	// Créer la structure User pour représenter les données à envoyer
-	type CretateUser struct {
-		User struct {
-			ID        int       `json:"id"`
-			CreatedAt time.Time `json:"created_at"`
-			Name      string    `json:"name"`
-			Email     string    `json:"email"`
-			Activated bool      `json:"activated"`
-		} `json:"user"`
-	}
 
 	data := map[string]string{
 		"name":     name,
@@ -67,7 +123,7 @@ func (app application) CreateUserApi(name string, email string, password string,
 		return err
 	}
 	defer resp.Body.Close()
-	var createUserApi CretateUser
+
 	// Vérification du code de statut HTTP
 	/* if resp.StatusCode != http.StatusCreated {
 		return cmovie, err
@@ -79,14 +135,46 @@ func (app application) CreateUserApi(name string, email string, password string,
 		fmt.Println("Error reading response body:", err)
 		return err
 	}
-	err = json.Unmarshal(body, &createUserApi)
-	if err != nil {
-		return err
-	}
-	// Renvoyer l'utilisateur créé
-	fmt.Println(createUserApi)
+	// Convertir le corps en chaîne de caractères
+	bodyString := string(body)
 
-	return nil
+	// Rechercher le mot "error"
+	if strings.Contains(bodyString, "error") {
+		// Gérer l'erreur ici (par exemple, retourner une erreur personnalisée)
+		fmt.Println("Error detected in response body")
+		type ApiError struct {
+			Error struct {
+				Email string `json:"email"`
+			} `json:"error"`
+		}
+		var apiError ApiError
+		err = json.Unmarshal(body, &apiError)
+		if err != nil {
+			return err
+		}
+		return fmt.Errorf(apiError.Error.Email)
+	} else {
+		// tester si le body contient le mot error
+		// Créer la structure User pour représenter les données à envoyer
+		type CretateUser struct {
+			User struct {
+				ID        int       `json:"id"`
+				CreatedAt time.Time `json:"created_at"`
+				Name      string    `json:"name"`
+				Email     string    `json:"email"`
+				Activated bool      `json:"activated"`
+			} `json:"user"`
+		}
+		var createUserApi CretateUser
+		err = json.Unmarshal(body, &createUserApi)
+		if err != nil {
+			return err
+		}
+		// Renvoyer l'utilisateur créé
+		fmt.Println(createUserApi)
+
+		return nil
+	}
 }
 
 // ##################################################################

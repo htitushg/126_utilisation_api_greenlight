@@ -3,7 +3,6 @@ package main
 import (
 	"125_isbn_new/internal/assert"
 	"125_isbn_new/internal/models"
-	"125_isbn_new/internal/utils"
 	"125_isbn_new/internal/validator"
 	"125_isbn_new/ui"
 	"errors"
@@ -38,11 +37,14 @@ type movieForm struct {
 	Id                  int64 `form:"id"`
 	validator.Validator `form:"-"`
 }
-type tokenForm struct {
-	Token               string `form:"token"`
-	Name                string `form:"name"`
-	validator.Validator `form:"-"`
-}
+
+/*
+	 type tokenForm struct {
+		Token               string `form:"token"`
+		Name                string `form:"name"`
+		validator.Validator `form:"-"`
+	}
+*/
 type snippetCreateForm struct {
 	Title               string `form:"title"`
 	Content             string `form:"content"`
@@ -442,8 +444,7 @@ func (app *application) LivresHandlerGet(w http.ResponseWriter, r *http.Request)
 	//app.logger.Info("Entrée dans LivresHandlerGet")
 	log.Println(models.GetCurrentFuncName())
 	data := app.newTemplateData(r)
-	var livres []models.Livre
-	livres = app.auteurs.GetLivresetEditeursAuteurs()
+	livres := app.auteurs.GetLivresetEditeursAuteurs()
 	data.Path = "/images/couverture/"
 	data.Livres = livres
 	data.Message = "Liste des Livres"
@@ -625,6 +626,7 @@ func (app *application) userLogin(w http.ResponseWriter, r *http.Request) {
 func (app *application) userLoginPost(w http.ResponseWriter, r *http.Request) {
 	// Decode the form data into the userLoginForm struct.// Decode the form data into the userLoginForm struct.
 	var form models.UserLoginForm
+	data := app.newTemplateData(r)
 	err := app.decodePostForm(r, &form)
 	if err != nil {
 		app.clientError(w, http.StatusBadRequest)
@@ -637,19 +639,18 @@ func (app *application) userLoginPost(w http.ResponseWriter, r *http.Request) {
 	form.CheckField(validator.Matches(form.Email, validator.EmailRX), "email", "This field must be a valid email address")
 	form.CheckField(validator.NotBlank(form.Password), "password", "This field cannot be blank")
 	if !form.Valid() {
-		data := app.newTemplateData(r)
 		data.Form = form
 		app.render(w, r, http.StatusUnprocessableEntity, "login.gohtml", data)
 		return
 	}
 	// Check whether the credentials are valid. If they're not, add a generic
 	// non-field error message and re-display the login page.
+	//var ok bool
 
 	user, err := app.user.Authenticate(form.Email, form.Password)
 	if err != nil {
 		if errors.Is(err, models.ErrInvalidCredentials) {
 			form.AddNonFieldError("Email or password is incorrect")
-			data := app.newTemplateData(r)
 			data.Form = form
 			app.render(w, r, http.StatusUnprocessableEntity, "login.gohtml", data)
 		} else {
@@ -661,7 +662,6 @@ func (app *application) userLoginPost(w http.ResponseWriter, r *http.Request) {
 	// ID. It's good practice to generate a new session ID when the
 	// authentication state or privilege levels changes for the user (e.g. login
 	// and logout operations).
-	// aller chercher le name avec l'Id
 	err = app.sessionManager.RenewToken(r.Context())
 	if err != nil {
 		app.serverError(w, r, err)
@@ -670,17 +670,45 @@ func (app *application) userLoginPost(w http.ResponseWriter, r *http.Request) {
 	// Add the ID of the current user to the session, so that they are now
 	// 'logged in'.
 	app.sessionManager.Put(r.Context(), "authenticatedUserID", user.User_id)
-
-	/* //app.logger.Info("Entrée dans MovieHandlerGet")
-	data := app.newTemplateData(r)
+	user2, _ := app.user.GetUserWithEmail(form.Email)
+	//str_id := strconv.FormatInt(int64(user2.Id), 10)
+	//form.ID = str_id
+	form.Name = user2.Name
+	// Controle ou établissement de la conection avec l'API
 	data.Message = ""
-	log.Println(models.GetCurrentFuncName())
-	// Pass the data to the render() helper as normal.
-	app.render(w, r, http.StatusOK, "movie.gohtml", data)
+	nom, err := app.InfoUserApi(form.Name, form.Email, form.Password)
+	if err != nil {
+		app.sessionManager.Put(r.Context(), "flash", "La connection avec l'API a echoué.")
+		http.Redirect(w, r, "/", http.StatusSeeOther)
+	}
 	// #### Fin de Etablir la connection avec l'API #### */
+	if nom == form.Name {
+		// Appeler la fonction d'authentification à l'API
+		cmovie, errAUM := app.AuthenticateUserApi(form.Email, form.Password, user2.Id)
+		if errAUM != nil {
+			fmt.Printf("erreur = %v\n", errAUM)
+		}
+		data.Message = "Vous êtes bien authentifié à l'API greenlight!"
+		// Ecrire le token dans la table tokens
+		var token models.AuthenticateUserApi
+		token.Expiry = cmovie.Expiry
+		token.ID = cmovie.User_id
+		token.Token = cmovie.Token
+		err = app.movies.EcrireJetonDansBase(token)
+		if err != nil {
+			errorMessage := fmt.Sprint(err)
+			app.sessionManager.Put(r.Context(), "flash", "La connection avec l'API a echoué, Une erreur s'est produite : "+errorMessage)
+			http.Redirect(w, r, "/", http.StatusSeeOther)
+			return
+		}
 
-	// Redirect the user to the create snippet page.
-	http.Redirect(w, r, "/", http.StatusSeeOther)
+		app.sessionManager.Put(r.Context(), "flash", "L'utilisateur est bien authentifié et connecté avec l'API")
+		http.Redirect(w, r, "/", http.StatusSeeOther)
+	} else {
+
+		app.sessionManager.Put(r.Context(), "flash", "La connection avec l'API a echoué.")
+		http.Redirect(w, r, "/", http.StatusSeeOther)
+	}
 }
 func (app *application) userLogoutGet(w http.ResponseWriter, r *http.Request) {
 	// Use the RenewToken() method on the current session to change the session
@@ -706,8 +734,7 @@ func (app *application) ListAuteursHandlerGet(w http.ResponseWriter, r *http.Req
 	app.logger.Info("Entrée dans ListAuteursHandlerGet")
 	log.Println(models.GetCurrentFuncName())
 	data := app.newTemplateData(r)
-	var auteurs []models.Auteur
-	auteurs = app.auteurs.GetAuteurs()
+	auteurs := app.auteurs.GetAuteurs()
 	data.Path = "/images/couverture/"
 	data.Auteurs = auteurs
 	data.Message = "Liste des Auteurs"
@@ -718,8 +745,7 @@ func (app *application) ListEditeursHandlerGet(w http.ResponseWriter, r *http.Re
 	app.logger.Info("Entrée dans ListEditeursHandlerGet")
 	log.Println(models.GetCurrentFuncName())
 	data := app.newTemplateData(r)
-	var editeurs []models.Editeur
-	editeurs = app.editeurs.GetEditeurs()
+	editeurs := app.editeurs.GetEditeurs()
 	data.Path = "/images/couverture/"
 	data.Editeurs = editeurs
 	data.Message = "Liste des Editeurs"
@@ -794,63 +820,33 @@ func (app *application) userModifPost(w http.ResponseWriter, r *http.Request) {
 	// And redirect the user to the login page.
 	http.Redirect(w, r, "/user/login", http.StatusSeeOther)
 }
-func (app *application) indexHandlerNoMeth(w http.ResponseWriter, r *http.Request) {
+
+/* func (app *application) indexHandlerNoMeth(w http.ResponseWriter, r *http.Request) {
 	log.Println(utils.GetCurrentFuncName())
 	log.Println("HTTP Error", http.StatusMethodNotAllowed)
 	w.WriteHeader(http.StatusMethodNotAllowed)
-	/*
-		utils.Logger.Warn("indexHandlerNoMeth", slog.Int("req_id", middlewares.LogId), slog.String("req_url", r.URL.String()), slog.Int("http_status", http.StatusMethodNotAllowed))
-		data := struct {
-			Connect  bool
-			Username string
-			Date     string
-			Message  string
-		}{
-			Date:    time.Now().Format("02/01/2006"),
-			Message: fmt.Sprintf("HTTP Error %v", http.StatusMethodNotAllowed),
-		}
-		data.Username, data.Connect = utils.IsConnected(r)
-		err := models.Tmpl["index"].ExecuteTemplate(w, "base", &data)
-		if err != nil {
-			log.Fatalln(err)
-		}
-	*/
 
 	app.sessionManager.Put(r.Context(), "flash", "Methode non authorisée! veuillez vous connecter")
 
 	// And redirect the user to the login page.
 	http.Redirect(w, r, "/user/login", http.StatusSeeOther)
-}
+} */
 
-func (app *application) indexHandlerOther(w http.ResponseWriter, r *http.Request) {
+/* func (app *application) indexHandlerOther(w http.ResponseWriter, r *http.Request) {
 	log.Println(utils.GetCurrentFuncName())
 	log.Println("HTTP Error", http.StatusNotFound)
 	w.WriteHeader(http.StatusNotFound)
-	/*
-		utils.Logger.Warn("indexHandlerOther", slog.Int("req_id", middlewares.LogId), slog.String("req_url", r.URL.String()), slog.Int("http_status", http.StatusNotFound))
-		data := struct {
-			Connect  bool
-			Username string
-			Date     string
-			Message  string
-		}{
-			Date:    time.Now().Format("02/01/2006"),
-			Message: fmt.Sprintf("This adress is not valid : Error %v", http.StatusNotFound),
-		}
-		data.Username, data.Connect = utils.IsConnected(r)
-		err := models.Tmpl["error404"].ExecuteTemplate(w, "base", &data)
-		if err != nil {
-			log.Fatalln(err)
-		}
-	*/
+
 	data := app.newTemplateData(r)
 	data.Message = "Adresse invalide! veuillez vous connecter"
 	//app.sessionManager.Put(r.Context(), "flash", "Adresse invalide! veuillez vous connecter")
 	app.render(w, r, http.StatusSeeOther, "error404.gohtml", data)
-}
+} */
 
 // ###########################################################################################
 func (app *application) ConnectUserApiGet(w http.ResponseWriter, r *http.Request) {
+	// Vérifier si l'utilisateur a un Token valide
+
 	var tokenForm models.UserLoginForm
 
 	data := app.newTemplateData(r)
@@ -883,18 +879,30 @@ func (app *application) ConnectUserApiPost(w http.ResponseWriter, r *http.Reques
 	data := app.newTemplateData(r)
 	user, ok := app.user.GetUser(data.Username)
 	if !ok {
-		data.Message = "Vous devez être connecté !"
+		app.sessionManager.Put(r.Context(), "flash", "Vous devez être connecté !")
+		// Redirect the user to the application home page.
+		http.Redirect(w, r, "/", http.StatusSeeOther)
+		return
 	}
 	// appel de l'API pour créer le compte s'il n'existe pas
-	form.ID = strconv.FormatInt(int64(user.Id), 10)
-	data.Form = form
 	errCUAPI := app.CreateUserApi(form.Name, form.Email, form.Password, user.Id)
 	if errCUAPI != nil {
 		// une erreur s'est produite
-		// Il faut traiter le type d'erreur (utilisateur existant...)
+		// Il faut traiter le type d'erreur (utilisateur existant)
 		fmt.Printf("Erreur : %v\n", errCUAPI)
-	}
+		errorMessage := fmt.Sprint(errCUAPI)
+		if errorMessage == "a user with this email address already exists" {
+			app.sessionManager.Put(r.Context(), "flash", "Il existe déjà un utilisateur avec cet email : "+user.Email)
+			//data.Message = "Il existe déjà un utilisateur avec cet email : " + user.Email
+			http.Redirect(w, r, "/", http.StatusSeeOther)
+			return
+		}
+		app.sessionManager.Put(r.Context(), "flash", "Une erreur s'est produite : "+errorMessage)
+		http.Redirect(w, r, "/", http.StatusSeeOther)
 
+	}
+	form.ID = strconv.FormatInt(int64(user.Id), 10)
+	data.Form = form
 	log.Println(models.GetCurrentFuncName())
 	app.render(w, r, http.StatusOK, "saisietokenapi.gohtml", data)
 }
@@ -1012,6 +1020,7 @@ func (app *application) AuthenticateUserApiPost(w http.ResponseWriter, r *http.R
 	if err != nil {
 		data.Message = "Impossible d'écrire le jeton dans la base !"
 		app.render(w, r, http.StatusOK, "home.gohtml", data)
+		return
 	}
 
 	app.render(w, r, http.StatusOK, "home.gohtml", data)
@@ -1054,16 +1063,22 @@ func (app *application) MovieViewPost(w http.ResponseWriter, r *http.Request) {
 	var movie models.Movie
 	// Il faut vérifier qu'il existe un token valide
 	user, ok := app.user.GetUser(data.Username)
+	if !ok {
+		data.Message = "Vous n'êtes pas connecté !"
+		app.render(w, r, http.StatusUnprocessableEntity, "home.gohtml", data)
+	}
 	var token models.AuthenticateUserApi
 	token, err = app.movies.LireJetonDansBase(user.Id)
 	if err != nil {
 		data.Message = "Il n'a pas été possible de lire le jeton API dans la base"
 		app.render(w, r, http.StatusUnprocessableEntity, "movie.gohtml", data)
+		return
 	}
 	// vérifier si le token est valide
 	if token.Expiry.Before(time.Now()) || (token.Token == "") {
 		data.Message = "Le jeton est expiré"
 		app.render(w, r, http.StatusUnprocessableEntity, "movie.gohtml", data)
+		return
 	}
 	// Vérifier si le livre existe dans la base
 	//movie = app.movies.MovieExist(form.Id)
@@ -1075,6 +1090,7 @@ func (app *application) MovieViewPost(w http.ResponseWriter, r *http.Request) {
 		data.Form = form
 		data.Flash = "Il n'a pas été possible d'obtenir le film !"
 		app.render(w, r, http.StatusUnprocessableEntity, "movie.gohtml", data)
+		return
 	}
 	data.Form = movie
 	app.render(w, r, http.StatusOK, "affichemovie.gohtml", data)
@@ -1089,17 +1105,24 @@ func (app *application) MoviesViewGet(w http.ResponseWriter, r *http.Request) {
 	var movie movieForm
 	// Il faut vérifier qu'il existe un token valide
 	user, ok := app.user.GetUser(data.Username)
+	if !ok {
+		data.Message = "Vous n'êtes pas connecté !"
+		app.render(w, r, http.StatusUnprocessableEntity, "home.gohtml", data)
+		return
+	}
 	var token models.AuthenticateUserApi
 	var err error
 	token, err = app.movies.LireJetonDansBase(user.Id)
 	if err != nil {
 		data.Message = "Il n'a pas été possible de lire le jeton API dans la base"
 		app.render(w, r, http.StatusUnprocessableEntity, "home.gohtml", data)
+		return
 	}
 	// vérifier si le token est valide
 	if token.Expiry.Before(time.Now()) || (token.Token == "") {
 		data.Message = "Le jeton est expiré"
 		app.render(w, r, http.StatusUnprocessableEntity, "home.gohtml", data)
+		return
 	}
 	//if movie.ID == 0 {
 	// Acquisition du livre dans l'API
@@ -1111,6 +1134,7 @@ func (app *application) MoviesViewGet(w http.ResponseWriter, r *http.Request) {
 		app.render(w, r, http.StatusUnprocessableEntity, "home.gohtml", data)
 		data.Message = "Le jeton est expiré"
 		app.render(w, r, http.StatusUnprocessableEntity, "home.gohtml", data)
+		return
 	}
 
 	data.Form = movies

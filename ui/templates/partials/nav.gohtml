@@ -10,19 +10,16 @@
                             <li><a href="/afficheediteurs">Liste des editeurs</a></li>
                             {{end}}
                             <li><a href="/affichelivres" >Liste des Livres</a></li>
-
                         </ul>
                     </li>
                     <li ><a href="#">Films</a>
                         <ul class="sous-menu" >
+                            {{if .IsAuthenticated}}
                             <li><a href='/movies/connectuserapi'>S'inscrire sur l'API films</a></li>
                             <li><a href='/movies/authenticateuserapi'>Se connecter à l'API films</a></li>
-                            {{if .IsAuthenticated}}
-                            <li><a href='/movie/view'>Affiche un film</a></li>
-                            {{end}}
                             <li><a href='/movie/view'>Affiche un film</a></li>
                             <li><a href='/movies/view' >Liste des Films</a></li>
-
+                            {{end}}
                         </ul>
                     </li>
                     <li ><a href="#">Messages</a>
