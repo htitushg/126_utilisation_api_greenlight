@@ -10,8 +10,6 @@ import (
 	"time"
 
 	"github.com/go-sql-driver/mysql"
-
-	_ "github.com/go-sql-driver/mysql"
 )
 
 // Fonction qui vérifie que ni l'utilisateur, ni le courriel n'exitent dans la base
@@ -569,8 +567,7 @@ func (m *LivresModel) CreateLivre(new_livre Livre) error {
 	DatedeCreation := []byte(time.Now().Format("2006-01-02"))
 	// Vérifier si les champs uniques le sont bien
 	// avant de lancer l'insertion du livre
-	query := `SELECT livre_id, idg, isbn FROM livres WHERE isbn=? || idg = ? || livre_id = ?`
-	formatedQuery := fmt.Sprintf(query)
+	formatedQuery := `SELECT livre_id, idg, isbn FROM livres WHERE isbn=? || idg = ? || livre_id = ?`
 	stmt, err := m.DB.Prepare(formatedQuery)
 	if err != nil {
 		panic(err)
@@ -602,8 +599,7 @@ func (m *LivresModel) CreateLivre(new_livre Livre) error {
 		editeur_id, language, publish_date,
 		nb_pages, created_at, resume, description )  
 		VALUES 	(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`
-		formatedQuery := fmt.Sprintf(query)
-		insertResult, err := m.DB.ExecContext(context.Background(), formatedQuery,
+		insertResult, err := m.DB.ExecContext(context.Background(), query,
 			new_livre.Livre_Id, new_livre.Idg, new_livre.Titre, new_livre.Isbn, new_livre.Thumbnail,
 			new_livre.Editeur.Editeur_Id, new_livre.Language, new_livre.Publish_date,
 			new_livre.Nb_pages, DatedeCreation, new_livre.Resume, new_livre.Description)
@@ -648,6 +644,9 @@ func (m *LivresModel) GetLivre(isbn string) (livre Livre) {
 	i := 0
 	for rows.Next() {
 		err = rows.Scan(&livre.Livre_Id, &livre.Idg, &livre.Titre, &livre.Isbn, &livre.Thumbnail, &livre.Editeur.Editeur_Id, &livre.Language, &livre.Publish_date, &livre.Nb_pages, &livre.CreatedAt, &livre.Resume, &livre.Description)
+		if err != nil {
+			fmt.Println(err)
+		}
 		i++
 	}
 
@@ -684,6 +683,9 @@ func (m *AuteursModel) GetLivreetEditeurAuteurs(isbn string) (livre Livre) {
 	i := 0
 	for rows.Next() {
 		err = rows.Scan(&livre.Livre_Id, &livre.Idg, &livre.Titre, &livre.Isbn, &livre.Thumbnail, &livre.Editeur.Editeur_Id, &livre.Language, &livre.Publish_date, &livre.Nb_pages, &livre.CreatedAt, &livre.Resume, &livre.Description)
+		if err != nil {
+			fmt.Println(err)
+		}
 		i++
 	}
 	log.Printf("desLivresA.Livre_Id : %v, desLivresA.Titre: %v, desLivresA.Editeur_Id: %v, desLivresA.Isbn: %v\n",
@@ -843,6 +845,9 @@ func (m *AuteursModel) AuteurExist(nomauteur string) (auteur Auteur, ok bool) {
 	count := 0
 	for rows.Next() {
 		err = rows.Scan(&auteur.Auteur_Id, &auteur.Nom, &auteur.CreatedAt, &auteur.Description)
+		if err != nil {
+			fmt.Println(err)
+		}
 		count++
 	}
 

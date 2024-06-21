@@ -692,7 +692,7 @@ func (app *application) userLoginPost(w http.ResponseWriter, r *http.Request) {
 	case models.ErrMdPIncorrect:
 		app.sessionManager.Put(r.Context(), "flash", "Mot de passe incorrect La connection avec l'API a echoué.")
 		http.Redirect(w, r, "/", http.StatusSeeOther)
-	case models.UserOk:
+	case models.ErrUserOk:
 		// Appeler la fonction d'authentification à l'API
 		cmovie, errAUM := app.AuthenticateUserApi(form.Email, form.Password, user2.Id)
 		if errAUM != nil {

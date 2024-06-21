@@ -100,7 +100,7 @@ func (app application) InfoUserApi(name string, email string, password string) (
 		case 1:
 			err = models.ErrMdPIncorrect
 		case 2:
-			err = models.UserOk
+			err = models.ErrUserOk
 		case 4:
 			err = models.ErrNomIncorrect
 		default:

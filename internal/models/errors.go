@@ -21,6 +21,6 @@ var (
 	ErrErreurServer    = errors.New("erreur du serveur api")  //-1
 	ErrEmailNonTrouve  = errors.New("email non trouvé")       //0
 	ErrMdPIncorrect    = errors.New("mot de passe incorrect") //1
-	UserOk             = errors.New("utilisateur reconnu")    //2
+	ErrUserOk          = errors.New("utilisateur reconnu")    //2 A modifier
 	ErrNomIncorrect    = errors.New("nom incorrect")          //4
 )
