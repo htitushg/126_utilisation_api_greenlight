@@ -95,7 +95,7 @@ func (u *User) IsAnonymous() bool {
 }
 
 // Nous utiliserons la méthode Insert pour ajouter un nouvel
-// enregistrement à la table « utilisateurs ».
+// enregistrement à la table «utilisateurs».
 func (m *UsersModel) Insert(name, email, password string) error {
 	// Create a bcrypt hash of the plain-text password.
 	hashedPassword, err := bcrypt.GenerateFromPassword([]byte(password), 12)

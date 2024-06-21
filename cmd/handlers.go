@@ -5,9 +5,11 @@ import (
 	"125_isbn_new/internal/models"
 	"125_isbn_new/internal/validator"
 	"125_isbn_new/ui"
+	"crypto/rand"
 	"errors"
 
 	//"125_isbn_new/ui"
+	"encoding/base64"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -68,16 +70,26 @@ type isbnForm struct {
 	validator.Validator `form:"-"`
 }
 
-/* // Create a new userLoginForm struct.
-type userLoginForm struct {
-	ID                  string `form:"id"`
-	Name                string `form:"name"`
-	Email               string `form:"email"`
-	Password            string `form:"password"`
-	Token               string `form:"token"`
-	validator.Validator `form:"-"`
-} */
+/*
+// Create a new userLoginForm struct.
 
+	type userLoginForm struct {
+		ID                  string `form:"id"`
+		Name                string `form:"name"`
+		Email               string `form:"email"`
+		Password            string `form:"password"`
+		Token               string `form:"token"`
+		validator.Validator `form:"-"`
+	}
+*/
+func generateToken() (string, error) {
+	b := make([]byte, 32)
+	_, err := rand.Read(b)
+	if err != nil {
+		return "", err
+	}
+	return base64.RawURLEncoding.EncodeToString(b), nil
+}
 func registerImage(url string, nomImage string) bool {
 
 	// don't worry about errors
@@ -659,6 +671,7 @@ func (app *application) userLoginPost(w http.ResponseWriter, r *http.Request) {
 		app.serverError(w, r, err)
 		return
 	}
+
 	// Add the ID of the current user to the session, so that they are now
 	// 'logged in'.
 	app.sessionManager.Put(r.Context(), "authenticatedUserID", user.User_id)
@@ -707,7 +720,47 @@ func (app *application) userLoginPost(w http.ResponseWriter, r *http.Request) {
 		}
 		// Store the JSON bytes in the session
 		app.sessionManager.Put(r.Context(), "tokenApi", tokenBytes)
+		var rtoken models.AuthenticateUserApi
+		rtoken.Expiry = cmovie.RExpiry
+		rtoken.ID = cmovie.User_id
+		rtoken.Token = cmovie.RToken
+		refrehtokenBytes, err := json.Marshal(rtoken)
+		if err != nil {
+			fmt.Println("Error marshalling refreshtoken to JSON:", err)
+			return
+		}
+		app.sessionManager.Put(r.Context(), "refreshToken", refrehtokenBytes)
 		app.sessionManager.Put(r.Context(), "flash", "L'utilisateur est bien authentifié et connecté avec l'API")
+
+		//#############################
+		// Store the refresh token with base64 encoding
+		//refreshTokenBytes := []byte(rtoken.Token)
+		//encodedRefreshToken := base64.StdEncoding.EncodeToString(refreshTokenBytes)
+		//err = app.sessionManager.Put(r.Context(), "refreshToken", encodedRefreshToken)
+		//if err != nil {
+		//	fmt.Println("Error storing refresh token in session:", err)
+		//	return
+		//}
+
+		// Retrieve the refresh token data from the session
+		refreshTokenData := app.sessionManager.GetBytes(r.Context(), "refreshToken")
+		if len(refreshTokenData) == 0 {
+			fmt.Println("Refresh token not found in session")
+			return
+		}
+
+		// Unmarshal the decoded bytes into the rtoken2 variable (assuming it's a struct)
+		var rtoken2 models.AuthenticateUserApi // Replace with your refresh token struct type
+		err = json.Unmarshal(refreshTokenData, &rtoken2)
+		if err != nil {
+			fmt.Println("Error unmarshalling refresh token:", err)
+			return
+		}
+
+		// Now you can use the unmarshalled refresh token data (rtoken)
+		fmt.Println("Refresh Token:", rtoken2)
+		//#############################
+
 		http.Redirect(w, r, "/", http.StatusSeeOther)
 	case models.ErrNomIncorrect:
 		app.sessionManager.Put(r.Context(), "flash", "Nom incorrect La connection avec l'API a echoué.")

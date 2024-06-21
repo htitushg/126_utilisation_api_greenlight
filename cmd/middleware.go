@@ -41,17 +41,15 @@ func (app *application) Log(next http.Handler) http.Handler {
 			uri    = r.URL.RequestURI()
 		)
 		LogId++
-		//log.Println("middlewares.Log()")
-		//fmt.Printf("user= %v\n", user)
-		/* name := r.Context().Value("UserName")
-		if name == nil { */
-		//session, _ := r.Cookie("session")
-		//fmt.Printf("Middleware Log app.user : %v\n", app.user)
-		status := app.isAuthenticated(r)
+		//cookie, err := r.Cookie("session")
+		//fmt.Printf("cookie = %v\n", cookie)
+		//status := app.isAuthenticated(r)
 		//fmt.Printf("Middleware Log status= %v\n", status)
-		if !status {
+		if !app.isAuthenticated(r) { //err != nil { //!status {
 			app.logger.Info("Visitor", slog.Int("req_id", LogId), "ip", ip, "proto", proto, "method", method, "uri", uri)
 		} else {
+			//data := app.newTemplateData(r) //slog.Any("nom", user.Name),
+			//user, _ := app.user.GetUser(data.Username)
 			app.logger.Info("User", slog.Int("req_id", LogId), slog.Any("user", app.sessionManager.Cookie.Name), "ip", ip, "proto", proto, "method", method, "uri", uri)
 		}
 

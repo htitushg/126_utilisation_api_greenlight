@@ -331,11 +331,17 @@ func (app application) AuthenticateUserApi(email string, password string, ID int
 	defer resp.Body.Close()
 	// Créer une nouvelle structure CreateUser pour récupérer la réponse de l'API
 	type AuthenticateApi struct {
+		AExpiry         time.Time `json:"aExpiry"`
+		ActivationToken string    `json:"activationToken"`
+		RExpiry         time.Time `json:"rExpiry"`
+		RefreshToken    string    `json:"refreshToken"`
+	}
+	/* type AuthenticateApi struct {
 		Authentication_Token struct {
 			Token  string    `json:"token"`
 			Expiry time.Time `json:"expiry"`
 		} `json:"authentication_token"`
-	}
+	} */
 	var authenticateTokenApi AuthenticateApi
 	// Lecture du contenu de resp.Body dans un tableau d'octets
 	bodyBytes, err := io.ReadAll(resp.Body)
@@ -354,8 +360,10 @@ func (app application) AuthenticateUserApi(email string, password string, ID int
 		// Mettre mamovie, dans les champs movie
 		cmovie.User_id = ID
 		cmovie.Email = email
-		cmovie.Token = authenticateTokenApi.Authentication_Token.Token
-		cmovie.Expiry = authenticateTokenApi.Authentication_Token.Expiry
+		cmovie.Token = authenticateTokenApi.ActivationToken
+		cmovie.Expiry = authenticateTokenApi.AExpiry
+		cmovie.RToken = authenticateTokenApi.RefreshToken
+		cmovie.RExpiry = authenticateTokenApi.RExpiry
 		return cmovie, nil
 	} else {
 		return cmovie, fmt.Errorf("status code: %d", resp.StatusCode)

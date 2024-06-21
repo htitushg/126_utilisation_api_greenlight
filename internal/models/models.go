@@ -10,7 +10,11 @@ import (
 )
 
 type Middleware func(handler http.HandlerFunc) http.HandlerFunc
-
+type TokenStruct struct {
+	Token  string    `json:"token"`
+	Expiry time.Time `json:"expiry"`
+	Status int       `json:"status"`
+}
 type Session struct {
 	UserID         int       `json:"user_id"`
 	ConnectionID   int       `json:"connection_id"`
@@ -99,6 +103,8 @@ type CreateUserMovie struct {
 	Email               string    `json:"email"`
 	Token               string    `json:"token"`
 	Expiry              time.Time `json:"expiry"`
+	RToken              string    `json:"rtoken"`
+	RExpiry             time.Time `json:"rexpiry"`
 	Scope               string    `json:"-"`
 	Activated           bool      `json:"activated"`
 	CreatedAt           time.Time `json:"createdat"`
