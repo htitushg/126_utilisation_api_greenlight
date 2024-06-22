@@ -33,7 +33,7 @@ var LogId = 0
 // user's models.Session (if logged), client IP, request Method, and request URL.
 func (app *application) Log(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		next.ServeHTTP(w, r)
+
 		var (
 			ip     = r.RemoteAddr
 			proto  = r.Proto
@@ -41,18 +41,21 @@ func (app *application) Log(next http.Handler) http.Handler {
 			uri    = r.URL.RequestURI()
 		)
 		LogId++
-		//cookie, err := r.Cookie("session")
-		//fmt.Printf("cookie = %v\n", cookie)
-		//status := app.isAuthenticated(r)
-		//fmt.Printf("Middleware Log status= %v\n", status)
-		if !app.isAuthenticated(r) { //err != nil { //!status {
+		//################# voir Chapitre 11.1 ################################
+		// Retrieve the value from the request context using our constant as the key.
+		isAuthenticated, _ := r.Context().Value(isAuthenticatedContextKey).(bool)
+		//#################################################
+		//fmt.Printf("Middleware Log : isAuthenticated = %v\n", isAuthenticated)
+		//isAuthenticated := false
+		if !isAuthenticated {
+			/* id := app.sessionManager.GetInt(r.Context(), "authenticatdUserID")
+			if id == 0 { */
 			app.logger.Info("Visitor", slog.Int("req_id", LogId), "ip", ip, "proto", proto, "method", method, "uri", uri)
 		} else {
-			//data := app.newTemplateData(r) //slog.Any("nom", user.Name),
-			//user, _ := app.user.GetUser(data.Username)
-			app.logger.Info("User", slog.Int("req_id", LogId), slog.Any("user", app.sessionManager.Cookie.Name), "ip", ip, "proto", proto, "method", method, "uri", uri)
+			username, _ := r.Context().Value("UserName").(string)
+			app.logger.Info("User", slog.Int("req_id", LogId), slog.Any("nom", username), slog.Any("user", app.sessionManager.Cookie.Name), "ip", ip, "proto", proto, "method", method, "uri", uri)
 		}
-
+		next.ServeHTTP(w, r)
 	})
 }
 
@@ -68,6 +71,9 @@ func (app *application) requireCompteapi(next http.Handler) http.Handler {
 			app.render(w, r, http.StatusUnprocessableEntity, "home.gohtml", data)
 			return
 		}
+
+		// Lire le token dans SessionManager (get)
+
 		token, err := app.movies.LireJetonDansBase(user.Id)
 		if err != nil {
 			data.Message = "Il n'a pas été possible de lire le jeton API dans la base"
@@ -76,6 +82,10 @@ func (app *application) requireCompteapi(next http.Handler) http.Handler {
 		// vérifier si le token est valide
 		if token.Expiry.Before(time.Now()) || (token.Token == "") {
 			data.Message = "Le jeton est expiré"
+
+			// Utilisation du refreshToken pour obtenir une nouvelle paire de tokens
+			// Sauvegarder les nouveaux tokens dans le sessionManager (put)
+
 			app.render(w, r, http.StatusUnprocessableEntity, "loginapi.gohtml", data)
 		}
 		next.ServeHTTP(w, r)

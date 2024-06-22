@@ -45,7 +45,7 @@ func (app *application) routes() http.Handler {
 	router.HandlerFunc(http.MethodGet, "/images/couverture/:name", app.CouvertureLivreGet)
 
 	// Add the authenticate() middleware to the chain.
-	dynamic := alice.New(app.sessionManager.LoadAndSave, noSurf, app.authenticate)
+	dynamic := alice.New(app.sessionManager.LoadAndSave, noSurf, app.authenticate, app.Log)
 	router.Handler(http.MethodGet, "/", dynamic.ThenFunc(app.index))
 	router.Handler(http.MethodGet, "/index", dynamic.ThenFunc(app.IndexHandlerGet))
 	router.Handler(http.MethodGet, "/affichelivres", dynamic.ThenFunc(app.LivresHandlerGet))
@@ -68,7 +68,7 @@ func (app *application) routes() http.Handler {
 	router.Handler(http.MethodPost, "/snippet/create", protected.ThenFunc(app.snippetCreatePost))
 	router.Handler(http.MethodGet, "/user/logout", protected.ThenFunc(app.userLogoutGet))
 
-	protectedmovie := alice.New(app.sessionManager.LoadAndSave, noSurf, app.authenticate, app.requireAuthentication, app.requireCompteapi)
+	protectedmovie := alice.New(app.sessionManager.LoadAndSave, noSurf, app.authenticate, app.Log, app.requireAuthentication, app.requireCompteapi)
 	router.Handler(http.MethodGet, "/movies/connectuserapi", protectedmovie.ThenFunc(app.ConnectUserApiGet))
 	router.Handler(http.MethodPost, "/movies/connectuserapi", protectedmovie.ThenFunc(app.ConnectUserApiPost))
 	router.Handler(http.MethodPost, "/movies/activeuserapi", protectedmovie.ThenFunc(app.ActiveUserPost))
@@ -78,7 +78,7 @@ func (app *application) routes() http.Handler {
 	router.Handler(http.MethodPost, "/movie/view", protectedmovie.ThenFunc(app.MovieViewPost))
 	router.Handler(http.MethodGet, "/movies/view", protectedmovie.ThenFunc(app.MoviesViewGet))
 
-	standard := alice.New(app.recoverPanic, app.Log, app.commonHeaders)
+	standard := alice.New(app.recoverPanic, app.commonHeaders)
 	return standard.Then(router)
 
 }
