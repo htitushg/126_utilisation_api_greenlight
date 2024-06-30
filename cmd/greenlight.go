@@ -14,6 +14,32 @@ import (
 	"time"
 )
 
+// ##########################################################################
+// Sauvegarder les tokens dans sessioManager
+func (app application) SaveTokensInSessionManager(r *http.Request, newauthenticateUserApi models.AuthenticationTokenApi) (string, error) {
+	tokenBytes, err := json.Marshal(newauthenticateUserApi)
+	if err != nil {
+		fmt.Println("Error marshalling token to JSON:", err)
+		return "Error marshalling token to JSON !", err
+	}
+	// Store the tokenApi JSON bytes from api in the session
+	app.sessionManager.Put(r.Context(), "tokensApi", tokenBytes)
+	return "Ok, Tokens API sauvegardés dans sessionManager !", err
+}
+
+// Lire les tokens dans sessioManager
+func (app application) ReadTokensInSessionManager(r *http.Request, scope string) (tokensApi models.AuthenticationTokenApi, err error) {
+
+	// Retrieve the refresh token data from the session
+	refreshTokenData := app.sessionManager.GetBytes(r.Context(), scope)
+	err = json.Unmarshal(refreshTokenData, &tokensApi)
+	if err != nil {
+		fmt.Println("Error unmarshalling refresh token:", err)
+		return tokensApi, err
+	}
+	return tokensApi, err
+}
+
 // #####################################################################
 func (app application) InfoUserApi(name string, email string, password string) (nom string, err error) {
 
@@ -212,13 +238,13 @@ func (app application) CreateUserApi(name string, email string, password string,
 // ##################################################################
 // ActivateUserApi : fonction d'activation d'un utilisateur de l'Api Greenlight
 func (app application) ActivateUserApi(tokenapi models.AuthenticateUserApi) (cmovie models.CreateUserMovie, err error) {
-	type ActivateUser struct {
+	type ActivateToken struct {
 		Token string `json:"token"`
 	}
-	var activateUser ActivateUser
-	activateUser.Token = tokenapi.Token
+	var activateToken ActivateToken
+	activateToken.Token = tokenapi.Token
 	// Encodage du champ Token de la structure tokenapi models.UserLoginForm en JSON
-	jsonData, err := json.Marshal(activateUser)
+	jsonData, err := json.Marshal(activateToken)
 	if err != nil {
 		return cmovie, err
 	}
@@ -286,9 +312,67 @@ func (app application) ActivateUserApi(tokenapi models.AuthenticateUserApi) (cmo
 	return cmovie, err
 }
 
+// ##################################################################################################################
+// newAuthenticationToken handler qui demande à l'API de rafraichier les tokens si le refresh token est encore valide
+func (app *application) newAuthenticationToken(token models.AuthenticationTokenApi) (authenticateUserApi models.AuthenticationTokenApi, err error) {
+	// vérification de la validité du refreshToken
+	// Encodage du champ Token de la structure tokenapi models.UserLoginForm en JSON
+	type RefreshToken struct {
+		RefreshToken string `json:"refreshtoken"`
+	}
+	var rToken RefreshToken
+	rToken.RefreshToken = token.RefreshToken.Token
+	jsonData, err := json.Marshal(rToken)
+	if err != nil {
+		return authenticateUserApi, err
+	}
+	// Création de l'URL de l'API
+	url := "https://localhost:4000/v1/tokens/refreshauthentication"
+
+	// Création de la requête HTTP POST
+	req, err := http.NewRequest("POST", url, bytes.NewReader(jsonData))
+	if err != nil {
+		return authenticateUserApi, err
+	}
+
+	// Définir le type de contenu du body à "application/json"
+	req.Header.Set("Content-Type", "application/json")
+	// Ajouté le 17/06/2024 9h36
+	tlsConfig := &tls.Config{InsecureSkipVerify: true}
+
+	transport := &http.Transport{TLSClientConfig: tlsConfig}
+	client := &http.Client{Transport: transport}
+
+	// Envoi de la requête et récupération de la réponse
+	resp, err := client.Do(req)
+	if err != nil {
+		return authenticateUserApi, err
+	}
+	defer resp.Body.Close()
+
+	// Lecture du contenu de resp.Body dans un tableau d'octets
+	bodyBytes, err := io.ReadAll(resp.Body)
+	if err != nil {
+		return authenticateUserApi, err
+	}
+	// Décodage du corps de la réponse JSON dans createUserApi
+	err = json.Unmarshal(bodyBytes, &authenticateUserApi)
+	if err != nil {
+		return authenticateUserApi, err
+	}
+	//Vérification du code de statut HTTP
+	if resp.StatusCode == 200 || resp.StatusCode == 201 || resp.StatusCode == 202 {
+		// Renvoyer la structure
+		fmt.Println(authenticateUserApi)
+		return authenticateUserApi, nil
+	} else {
+		return authenticateUserApi, fmt.Errorf("status code: %d", resp.StatusCode)
+	}
+}
+
 // ##################################################################
 // AuthenticateUserApi : fonction d'authentification de l'utilisateur de l'Api greenlight
-func (app application) AuthenticateUserApi(email string, password string, ID int) (cmovie models.CreateUserMovie, err error) {
+func (app application) AuthenticateUserApi(email string, password string, ID int) (tokensApi models.AuthenticationTokenApi, err error) {
 	type AuthenticateUser struct {
 		Email    string `json:"email"`
 		Password string `json:"password"`
@@ -296,10 +380,11 @@ func (app application) AuthenticateUserApi(email string, password string, ID int
 	var authenticateUser AuthenticateUser
 	authenticateUser.Email = email
 	authenticateUser.Password = password
+	tokensApi.Id = ID
 	// Encodage du champ Token de la structure tokenapi models.UserLoginForm en JSON
 	jsonData, err := json.Marshal(authenticateUser)
 	if err != nil {
-		return cmovie, err
+		return tokensApi, err
 	}
 
 	// Création de l'URL de l'API
@@ -308,7 +393,7 @@ func (app application) AuthenticateUserApi(email string, password string, ID int
 	// Création de la requête HTTP POST
 	req, err := http.NewRequest("POST", url, bytes.NewReader(jsonData))
 	if err != nil {
-		return cmovie, err
+		return tokensApi, err
 	}
 
 	// Définir le type de contenu du body à "application/json"
@@ -326,47 +411,30 @@ func (app application) AuthenticateUserApi(email string, password string, ID int
 	// Envoi de la requête et récupération de la réponse
 	resp, err := client.Do(req)
 	if err != nil {
-		return cmovie, err
+		return tokensApi, err
 	}
 	defer resp.Body.Close()
-	// Créer une nouvelle structure CreateUser pour récupérer la réponse de l'API
-	type AuthenticateApi struct {
-		AExpiry         time.Time `json:"aExpiry"`
-		ActivationToken string    `json:"activationToken"`
-		RExpiry         time.Time `json:"rExpiry"`
-		RefreshToken    string    `json:"refreshToken"`
-	}
-	/* type AuthenticateApi struct {
-		Authentication_Token struct {
-			Token  string    `json:"token"`
-			Expiry time.Time `json:"expiry"`
-		} `json:"authentication_token"`
-	} */
-	var authenticateTokenApi AuthenticateApi
+
 	// Lecture du contenu de resp.Body dans un tableau d'octets
 	bodyBytes, err := io.ReadAll(resp.Body)
 	if err != nil {
-		return cmovie, err
+		return tokensApi, err
 	}
 	// Décodage du corps de la réponse JSON dans createUserApi
-	err = json.Unmarshal(bodyBytes, &authenticateTokenApi)
+	err = json.Unmarshal(bodyBytes, &tokensApi)
 	if err != nil {
-		return cmovie, err
+		return tokensApi, err
 	}
 	//Vérification du code de statut HTTP
 	if resp.StatusCode == 200 || resp.StatusCode == 201 || resp.StatusCode == 202 {
 		// Renvoyer la structure
-		fmt.Println(authenticateTokenApi)
+		fmt.Println(tokensApi)
 		// Mettre mamovie, dans les champs movie
-		cmovie.User_id = ID
-		cmovie.Email = email
-		cmovie.Token = authenticateTokenApi.ActivationToken
-		cmovie.Expiry = authenticateTokenApi.AExpiry
-		cmovie.RToken = authenticateTokenApi.RefreshToken
-		cmovie.RExpiry = authenticateTokenApi.RExpiry
-		return cmovie, nil
+		tokensApi.Id = ID
+
+		return tokensApi, nil
 	} else {
-		return cmovie, fmt.Errorf("status code: %d", resp.StatusCode)
+		return tokensApi, fmt.Errorf("status code: %d", resp.StatusCode)
 	}
 
 }

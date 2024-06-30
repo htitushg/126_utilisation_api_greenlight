@@ -12,8 +12,8 @@ import (
 
 func (app *application) commonHeaders(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		// Note: This is split across multiple lines for readability. You don't
-		// need to do this in your own code.
+		// Remarque : ceci est réparti sur plusieurs lignes pour plus de lisibilité.
+		// Il n’est pas nécessaire de le faire dans votre propre code.
 		//app.logger.Info("Entrée dans commonHeaders")
 		w.Header().Set("Content-Security-Policy",
 			"default-src 'self'; style-src 'self' fonts.googleapis.com; font-src fonts.gstatic.com")

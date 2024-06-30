@@ -23,6 +23,32 @@ import (
 	"time"
 )
 
+// SetDailyTimer sets a waiting time to match a certain `hour`.
+func SetDailyTimer(hour int) time.Duration {
+	hour = hour % 24
+	t := time.Now()
+	n := time.Date(t.Year(), t.Month(), t.Day(), hour, 0, 0, 0, t.Location())
+	d := n.Sub(t)
+	if d < 0 {
+		n = n.Add(24 * time.Hour)
+		d = n.Sub(t)
+	}
+	//log.Println("SetDailyTimer() value: ", durationToString(d), "until", n.Format("02 Jan 15H04")) // verbose
+	return d
+}
+
+// Go routine pour vider les tokens épuisés de la table tokens
+// Supprime les enregistrements provisoires qui n'ont pas été validés après 12h
+func (app *application) ManageTokensUsers() {
+	fmt.Printf("Fonction ManageTokensUsers \n")
+	duration := SetDailyTimer(2)
+	//app.sessionManager.remove()
+	//app.models.Tokens.DeleteTokensUserExpiry()
+	time.Sleep(duration)
+	duration = time.Hour * 24
+}
+
+// serverError fonction qui traite les erreurs serveur
 func (app *application) serverError(w http.ResponseWriter, r *http.Request, err error) {
 	var (
 		method = r.Method

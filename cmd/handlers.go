@@ -681,96 +681,45 @@ func (app *application) userLoginPost(w http.ResponseWriter, r *http.Request) {
 	form.Name = user2.Name
 	// Controle ou établissement de la conection avec l'API
 	data.Message = ""
-	_, err = app.InfoUserApi(form.Name, form.Email, form.Password)
+	/* _, err = app.InfoUserApi(form.Name, form.Email, form.Password)
 	switch err {
 	case models.ErrErreurServer:
 		app.sessionManager.Put(r.Context(), "flash", "Erreur serveur, La connection avec l'API a echoué.")
 		http.Redirect(w, r, "/", http.StatusSeeOther)
+		return
 	case models.ErrEmailNonTrouve:
 		app.sessionManager.Put(r.Context(), "flash", "Email non trouvé La connection avec l'API a echoué.")
 		http.Redirect(w, r, "/", http.StatusSeeOther)
+		return
 	case models.ErrMdPIncorrect:
 		app.sessionManager.Put(r.Context(), "flash", "Mot de passe incorrect La connection avec l'API a echoué.")
 		http.Redirect(w, r, "/", http.StatusSeeOther)
-	case models.ErrUserOk:
-		// Appeler la fonction d'authentification à l'API
-		cmovie, errAUM := app.AuthenticateUserApi(form.Email, form.Password, user2.Id)
-		if errAUM != nil {
-			fmt.Printf("erreur = %v\n", errAUM)
-		}
-		data.Message = "Vous êtes bien authentifié à l'API greenlight!"
-		// Ecrire le token dans la table tokens
-		var token models.AuthenticateUserApi
-		token.Expiry = cmovie.Expiry
-		token.ID = cmovie.User_id
-		token.Token = cmovie.Token
-		err = app.movies.EcrireJetonDansBase(token)
-		if err != nil {
-			errorMessage := fmt.Sprint(err)
-			app.sessionManager.Put(r.Context(), "flash", "La connection avec l'API a echoué, Une erreur s'est produite : "+errorMessage)
-			http.Redirect(w, r, "/", http.StatusSeeOther)
-			return
-		}
-		fmt.Printf("token = %#v\n", token)
-		// Marshal the token into JSON bytes
-		tokenBytes, err := json.Marshal(token)
-		if err != nil {
-			fmt.Println("Error marshalling token to JSON:", err)
-			return
-		}
-		// Store the JSON bytes in the session
-		app.sessionManager.Put(r.Context(), "tokenApi", tokenBytes)
-		var rtoken models.AuthenticateUserApi
-		rtoken.Expiry = cmovie.RExpiry
-		rtoken.ID = cmovie.User_id
-		rtoken.Token = cmovie.RToken
-		refrehtokenBytes, err := json.Marshal(rtoken)
-		if err != nil {
-			fmt.Println("Error marshalling refreshtoken to JSON:", err)
-			return
-		}
-		app.sessionManager.Put(r.Context(), "refreshToken", refrehtokenBytes)
-		app.sessionManager.Put(r.Context(), "flash", "L'utilisateur est bien authentifié et connecté avec l'API")
-
-		//#############################
-		// Store the refresh token with base64 encoding
-		//refreshTokenBytes := []byte(rtoken.Token)
-		//encodedRefreshToken := base64.StdEncoding.EncodeToString(refreshTokenBytes)
-		//err = app.sessionManager.Put(r.Context(), "refreshToken", encodedRefreshToken)
-		//if err != nil {
-		//	fmt.Println("Error storing refresh token in session:", err)
-		//	return
-		//}
-
-		// Retrieve the refresh token data from the session
-		refreshTokenData := app.sessionManager.GetBytes(r.Context(), "refreshToken")
-		if len(refreshTokenData) == 0 {
-			fmt.Println("Refresh token not found in session")
-			return
-		}
-
-		// Unmarshal the decoded bytes into the rtoken2 variable (assuming it's a struct)
-		var rtoken2 models.AuthenticateUserApi // Replace with your refresh token struct type
-		err = json.Unmarshal(refreshTokenData, &rtoken2)
-		if err != nil {
-			fmt.Println("Error unmarshalling refresh token:", err)
-			return
-		}
-
-		// Now you can use the unmarshalled refresh token data (rtoken)
-		fmt.Println("Refresh Token:", rtoken2)
-		//#############################
-
+		return
+	case models.ErrUserOk: */
+	// Appeler la fonction d'authentification à l'API et récupérer les token (tokenApi et refreshTokenApi)
+	tokensApi, errAUM := app.AuthenticateUserApi(form.Email, form.Password, user2.Id)
+	if errAUM != nil {
+		fmt.Printf("erreur = %v\n", errAUM)
 		http.Redirect(w, r, "/", http.StatusSeeOther)
-	case models.ErrNomIncorrect:
-		app.sessionManager.Put(r.Context(), "flash", "Nom incorrect La connection avec l'API a echoué.")
-		http.Redirect(w, r, "/", http.StatusSeeOther)
+		return
 	}
+	data.Message = "Vous êtes bien authentifié à l'API greenlight!"
+	// Store the tokensApi in the sessionManager
+	message, errST := app.SaveTokensInSessionManager(r, tokensApi)
+	if errST != nil {
+		errorMessage := fmt.Sprint(message)
+		app.sessionManager.Put(r.Context(), "flash", "Lors de la sauvegarde des tokens, Une erreur s'est produite : "+errorMessage)
+		http.Redirect(w, r, "/", http.StatusSeeOther)
+		return
+	}
+
+	fmt.Println("Tokens API:", tokensApi)
+	app.sessionManager.Put(r.Context(), "flash", "Vous êtes bien authentifié à l'API greenlight!")
+	http.Redirect(w, r, "/", http.StatusSeeOther)
 }
 func (app *application) userLogoutGet(w http.ResponseWriter, r *http.Request) {
 	// Use the RenewToken() method on the current session to change the session
 	// ID again.
-	app.sessionManager.Remove(r.Context(), "tokenApi")
 	err := app.sessionManager.RenewToken(r.Context())
 	if err != nil {
 		app.serverError(w, r, err)
@@ -779,6 +728,8 @@ func (app *application) userLogoutGet(w http.ResponseWriter, r *http.Request) {
 	// Remove the authenticatedUserID from the session data so that the user is
 	// 'logged out'.
 	app.sessionManager.Remove(r.Context(), "authenticatedUserID")
+	// Remove the tokensapi
+	app.sessionManager.Remove(r.Context(), "tokensApi")
 	// Add a flash message to the session to confirm to the user that they've been
 	// logged out.
 	app.sessionManager.Put(r.Context(), "flash", "Vous êtes déconnecté(e)!")
@@ -951,7 +902,6 @@ func (app *application) ConnectUserApiPost(w http.ResponseWriter, r *http.Reques
 		errorMessage := fmt.Sprint(errCUAPI)
 		if errorMessage == "a user with this email address already exists" {
 			app.sessionManager.Put(r.Context(), "flash", "Il existe déjà un utilisateur avec cet email : "+user.Email)
-			//data.Message = "Il existe déjà un utilisateur avec cet email : " + user.Email
 			http.Redirect(w, r, "/", http.StatusSeeOther)
 			return
 		}
@@ -1063,25 +1013,68 @@ func (app *application) AuthenticateUserApiPost(w http.ResponseWriter, r *http.R
 		data.Message = "Vous devez être connecté !"
 	}
 	// Appeler la fonction d'authentification à l'API
-	cmovie, errAUM := app.AuthenticateUserApi(form.Email, form.Password, user.Id)
+	tokensApi, errAUM := app.AuthenticateUserApi(form.Email, form.Password, user.Id)
 	if errAUM != nil {
 		fmt.Printf("erreur = %v\n", errAUM)
 	}
 
-	data.Message = "Vous êtes bien authentifié à l'API greenlight!"
-	// Ecrire le token dans la table tokens
-	var token models.AuthenticateUserApi
-	token.Expiry = cmovie.Expiry
-	token.ID = cmovie.User_id
-	token.Token = cmovie.Token
-	err = app.movies.EcrireJetonDansBase(token)
+	// Sauvegarder les tokens dans sessioManager
+	message, err := app.SaveTokensInSessionManager(r, tokensApi)
 	if err != nil {
-		data.Message = "Impossible d'écrire le jeton dans la base !"
+		data.Message = message
+		app.render(w, r, http.StatusOK, "home.gohtml", data)
+	}
+	data.Message = "Vous êtes bien authentifié à l'API greenlight!"
+	app.render(w, r, http.StatusOK, "home.gohtml", data)
+
+}
+
+// ##########################################################################################
+
+// ##########################################################################################
+func (app *application) refreshTokensHandlerApiGet(w http.ResponseWriter, r *http.Request) {
+	data := app.newTemplateData(r)
+	// Récupération du token
+	// Retrieve the refresh token data from the session
+	refreshTokenData := app.sessionManager.GetBytes(r.Context(), "tokensApi")
+	if len(refreshTokenData) == 0 {
+		fmt.Println("Refresh token not found in session")
+		return
+	}
+	// Unmarshal the decoded bytes into the tokens variable (assuming it's a struct)
+	var tokens models.AuthenticationTokenApi // Replace with your refresh token struct type
+	err := json.Unmarshal(refreshTokenData, &tokens)
+	if err != nil {
+		fmt.Println("Error unmarshalling refresh token:", err)
+		return
+	}
+	// Now you can use the unmarshalled refresh token data (rtoken)
+	fmt.Println("Refresh Token:", tokens)
+	// Vérification de la date d'expiration du token
+	if tokens.RefreshToken.Expiry.After(time.Now()) {
+		// Appel de l'API pour obtenir de nouveaux tokens
+		newauthenticateUserApi, errNAT := app.newAuthenticationToken(tokens)
+		if errNAT != nil {
+			data.Message = "Impossible d'obtenir de nouveaux tokens !"
+			app.render(w, r, http.StatusOK, "home.gohtml", data)
+			return
+		}
+		// Sauvegarder les tokens dans sessioManager
+		message, err := app.SaveTokensInSessionManager(r, newauthenticateUserApi)
+		if err != nil {
+			fmt.Println(message, err)
+			data.Message = message
+			app.render(w, r, http.StatusOK, "home.gohtml", data)
+			return
+		}
+		data.Message = message
+		app.render(w, r, http.StatusOK, "home.gohtml", data)
+		return
+	} else {
+		data.Message = "Le refrehtoken est expiré, il faut vous reconnecter à l'Api !"
 		app.render(w, r, http.StatusOK, "home.gohtml", data)
 		return
 	}
-
-	app.render(w, r, http.StatusOK, "home.gohtml", data)
 
 }
 
@@ -1090,7 +1083,6 @@ func (app *application) AuthenticateUserApiPost(w http.ResponseWriter, r *http.R
 func (app *application) MovieViewGet(w http.ResponseWriter, r *http.Request) {
 	var form movieForm
 
-	//app.logger.Info("Entrée dans MovieHandlerGet")
 	data := app.newTemplateData(r)
 	data.Form = form
 	data.Message = ""
@@ -1116,33 +1108,28 @@ func (app *application) MovieViewPost(w http.ResponseWriter, r *http.Request) {
 		data.Message = "Le code id peut contenir 3 chiffres maximum"
 		app.render(w, r, http.StatusUnprocessableEntity, "movie.gohtml", data)
 	}
-	//app.logger.Info("Entrée dans MovieHandlerPost")
 	log.Println(models.GetCurrentFuncName())
 	var movie models.Movie
 	// Il faut vérifier qu'il existe un token valide
-	user, ok := app.user.GetUser(data.Username)
-	if !ok {
-		data.Message = "Vous n'êtes pas connecté !"
-		app.render(w, r, http.StatusUnprocessableEntity, "home.gohtml", data)
+	// Aller chercher le token dans sessionManager
+	tokensApi, err := app.ReadTokensInSessionManager(r, "tokensApi")
+	if err != nil {
+		data.Flash = "Il n'a pas été possible de lire le jeton API dans le sessionManager !"
+		app.render(w, r, http.StatusUnprocessableEntity, "movie.gohtml", data)
+		return
 	}
 	var token models.AuthenticateUserApi
-	token, err = app.movies.LireJetonDansBase(user.Id)
-	if err != nil {
-		data.Message = "Il n'a pas été possible de lire le jeton API dans la base"
-		app.render(w, r, http.StatusUnprocessableEntity, "movie.gohtml", data)
-		return
-	}
+	token.Token = tokensApi.AuthenticationToken.Token
+	token.Expiry = tokensApi.AuthenticationToken.Expiry
+
 	// vérifier si le token est valide
 	if token.Expiry.Before(time.Now()) || (token.Token == "") {
-		data.Message = "Le jeton est expiré"
+		data.Message = "Le jeton est expiré, il faut vous connecter à l'API"
 		app.render(w, r, http.StatusUnprocessableEntity, "movie.gohtml", data)
 		return
 	}
-	// Vérifier si le livre existe dans la base
-	//movie = app.movies.MovieExist(form.Id)
-	//if movie.ID == 0 {
-	// Acquisition du livre dans l'API
-	movie, ok = app.GetMovie(str_id, token.Token)
+	// Acquisition du film dans l'API
+	movie, ok := app.GetMovie(str_id, token.Token)
 	if !ok {
 		log.Printf("Il n'a pas été possible d'obtenir le film : %v\n", form.Id)
 		data.Form = form
@@ -1162,29 +1149,25 @@ func (app *application) MoviesViewGet(w http.ResponseWriter, r *http.Request) {
 	var movies []models.Movie
 	var movie movieForm
 	// Il faut vérifier qu'il existe un token valide
-	user, ok := app.user.GetUser(data.Username)
-	if !ok {
-		data.Message = "Vous n'êtes pas connecté !"
-		app.render(w, r, http.StatusUnprocessableEntity, "home.gohtml", data)
+	// Aller chercher le token dans sessionManager
+	tokensApi, errRT := app.ReadTokensInSessionManager(r, "tokensApi")
+	if errRT != nil {
+		data.Flash = "Il n'a pas été possible de lire le jeton API dans le sessionManager !"
+		app.render(w, r, http.StatusUnprocessableEntity, "movie.gohtml", data)
 		return
 	}
 	var token models.AuthenticateUserApi
-	var err error
-	token, err = app.movies.LireJetonDansBase(user.Id)
-	if err != nil {
-		data.Message = "Il n'a pas été possible de lire le jeton API dans la base"
-		app.render(w, r, http.StatusUnprocessableEntity, "home.gohtml", data)
-		return
-	}
+	token.Token = tokensApi.AuthenticationToken.Token
+	token.Expiry = tokensApi.AuthenticationToken.Expiry
+
 	// vérifier si le token est valide
 	if token.Expiry.Before(time.Now()) || (token.Token == "") {
-		data.Message = "Le jeton est expiré"
-		app.render(w, r, http.StatusUnprocessableEntity, "home.gohtml", data)
+		data.Message = "Le jeton est expiré, il faut vous connecter à l'API"
+		app.render(w, r, http.StatusUnprocessableEntity, "movie.gohtml", data)
 		return
 	}
-	//if movie.ID == 0 {
-	// Acquisition du livre dans l'API
-	movies, ok = app.GetMovies(token.Token)
+	// Acquisition des Films dans l'API
+	movies, ok := app.GetMovies(token.Token)
 	if !ok {
 		log.Printf("Il n'a pas été possible d'obtenir les films demandés \n")
 		data.Form = movie

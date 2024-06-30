@@ -1,6 +1,9 @@
 {{define "title"}}Index{{end}}
 {{define "main"}}
 <div class="login-container">
+    <div class="part2">
+          <h1  >{{.Message}}</h1>
+    </div>  
     {{if .IsAuthenticated}}
         <div class="corps"><h2>Vous êtes connecté</h2></div>
     {{else}}

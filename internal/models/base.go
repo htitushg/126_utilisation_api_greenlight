@@ -869,6 +869,33 @@ func (m *AuteursModel) AuteurExist(nomauteur string) (auteur Auteur, ok bool) {
 }
 
 // ####################################################################################
+
+// LireJetonDansBase fonction qui va chercher les jetons de l'utilisateur
+// dans la table tokens
+func (m *MoviesModel) EffacerJetonsIdDansBase(user_id int) (err error) {
+
+	query := `DELETE FROM tokens WHERE id=?`
+
+	// Préparation de la requête
+	stmt, err := m.DB.Prepare(query)
+	if err != nil {
+		return err
+	}
+	defer stmt.Close()
+	// Exécution de la requête avec les valeurs des variables
+	rows, err := stmt.Query(user_id)
+	if err != nil {
+		return err
+	}
+	defer rows.Close()
+
+	return err
+}
+
+// ####################################################################################
+
+// LireJetonDansBase fonction qui va chercher les jetons de l'utilisateur
+// dans la table tokens
 func (m *MoviesModel) LireJetonDansBase(user_id int) (token AuthenticateUserApi, err error) {
 
 	query := `SELECT id, token , expiry FROM tokens WHERE id=?`
@@ -904,56 +931,33 @@ func (m *MoviesModel) LireJetonDansBase(user_id int) (token AuthenticateUserApi,
 // ####################################################################################
 func (m *MoviesModel) EcrireJetonDansBase(token AuthenticateUserApi) (err error) {
 
-	// vérification de l'existence d'un jeton pour cet utilisateur
-	var token2 AuthenticateUserApi
-	token2, err = m.LireJetonDansBase(token.ID)
+	query := `INSERT INTO tokens (token, id, expiry ) VALUES (?, ?, ?)`
+	//formatedQuery := fmt.Sprintf(query)
+	insertResult, err := m.DB.ExecContext(context.Background(), query,
+		token.Token, token.ID, token.Expiry)
 	if err != nil {
-		return err
-	}
-	if token2.ID > 0 {
-		query := `UPDATE tokens SET token=?, id= ? , expiry= ? WHERE id = ?`
-		res, err := m.DB.Exec(query, token.Token, token.ID, token.Expiry, token.ID)
-		if err != nil {
-			log.Fatal(err)
-		}
-
-		count, err := res.RowsAffected()
-
-		if err != nil {
-			log.Fatal(err)
-		}
-
-		log.Println(count)
-		return err
-
-	} else {
-		query := `INSERT INTO tokens (token, id, expiry ) VALUES (?, ?, ?)`
-		//formatedQuery := fmt.Sprintf(query)
-		insertResult, err := m.DB.ExecContext(context.Background(), query,
-			token.Token, token.ID, token.Expiry)
-		if err != nil {
-			// If this returns an error, we use the errors.As() function to check
-			// whether the error has the type *mysql.MySQLError. If it does, the
-			// error will be assigned to the mySQLError variable. We can then check
-			// whether or not the error relates to our users_uc_email key by
-			// checking if the error code equals 1062 and the contents of the error
-			// message string. If it does, we return an ErrDuplicateEmail error.
-			var mySQLError *mysql.MySQLError
-			if errors.As(err, &mySQLError) {
-				if mySQLError.Number == 1062 && strings.Contains(mySQLError.Message, "token.ID") {
-					return ErrDuplicateUserId
-				}
-			} else {
-				return err
+		// If this returns an error, we use the errors.As() function to check
+		// whether the error has the type *mysql.MySQLError. If it does, the
+		// error will be assigned to the mySQLError variable. We can then check
+		// whether or not the error relates to our users_uc_email key by
+		// checking if the error code equals 1062 and the contents of the error
+		// message string. If it does, we return an ErrDuplicateEmail error.
+		var mySQLError *mysql.MySQLError
+		if errors.As(err, &mySQLError) {
+			if mySQLError.Number == 1062 && strings.Contains(mySQLError.Message, "token.ID") {
+				return ErrDuplicateUserId
 			}
+		} else {
+			return err
 		}
-		insertid, err := insertResult.LastInsertId()
-		if err != nil {
-			log.Fatalf("impossible to retrieve last inserted id: 	%s", err)
-		}
-		log.Printf("inserted id: %d", insertid)
-		return err
 	}
+	insertid, err := insertResult.LastInsertId()
+	if err != nil {
+		log.Fatalf("impossible to retrieve last inserted id: 	%s", err)
+	}
+	log.Printf("inserted id: %d", insertid)
+	return err
+
 }
 
 // ####################################################################################

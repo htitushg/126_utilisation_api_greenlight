@@ -124,8 +124,26 @@ type Movie struct {
 	Genres  []string `json:"genres,omitempty"`
 	Version int32    `json:"version"`
 }
+
+// ############################################################################################
+type AuthenticationToken struct {
+	Token  string    `json:"token"`
+	Expiry time.Time `json:"expiry"`
+}
+type RefreshToken struct {
+	Token  string    `json:"token"`
+	Expiry time.Time `json:"expiry"`
+}
+type AuthenticationTokenApi struct {
+	Id                  int                 `json:"id"`
+	AuthenticationToken AuthenticationToken `json:"authentication_token"`
+	RefreshToken        RefreshToken        `json:"refresh_token"`
+}
+
+// #############################################################################################
 type AuthenticateUserApi struct {
 	ID     int       `json:"id"`
+	Scope  string    `json:"scope"`
 	Token  string    `json:"token"`
 	Expiry time.Time `json:"expiry"`
 }

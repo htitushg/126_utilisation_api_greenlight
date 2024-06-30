@@ -150,6 +150,10 @@ func main() {
 		ReadTimeout:  5 * time.Minute,
 		WriteTimeout: 10 * time.Minute,
 	}
+
+	// Running the goroutine to automatically remove old Tokens Epired
+	go app.ManageTokensUsers()
+
 	logger.Info("starting server", "addr", srv.Addr)
 	// Use the ListenAndServeTLS() method to start the HTTPS server. We
 	// pass in the paths to the TLS certificate and corresponding private key as
