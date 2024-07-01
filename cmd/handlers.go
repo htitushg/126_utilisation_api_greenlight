@@ -910,6 +910,8 @@ func (app *application) ConnectUserApiPost(w http.ResponseWriter, r *http.Reques
 		fmt.Printf("Erreur : %v\n", errCUAPI)
 		errorMessage := fmt.Sprint(errCUAPI)
 		if errorMessage == "a user with this email address already exists" {
+			// Vérifier si l'utilisateur est activé
+
 			app.sessionManager.Put(r.Context(), "flash", "Il existe déjà un utilisateur avec cet email : "+user.Email)
 			http.Redirect(w, r, "/", http.StatusSeeOther)
 			return
@@ -937,46 +939,46 @@ func (app *application) ActiveUserPost(w http.ResponseWriter, r *http.Request) {
 	if !tokenForm.Valid() {
 		data := app.newTemplateData(r)
 		data.Form = tokenForm
+		data.Message = "This field must contains 26 characters !"
 		app.render(w, r, http.StatusUnprocessableEntity, "saisietokenapi.gohtml", data)
 		return
 	}
 	data := app.newTemplateData(r)
-	// Récupération du token envoyé par l'API, et de l'identifiant de l'utilisateur
-	user, ok := app.user.GetUser(data.Username)
-	if !ok {
+	// Récupération des infos de l'utilisateur
+	//user, ok := app.user.GetUser(data.Username)
+	/* if !ok {
 		data.Message = "Vous devez être connecté !"
-	}
-	tokenForm.Name = user.Name
-	str_id := strconv.FormatInt(int64(user.Id), 10)
+		app.render(w, r, http.StatusOK, "home.gohtml", data)
+		return
+	} */
+	//tokenForm.Name = user.Name
+	/* str_id := strconv.FormatInt(int64(user.Id), 10)
 	tokenForm.ID = str_id
-	log.Println(models.GetCurrentFuncName())
+	log.Println(models.GetCurrentFuncName()) */
 	// Ecrire le token dans la base de données
-	var token models.AuthenticateUserApi
+	/* var token models.AuthenticateUserApi
 	token.ID = user.Id
-	token.Token = tokenForm.Token
-	token.Expiry = time.Now().Add(time.Hour * 24)
-	errEJ := app.movies.EcrireJetonDansBase(token)
-	if errEJ != nil {
-		data.Message = "Impossible de sauvegarder le token !"
-	}
+	token.Token = tokenForm.Token */
 	// renvoyer le token à l'API pour activer le compte
-	var token2 models.AuthenticateUserApi
-	id, _ := strconv.Atoi(tokenForm.ID)
-	token2.ID = id
-	token2.Token = tokenForm.Token
-	cmovie, errAUM := app.ActivateUserApi(token2)
+	var token models.AuthenticateUserApi
+	//id, _ := strconv.Atoi(tokenForm.ID)
+	//token.ID = id
+	token.Token = tokenForm.Token
+	cmovie, errAUM := app.ActivateUserApi(token)
 	if errAUM != nil {
 		fmt.Printf("erreur = %v\n", errAUM)
 	}
 	if cmovie.Activated {
-		data.Message = "Votre compte API greenlight est activé !"
-		log.Printf("Votre compte API greenlight est activé !\n")
-		http.Redirect(w, r, "/movies/authenticateuserapi", http.StatusOK)
+		/* data.Message = "Votre compte API greenlight est activé !"
+		log.Printf("Votre compte API greenlight est activé !\n") */
+		app.sessionManager.Put(r.Context(), "flash", "Votre compte API greenlight est activé !")
+		http.Redirect(w, r, "/", http.StatusOK)
 		return
 	} else {
+
 		data.Message = " *** Votre compte API greenlight n'est pas activé ! ***"
 	}
-
+	data.Message = " *** Votre compte API greenlight n'est pas activé ! ***"
 	app.render(w, r, http.StatusOK, "home.gohtml", data)
 
 }
@@ -994,7 +996,7 @@ func (app *application) AuthenticateUserApiGet(w http.ResponseWriter, r *http.Re
 	id := app.sessionManager.GetInt(r.Context(), "authenticatedUserID")
 	user, ok := app.user.SelectUserwithId(id)
 	if !ok {
-		app.sessionManager.Put(r.Context(), "flash", "Erreur vous devez vous reconnecter !")
+		app.sessionManager.Put(r.Context(), "flash", "Erreur vous devez être connecté(e) !")
 		http.Redirect(w, r, "/", http.StatusSeeOther)
 	}
 	tokenForm.Name = user.Name
@@ -1026,6 +1028,7 @@ func (app *application) AuthenticateUserApiPost(w http.ResponseWriter, r *http.R
 	data := app.newTemplateData(r)
 	data.Form = form
 	if !form.Valid() {
+		data.Message = " Erreur de saisie !"
 		app.render(w, r, http.StatusUnprocessableEntity, "loginapi.gohtml", data)
 		return
 	}
@@ -1033,7 +1036,8 @@ func (app *application) AuthenticateUserApiPost(w http.ResponseWriter, r *http.R
 	log.Println(models.GetCurrentFuncName())
 	user, ok := app.user.GetUser(data.Username)
 	if !ok {
-		data.Message = "Vous devez être connecté !"
+		app.sessionManager.Put(r.Context(), "flash", "Erreur vous devez être connecté(e) !")
+		http.Redirect(w, r, "/", http.StatusSeeOther)
 	}
 	// Appeler la fonction d'authentification à l'API
 	tokensApi, errAUM := app.AuthenticateUserApi(form.Email, form.Password, user.Id)
@@ -1051,8 +1055,6 @@ func (app *application) AuthenticateUserApiPost(w http.ResponseWriter, r *http.R
 	app.render(w, r, http.StatusOK, "home.gohtml", data)
 
 }
-
-// ##########################################################################################
 
 // ##########################################################################################
 func (app *application) refreshTokensHandlerApiGet(w http.ResponseWriter, r *http.Request) {

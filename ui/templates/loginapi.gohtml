@@ -7,6 +7,11 @@
         {{range .Form.NonFieldErrors}}
             <div class='error'>{{.}}</div>
         {{end}}
+        {{if .Message}}
+            <div class="part2">
+                <h3  >{{.Message}}</h3>
+            </div> 
+        {{end}}
         <div>
             <label>Name:</label>
             {{with .Form.FieldErrors.email}}

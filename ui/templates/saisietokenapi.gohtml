@@ -8,8 +8,9 @@
     {{range .Form.NonFieldErrors}}
         <div class='error'>{{.}}</div>
     {{end}}
-    <label name="id">ID</label>
-    <input type='readonly' value={{.Form.ID}}>
+    <input type='readonly' value={{.Form.Name}} hidden>
+    <label name="email">Email</label>
+    <input type='readonly' value={{.Form.Email}}>
     <div class="modifuserlabel"><label name="pseudo">Token</label>
         {{with .Form.FieldErrors.token}}
             <label class='error'>{{.}}</label>

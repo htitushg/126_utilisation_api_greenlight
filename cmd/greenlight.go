@@ -262,13 +262,10 @@ func (app application) ActivateUserApi(tokenapi models.AuthenticateUserApi) (cmo
 	req.Header.Set("Content-Type", "application/json")
 	// Ajouté le 17/06/2024 9h36
 	tlsConfig := &tls.Config{InsecureSkipVerify: true}
-
 	transport := &http.Transport{TLSClientConfig: tlsConfig}
 	client := &http.Client{Transport: transport}
 
 	// Fin de Ajouté le 17/06/2024 9h36
-	// Création d'un client HTTP
-	//client := &http.Client{}
 
 	// Envoi de la requête et récupération de la réponse
 	resp, err := client.Do(req)
@@ -277,7 +274,7 @@ func (app application) ActivateUserApi(tokenapi models.AuthenticateUserApi) (cmo
 	}
 	defer resp.Body.Close()
 	// Créer une nouvelle structure CreateUser pour récupérer la réponse de l'API
-	type CreateUser struct {
+	type ActivateUser struct {
 		User struct {
 			ID        int       `json:"id"`
 			CreatedAt time.Time `json:"created_at"`
@@ -286,14 +283,14 @@ func (app application) ActivateUserApi(tokenapi models.AuthenticateUserApi) (cmo
 			Activated bool      `json:"activated"`
 		} `json:"user"`
 	}
-	var createUserApi CreateUser
+	var activateUserApi ActivateUser
 	// Lecture du contenu de resp.Body dans un tableau d'octets
 	bodyBytes, err := io.ReadAll(resp.Body)
 	if err != nil {
 		return cmovie, err
 	}
 	// Décodage du corps de la réponse JSON dans createUserApi
-	err = json.Unmarshal(bodyBytes, &createUserApi)
+	err = json.Unmarshal(bodyBytes, &activateUserApi)
 	if err != nil {
 		return cmovie, err
 	}
@@ -303,12 +300,12 @@ func (app application) ActivateUserApi(tokenapi models.AuthenticateUserApi) (cmo
 	}
 
 	// Renvoyer la structure
-	fmt.Println(createUserApi)
+	fmt.Println(activateUserApi)
 	// Mettre mamovie, dans les champs movie
-	cmovie.Name = createUserApi.User.Name
-	cmovie.Email = createUserApi.User.Email
-	cmovie.Activated = createUserApi.User.Activated
-	cmovie.CreatedAt = createUserApi.User.CreatedAt
+	cmovie.Name = activateUserApi.User.Name
+	cmovie.Email = activateUserApi.User.Email
+	cmovie.Activated = activateUserApi.User.Activated
+	cmovie.CreatedAt = activateUserApi.User.CreatedAt
 	return cmovie, err
 }
 

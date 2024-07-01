@@ -1,6 +1,7 @@
 package main
 
 import (
+	"125_isbn_new/internal/models"
 	"context"
 	"fmt"
 	"log/slog"
@@ -62,23 +63,37 @@ func (app *application) Log(next http.Handler) http.Handler {
 func (app *application) requireCompteapi(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		// vérifier l'existence d'un compte vers l'API greenlight
-		/* data := app.newTemplateData(r)
-		var form models.UserLoginForm
-		data.Form = form */
+		data := app.newTemplateData(r)
+		data.Form = models.UserLoginForm{}
+
+		// Création de la structure avant l'appel du formulaire
+		var tokenForm models.UserLoginForm
+		// Récupérer les infos de l'utilisateur connecté
+		user := app.contextGetUser(r)
+		//var ok bool
+		fmt.Println(user.Name)
+
+		tokenForm.Name = user.Name
+		// Pour la connection à l'API, le nom et l'Email doivent être les mêmes que pour le backend
+		tokenForm.Email = user.Email
+		data.Form = tokenForm
+
 		// Lire le token dans SessionManager
 		tokensApi, err := app.ReadTokensInSessionManager(r, "tokensApi")
 		if err != nil {
-			/* data.Message = "Il n'a pas été possible de lire le jeton API dans le sessionManager"
-			app.render(w, r, http.StatusUnprocessableEntity, "saisietokenapi.gohtml", data) */
-			app.sessionManager.Put(r.Context(), "flash", "Erreur vous devez vous reconnecter !")
-			http.Redirect(w, r, "/", http.StatusSeeOther)
+
+			data.Message = "Il n'a pas été possible de lire le jeton API dans le sessionManager"
+			app.render(w, r, http.StatusUnprocessableEntity, "saisietokenapi.gohtml", data)
+			/* app.sessionManager.Put(r.Context(), "flash", "Erreur vous devez vous reconnecter !")
+			http.Redirect(w, r, "/", http.StatusSeeOther) */
+			return
 		}
 		// vérifier si le token est valide
 		if tokensApi.AuthenticationToken.Expiry.Before(time.Now()) || (tokensApi.AuthenticationToken.Token == "") {
-			/* data.Message = "Le jeton est expiré"
-			app.render(w, r, http.StatusUnprocessableEntity, "loginapi.gohtml", data) */
-			app.sessionManager.Put(r.Context(), "flash", "Le jeton est expiré vous devez vous reconnecter !")
-			http.Redirect(w, r, "/", http.StatusSeeOther)
+			data.Message = "Le jeton est expiré"
+			app.render(w, r, http.StatusUnprocessableEntity, "loginapi.gohtml", data)
+			/* app.sessionManager.Put(r.Context(), "flash", "Le jeton est expiré vous devez vous reconnecter !")
+			http.Redirect(w, r, "/", http.StatusSeeOther) */
 			return
 		}
 		next.ServeHTTP(w, r)
@@ -145,6 +160,7 @@ func (app *application) authenticate(next http.Handler) http.Handler {
 		// comme d'habitude et "return".
 		id := app.sessionManager.GetInt(r.Context(), "authenticatedUserID")
 		if id == 0 {
+			r = app.contextSetUser(r, models.AnonymousUser)
 			next.ServeHTTP(w, r)
 			return
 		}
@@ -165,6 +181,9 @@ func (app *application) authenticate(next http.Handler) http.Handler {
 			user, _ := app.user.SelectUserwithId(id)
 			ctx = context.WithValue(ctx, "UserName", user.Name)
 			r = r.WithContext(ctx)
+			// Call the contextSetUser() helper to add the user information to the request
+			// context.
+			r = app.contextSetUser(r, &user)
 		}
 		// Call the next handler in the chain.
 		next.ServeHTTP(w, r)

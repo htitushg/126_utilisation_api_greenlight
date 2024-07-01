@@ -87,16 +87,16 @@ type Credentials struct {
 	Droits   string
 }
 
-/*
-	 type CreateUserMovie struct {
-		Name                string    `json:"name"`
-		User_id             int       `json:"id"`
-		Token               string    `json:"token"`
-		Expiry              time.Time `json:"expiry"`
-		Scope               string    `json:"-"`
-		validator.Validator `form:"-"`
-	}
-*/
+type ActivateUserMovie struct {
+	Name                string    `json:"name"`
+	User_id             int       `json:"id"`
+	Token               string    `json:"token"`
+	Expiry              time.Time `json:"expiry"`
+	Activated           bool      `json:"activated"`
+	Scope               string    `json:"-"`
+	validator.Validator `form:"-"`
+}
+
 type CreateUserMovie struct {
 	User_id             int       `json:"id"`
 	Name                string    `json:"name"`
