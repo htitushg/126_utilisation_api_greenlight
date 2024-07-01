@@ -152,7 +152,7 @@ func main() {
 	}
 
 	// Running the goroutine to automatically remove old Tokens Epired
-	go app.ManageTokensUsers()
+	//go app.ManageTokensUsers()
 
 	logger.Info("starting server", "addr", srv.Addr)
 	// Use the ListenAndServeTLS() method to start the HTTPS server. We

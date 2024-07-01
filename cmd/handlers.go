@@ -854,18 +854,29 @@ func (app *application) userModifPost(w http.ResponseWriter, r *http.Request) {
 
 // ###########################################################################################
 func (app *application) ConnectUserApiGet(w http.ResponseWriter, r *http.Request) {
-	// Vérifier si l'utilisateur a un Token valide
-
+	// Création de la structure avant l'appel du formulaire
 	var tokenForm models.UserLoginForm
-
+	// Récupérer les infos de l'utilisateur connecté
+	id := app.sessionManager.GetInt(r.Context(), "authenticatedUserID")
+	user, ok := app.user.SelectUserwithId(id)
+	if !ok {
+		app.sessionManager.Put(r.Context(), "flash", "Erreur vous devez vous reconnecter !")
+		http.Redirect(w, r, "/", http.StatusSeeOther)
+	}
+	tokenForm.Name = user.Name
+	// Pour la connection à l'API, le nom et l'Email doivent être les mêmes que pour le backend
+	tokenForm.Email = user.Email
 	data := app.newTemplateData(r)
 	data.Form = tokenForm
+
 	app.render(w, r, http.StatusOK, "signupapi.gohtml", data)
 }
 
 // ###########################################################################################
 func (app *application) ConnectUserApiPost(w http.ResponseWriter, r *http.Request) {
+	// Récupérer les infos venant du formulaire
 	var form models.UserLoginForm
+	data := app.newTemplateData(r)
 	err := app.decodePostForm(r, &form)
 	if err != nil {
 		app.clientError(w, http.StatusBadRequest)
@@ -878,14 +889,12 @@ func (app *application) ConnectUserApiPost(w http.ResponseWriter, r *http.Reques
 	form.CheckField(validator.Matches(form.Email, validator.EmailRX), "email", "This field must be a valid email address")
 	form.CheckField(validator.NotBlank(form.Password), "password", "This field cannot be blank")
 	if !form.Valid() {
-		data := app.newTemplateData(r)
 		data.Form = form
 		app.render(w, r, http.StatusUnprocessableEntity, "loginapi.gohtml", data)
 		return
 	}
 	// Il faut avoir l'Id utilisateur
 	// Récupération du token envoyé par l'API, et de l'identifiant de l'utilisateur
-	data := app.newTemplateData(r)
 	user, ok := app.user.GetUser(data.Username)
 	if !ok {
 		app.sessionManager.Put(r.Context(), "flash", "Vous devez être connecté !")
@@ -974,10 +983,24 @@ func (app *application) ActiveUserPost(w http.ResponseWriter, r *http.Request) {
 
 // ###########################################################################################
 func (app *application) AuthenticateUserApiGet(w http.ResponseWriter, r *http.Request) {
-
+	// Création de la structure avant l'appel du formulaire
+	var tokenForm models.UserLoginForm
 	data := app.newTemplateData(r)
 	data.Form = models.UserLoginForm{}
-	// Récupération des données utilisateur (email et password) pour s'authentifier à l'API
+	// Récupération du password utilisateur pour s'authentifier à l'API
+	// Le nom et l'Email doivent etre celle du backend
+
+	// Récupérer les infos de l'utilisateur connecté
+	id := app.sessionManager.GetInt(r.Context(), "authenticatedUserID")
+	user, ok := app.user.SelectUserwithId(id)
+	if !ok {
+		app.sessionManager.Put(r.Context(), "flash", "Erreur vous devez vous reconnecter !")
+		http.Redirect(w, r, "/", http.StatusSeeOther)
+	}
+	tokenForm.Name = user.Name
+	// Pour la connection à l'API, le nom et l'Email doivent être les mêmes que pour le backend
+	tokenForm.Email = user.Email
+	data.Form = tokenForm
 	log.Println(models.GetCurrentFuncName())
 	app.render(w, r, http.StatusOK, "loginapi.gohtml", data)
 

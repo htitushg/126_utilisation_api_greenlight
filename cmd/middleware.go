@@ -62,31 +62,24 @@ func (app *application) Log(next http.Handler) http.Handler {
 func (app *application) requireCompteapi(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		// vérifier l'existence d'un compte vers l'API greenlight
-		data := app.newTemplateData(r)
-
-		user, ok := app.user.GetUser(data.Username)
-		if !ok {
-			//pas de connexion
-			data.Message = "Vous n'êtes pas connecté !"
-			app.render(w, r, http.StatusUnprocessableEntity, "home.gohtml", data)
-			return
-		}
-
-		// Lire le token dans SessionManager (get)
-
-		token, err := app.movies.LireJetonDansBase(user.Id)
+		/* data := app.newTemplateData(r)
+		var form models.UserLoginForm
+		data.Form = form */
+		// Lire le token dans SessionManager
+		tokensApi, err := app.ReadTokensInSessionManager(r, "tokensApi")
 		if err != nil {
-			data.Message = "Il n'a pas été possible de lire le jeton API dans la base"
-			app.render(w, r, http.StatusUnprocessableEntity, "saisietokenapi.gohtml", data)
+			/* data.Message = "Il n'a pas été possible de lire le jeton API dans le sessionManager"
+			app.render(w, r, http.StatusUnprocessableEntity, "saisietokenapi.gohtml", data) */
+			app.sessionManager.Put(r.Context(), "flash", "Erreur vous devez vous reconnecter !")
+			http.Redirect(w, r, "/", http.StatusSeeOther)
 		}
 		// vérifier si le token est valide
-		if token.Expiry.Before(time.Now()) || (token.Token == "") {
-			data.Message = "Le jeton est expiré"
-
-			// Utilisation du refreshToken pour obtenir une nouvelle paire de tokens
-			// Sauvegarder les nouveaux tokens dans le sessionManager (put)
-
-			app.render(w, r, http.StatusUnprocessableEntity, "loginapi.gohtml", data)
+		if tokensApi.AuthenticationToken.Expiry.Before(time.Now()) || (tokensApi.AuthenticationToken.Token == "") {
+			/* data.Message = "Le jeton est expiré"
+			app.render(w, r, http.StatusUnprocessableEntity, "loginapi.gohtml", data) */
+			app.sessionManager.Put(r.Context(), "flash", "Le jeton est expiré vous devez vous reconnecter !")
+			http.Redirect(w, r, "/", http.StatusSeeOther)
+			return
 		}
 		next.ServeHTTP(w, r)
 	})

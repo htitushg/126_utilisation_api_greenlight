@@ -12,14 +12,14 @@
             {{with .Form.FieldErrors.email}}
                 <label class='error'>{{.}}</label>
             {{end}}
-            <input type='name' name='name' value='{{.Form.Name}}'>
+            <input type='name' name='name' value='{{.Form.Name}}' readonly>
         </div>
         <div>
             <label>Email:</label>
             {{with .Form.FieldErrors.email}}
                 <label class='error'>{{.}}</label>
             {{end}}
-            <input type='email' name='email' value='{{.Form.Email}}'>
+            <input type='email' name='email' value='{{.Form.Email}}' readonly>
         </div>
         <div>
             <label>Password:</label>
