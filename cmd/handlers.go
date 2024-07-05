@@ -971,8 +971,10 @@ func (app *application) ActiveUserPost(w http.ResponseWriter, r *http.Request) {
 	if cmovie.Activated {
 		/* data.Message = "Votre compte API greenlight est activé !"
 		log.Printf("Votre compte API greenlight est activé !\n") */
-		app.sessionManager.Put(r.Context(), "flash", "Votre compte API greenlight est activé !")
-		http.Redirect(w, r, "/", http.StatusOK)
+		/* app.sessionManager.Put(r.Context(), "flash", "Votre compte API greenlight est activé !")
+		http.Redirect(w, r, "/", http.StatusSeeOther) */
+		data.Message = "Votre compte API greenlight est activé !"
+		app.render(w, r, http.StatusOK, "home.gohtml", data)
 		return
 	} else {
 
