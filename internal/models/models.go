@@ -126,6 +126,7 @@ type Movie struct {
 }
 
 // ############################################################################################
+// Manipulation des tokens de l'API (Sauvegarde dans sessionManager ...)
 type AuthenticationToken struct {
 	Token  string    `json:"token"`
 	Expiry time.Time `json:"expiry"`
@@ -147,6 +148,19 @@ type AuthenticateUserApi struct {
 	Token  string    `json:"token"`
 	Expiry time.Time `json:"expiry"`
 }
+
+type JsonInfoUserApi struct {
+	User struct {
+		Name      string `json:"Name"`
+		Email     string `json:"Email"`
+		Password  string `json:"Password"`
+		Activated bool   `json:"Activated"`
+		CreatedAt string `json:"CreatedAt"`
+		Code      int    `json:"Code"`
+	} `json:"user"`
+}
+
+// #############################################################################################
 type User struct {
 	Id        int       `json:"id"`
 	Name      string    `json:"name"`

@@ -15,9 +15,6 @@
                     <li ><a href="#">Films</a>
                         <ul class="sous-menu" >
                             {{if .IsAuthenticated}}
-                            <li><a href='/movies/connectuserapi'>S'inscrire sur l'API films</a></li>
-                            <li><a href='/movies/authenticateuserapi'>Se connecter à l'API films</a></li>
-                            <li><a href='/movies/refreshtokensuserapi'>Utiliser le refresh Token API films</a></li>
                             <li><a href='/movie/view'>Affiche un film</a></li>
                             <li><a href='/movies/view' >Liste des Films</a></li>
                             {{end}}
@@ -45,9 +42,16 @@
 
             {{end}}
                 {{- if .IsAuthenticated }}
-                    <li class ="menu-connect"><a href="#"><img src="/static/css/personne_connectee.png" class="iconeconnect" alt="Image vraie"></a></li>
-                    <li class ="menu-connect"><a href="/user/modif">{{.Username}}</a></li>
-                    <li class ="menu-connect"><a href="/user/modif"><img src="/static/css/faviconhb.png"></a></li>
+                    {{/* <li class ="menu-connect"><a href="#"><img src="/static/css/personne_connectee.png" class="iconeconnect" alt="Image vraie"></a></li> */}}
+                    <li ><a href="#"><img src="/static/css/personne_connectee.png" class="iconeconnect" alt="Image vraie"></a>
+                        <ul class="sous-menu" >
+                            <li><a href="/user/modif">{{.Username}}</a></li>
+                            <li><a href='/movies/connectuserapi'>S'inscrire sur l'API films</a></li>
+                            <li><a href='/movies/authenticateuserapi'>Se connecter à l'API films</a></li>
+                            <li><a href='/movies/refreshtokensuserapi'>Utiliser le refresh Token API films</a></li>
+                        </ul>
+                    </li>
+                    <li class ="menu-connect"><a href="/"><img src="/static/css/faviconhb.png"></a></li>
                 {{- end }}
             </ul>
         </div>

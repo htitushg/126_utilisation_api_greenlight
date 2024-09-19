@@ -83,18 +83,6 @@ func (app application) InfoUserApi(name string, email string, password string) (
 	}
 	defer resp.Body.Close()
 
-	type jsonInfoUserApi struct {
-		User struct {
-			Name      string `json:"Name"`
-			Email     string `json:"Email"`
-			Password  string `json:"Password"`
-			Activated bool   `json:"Activated"`
-			CreatedAt string `json:"CreatedAt"`
-			Code      int    `json:"Code"`
-		} `json:"user"`
-	}
-	// Vérification du code de statut HTTP
-
 	// Décodage du corps de la réponse JSON dans une nouvelle structure User
 	body, err := io.ReadAll(resp.Body)
 	if err != nil {
@@ -107,7 +95,7 @@ func (app application) InfoUserApi(name string, email string, password string) (
 	// Rechercher le mot "error"
 	if strings.Contains(bodyString, name) {
 		// Le nom figure bien dans la réponse
-		var jsonInfoApi jsonInfoUserApi
+		var jsonInfoApi models.JsonInfoUserApi
 		err = json.Unmarshal(body, &jsonInfoApi)
 		if err != nil {
 			return nom, nil
@@ -214,7 +202,7 @@ func (app application) CreateUserApi(name string, email string, password string,
 	} else {
 		// tester si le body contient le mot error
 		// Créer la structure User pour représenter les données à envoyer
-		type CretateUser struct {
+		type cretateUser struct {
 			User struct {
 				ID        int       `json:"id"`
 				CreatedAt time.Time `json:"created_at"`
@@ -223,7 +211,7 @@ func (app application) CreateUserApi(name string, email string, password string,
 				Activated bool      `json:"activated"`
 			} `json:"user"`
 		}
-		var createUserApi CretateUser
+		var createUserApi cretateUser
 		err = json.Unmarshal(body, &createUserApi)
 		if err != nil {
 			return err
@@ -238,10 +226,10 @@ func (app application) CreateUserApi(name string, email string, password string,
 // ##################################################################
 // ActivateUserApi : fonction d'activation d'un utilisateur de l'Api Greenlight
 func (app application) ActivateUserApi(tokenapi models.AuthenticateUserApi) (cmovie models.CreateUserMovie, err error) {
-	type ActivateToken struct {
+	type activateTokenStruct struct {
 		Token string `json:"token"`
 	}
-	var activateToken ActivateToken
+	var activateToken activateTokenStruct
 	activateToken.Token = tokenapi.Token
 	// Encodage du champ Token de la structure tokenapi models.UserLoginForm en JSON
 	jsonData, err := json.Marshal(activateToken)
@@ -274,7 +262,7 @@ func (app application) ActivateUserApi(tokenapi models.AuthenticateUserApi) (cmo
 	}
 	defer resp.Body.Close()
 	// Créer une nouvelle structure CreateUser pour récupérer la réponse de l'API
-	type ActivateUser struct {
+	type activateUser struct {
 		User struct {
 			ID        int       `json:"id"`
 			CreatedAt time.Time `json:"created_at"`
@@ -283,7 +271,7 @@ func (app application) ActivateUserApi(tokenapi models.AuthenticateUserApi) (cmo
 			Activated bool      `json:"activated"`
 		} `json:"user"`
 	}
-	var activateUserApi ActivateUser
+	var activateUserApi activateUser
 	// Lecture du contenu de resp.Body dans un tableau d'octets
 	bodyBytes, err := io.ReadAll(resp.Body)
 	if err != nil {
